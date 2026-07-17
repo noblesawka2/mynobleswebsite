@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery — Nobles Cooperative</title>
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+  <!-- Fonts & CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./asset/css/styles.css">
+  
+  <!-- Supabase JS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- ===== NAVIGATION (same as other pages) ===== -->
+  <header class="nav" id="siteNav">
+    <div class="container nav-inner">
+      <a href="/index" class="nav-logo" aria-label="Nobles Cooperative — Home">
+        <img class="nav-logo-mark" src="./asset/N1 Logo full.png" alt="Nobles Cooperative logo mark" width="50" height="55" />
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <li>
+          <button class="nav-link-label" aria-haspopup="true" type="button">
+            Products <span class="dropdown-arrow">▾</span>
+          </button>
+          <ul class="nav-dropdown">
+            <li><a href="#">MarketLift</a></li>
+            <li><a href="#">MarketPower</a></li>
+            <li><a href="#">Unity Loan</a></li>
+            <li><a href="#">EasyPay</a></li>
+            <li><a href="#">Empower Loan</a></li>
+            <li><a href="#">Kitchen Saver</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="nav-link-label" aria-haspopup="true" type="button">
+            Save &amp; Invest <span class="dropdown-arrow">▾</span>
+          </button>
+          <ul class="nav-dropdown">
+            <li><a href="#">EasySave</a></li>
+            <li><a href="#">Future Fund</a></li>
+            <li><a href="#">Gold Vault</a></li>
+            <li><a href="#">EduSave</a></li>
+            <li><a href="#">Group Savings</a></li>
+            <li><a href="#">Monthly Savings Challenge</a></li>
+            <li><a href="#">Food Vault</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="nav-link-label" aria-haspopup="true" type="button">
+            About Us <span class="dropdown-arrow">▾</span>
+          </button>
+          <ul class="nav-dropdown">
+            <li><a href="#">Mission &amp; Vision</a></li>
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Founder's Story</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="nav-link-label" aria-haspopup="true" type="button">
+            Partner <span class="dropdown-arrow">▾</span>
+          </button>
+          <ul class="nav-dropdown">
+            <li><a href="#">Investors</a></li>
+            <li><a href="#">LegacyBuilders</a></li>
+            <li><a href="#">Nobles Vault</a></li>
+            <li><a href="#">Partners</a></li>
+            <li>
+              <a href="#">Resources <span class="sub-arrow">▸</span></a>
+              <ul class="nav-dropdown-nested">
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Financial Education</a></li>
+                <li><a href="#">FAQs</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/gallery">Gallery</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </nav>
+      <div class="nav-cta">
+        <a href="#" class="btn btn-secondary btn-sm">Download Nobles Vault</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== MOBILE MENU (same as other pages) ===== -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu-back" id="mobileMenuBack" type="button" aria-label="Close menu">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>Back</span>
+    </button>
+    <div class="mobile-menu-inner">
+      <nav class="mobile-menu-links" aria-label="Mobile navigation">
+        <!-- Products -->
+        <div class="mm-item">
+          <button class="mm-link" data-mm-accordion type="button">
+            <span>Products</span><span class="mm-arrow">▾</span>
+          </button>
+          <div class="mm-sublinks">
+            <a href="#">MarketLift</a>
+            <a href="#">MarketPower</a>
+            <a href="#">Unity Loan</a>
+            <a href="#">EasyPay</a>
+            <a href="#">Empower Loan</a>
+            <a href="#">Kitchen Saver</a>
+          </div>
+        </div>
+        <!-- Save & Invest -->
+        <div class="mm-item">
+          <button class="mm-link" data-mm-accordion type="button">
+            <span>Save &amp; Invest</span><span class="mm-arrow">▾</span>
+          </button>
+          <div class="mm-sublinks">
+            <a href="#">EasySave</a>
+            <a href="#">Future Fund</a>
+            <a href="#">Gold Vault</a>
+            <a href="#">EduSave</a>
+            <a href="#">Group Savings</a>
+            <a href="#">Monthly Savings Challenge</a>
+            <a href="#">Food Vault</a>
+          </div>
+        </div>
+        <!-- About Us -->
+        <div class="mm-item">
+          <button class="mm-link" data-mm-accordion type="button">
+            <span>About Us</span><span class="mm-arrow">▾</span>
+          </button>
+          <div class="mm-sublinks">
+            <a href="#">Mission &amp; Vision</a>
+            <a href="#">Our Story</a>
+            <a href="#">Founder's Story</a>
+          </div>
+        </div>
+        <!-- Partner -->
+        <div class="mm-item">
+          <button class="mm-link" data-mm-accordion type="button">
+            <span>Partner</span><span class="mm-arrow">▾</span>
+          </button>
+          <div class="mm-sublinks">
+            <a href="#">Investors</a>
+            <a href="#">LegacyBuilders</a>
+            <a href="#">Nobles Vault</a>
+            <a href="#">Partners</a>
+            <div class="mm-nested">
+              <a href="#">Blog</a>
+              <a href="#">Financial Education</a>
+              <a href="#">FAQs</a>
+            </div>
+          </div>
+        </div>
+        <div class="mm-item"><a href="/gallery" class="mm-link" style="justify-content:flex-start;">Gallery</a></div>
+        <div class="mm-item"><a href="#" class="mm-link" style="justify-content:flex-start;">Contact Us</a></div>
+      </nav>
+      <div class="mobile-menu-actions">
+        <a href="#" class="btn btn-primary btn-block">Download Nobles Vault</a>
+        <a href="#" class="btn btn-outline btn-block">Become a Member (₦1,000)</a>
+      </div>
+      <a href="https://wa.me/234800000000" target="_blank" class="mobile-menu-wa">Chat with Nola on WhatsApp →</a>
+    </div>
+  </div>
+    
+
+<!-- ===== gallery.html (public view) ===== -->
+
+<main id="main" class="section-pad" style="padding-top:140px;">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Our Gallery</h2>
+      <p>Moments from our community, events, and the impact we’re building together.</p>
+    </div>
+    <div id="galleryGrid" class="gallery-grid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px,1fr)); gap:24px; margin-top:20px;"></div>
+  </div>
+</main>
+
+<!-- Lightbox (same as before) -->
+<div id="lightbox" style="display:none; position:fixed; inset:0; z-index:2000; background:rgba(0,0,0,0.85); justify-content:center; align-items:center; backdrop-filter:blur(6px);">
+  <div style="position:relative; max-width:90vw; max-height:90vh;">
+    <button id="lightboxClose" style="position:absolute; top:-50px; right:0; background:none; border:none; color:white; font-size:2rem; cursor:pointer;">&times;</button>
+    <div id="lightboxContent" style="display:flex; justify-content:center; align-items:center; width:100%; height:100%;"></div>
+  </div>
+</div>
+
+  <!-- ===== FOOTER (same as other pages) ===== -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo-chip">
+          <img src="./asset/N1 Logo full.png" alt="Nobles Cooperative logo" />
+        </div>
+        <p style="color:rgba(255,255,255,.72); max-width:280px; line-height:1.7;">Plan. Save. Invest. Grow — with dignity. A women-first financial cooperative and strategic development ecosystem built for the South-East.</p>
+        <p class="footer-reg">Anambra State Cooperative — Reg. No. AN 17915</p>
+      </div>
+      <div class="footer-col">
+        <h4>Empowerment hubs</h4>
+        <ul>
+          <li><a href="#">Save &amp; Invest</a></li>
+          <li><a href="#">Borrow Responsibly</a></li>
+          <li><a href="#">Financial Calculators</a></li>
+          <li><a href="#">Impact Programs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Partner With Us</h4>
+        <ul>
+          <li><a href="#">Investors</a></li>
+          <li><a href="#">LegacyBuilders</a></li>
+          <li><a href="#">Nobles Vault</a></li>
+          <li><a href="#">Partners</a></li>
+          
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Financial Education</a></li>
+          <li><a href="#">FAQs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Immediate help</h4>
+        <ul>
+          <li><a href="#">Vault Setup Support</a></li>
+          <li><a href="https://wa.me/234800000000" target="_blank">Chat with Nola</a></li>
+          <li><a href="#">Complaints Portal</a></li>
+          <div style="justify-content:flex-end; margin-bottom:20px;">
+        <button id="toggleAdmin" class="btn btn-outline btn-sm">🔐 Admin Panel</button>
+      </div>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <div>&copy; 2025 Nobles Cooperative. All rights reserved.</div>
+      <div><strong>No woman is left behind.</strong></div>
+    </div>
+  </footer>
+
+  <!-- ===== BACK TO TOP ===== -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <!-- ===== MOBILE STICKY BAR ===== -->
+  <div class="mobile-sticky-bar">
+    <a href="#" class="sticky-app">Download App</a>
+    <a href="https://wa.me/234800000000" target="_blank" class="sticky-wa">WhatsApp Help</a>
+  </div>
+
+  <!-- ===== SCRIPTS ===== -->
+<script src="asset/js/app.js"></script>
+<script>
+  (async function() {
+    try {
+      const items = await loadGalleryItems();
+      renderGalleryGrid(items, 'galleryGrid', false);
+    } catch (err) {
+      console.error('Gallery error:', err);
+      document.getElementById('galleryGrid').innerHTML =
+        `<p style="text-align:center; color:red; padding:40px;">Error loading gallery. Please check console for details.</p>`;
+    }
+  })();
+</script>
+</body>
+</html>
