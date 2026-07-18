@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mission, Vision &amp; Values — Nobles Cooperative</title>
+    <meta name="description" content="Nobles Cooperative's mission, vision and core values that guide everything we do. Join a women-first financial cooperative built on trust, integrity and community." />
+    <link rel="icon" type="image/png" href="/asset/ChatGPT Image Jul 16, 2026, 04_19_37 PM.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/asset/css/styles.css" />
+    <style>
+        /* ---------- Mission page specific styles ---------- */
+        .mission-hero {
+            position: relative;
+            padding: 160px 0 80px;
+            background: var(--purple-deep);
+            overflow: hidden;
+        }
+        .mission-hero .hero-aurora .blob {
+            opacity: .4;
+        }
+        .mission-hero-content {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        @media (max-width: 900px) {
+            .mission-hero-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+        .mission-hero-text h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.4rem, 5vw, 3.5rem);
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 18px;
+            letter-spacing: -.015em;
+        }
+        .mission-hero-text p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, .82);
+            max-width: 520px;
+            margin-bottom: 30px;
+        }
+        .mission-hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--r-lg);
+            box-shadow: var(--shadow-lg);
+            object-fit: cover;
+            aspect-ratio: 4/3;
+        }
+
+        /* ---------- Mission/Vision/Promise cards ---------- */
+        .mvp-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 20px;
+        }
+        @media (max-width: 900px) {
+            .mvp-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+        }
+        .mvp-card {
+            display: flex;
+            flex-direction: column;
+            background: var(--white);
+            border-radius: var(--r-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: transform .4s var(--ease), box-shadow .4s var(--ease);
+            border: 1px solid var(--line);
+        }
+        .mvp-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-md);
+        }
+        .mvp-card .mvp-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        .mvp-card .mvp-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .5s var(--ease);
+        }
+        .mvp-card:hover .mvp-image img {
+            transform: scale(1.03);
+        }
+        .mvp-card .mvp-body {
+            padding: 28px 26px 32px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .mvp-card .mvp-body h3 {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            color: var(--purple);
+            margin-bottom: 12px;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+        .mvp-card .mvp-body p {
+            color: var(--muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            flex-grow: 1;
+        }
+        .mvp-card.promise {
+            background: var(--grad-brand);
+            border-color: var(--purple);
+        }
+        .mvp-card.promise .mvp-body h3 {
+            color: var(--gold);
+        }
+        .mvp-card.promise .mvp-body p {
+            color: rgba(255, 255, 255, .9);
+        }
+
+        /* ---------- Core Values ---------- */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 20px;
+        }
+        @media (max-width: 900px) {
+            .values-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 600px) {
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .value-card {
+            background: var(--white);
+            border-radius: var(--r-md);
+            padding: 28px 24px;
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow-sm);
+            transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+            border-left: 4px solid var(--orange);
+        }
+        .value-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+        .value-card .value-accent {
+            display: block;
+            width: 6px;
+            height: 6px;
+            background: var(--orange);
+            margin-bottom: 14px;
+            border-radius: 50%;
+        }
+        .value-card h4 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            color: var(--purple);
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+        .value-card p {
+            color: var(--muted);
+            font-size: .92rem;
+            line-height: 1.6;
+        }
+
+        /* ---------- How Values Guide Us ---------- */
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px 30px;
+            max-width: 720px;
+            margin: 24px auto 0;
+        }
+        @media (max-width: 600px) {
+            .guide-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .guide-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 12px 16px;
+            background: var(--white);
+            border-radius: var(--r-sm);
+            border: 1px solid var(--line);
+            transition: background .2s, border-color .2s;
+        }
+        .guide-item:hover {
+            background: var(--purple-tint);
+            border-color: var(--purple);
+        }
+        .guide-item .check {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 22px;
+            height: 22px;
+            background: var(--purple);
+            color: white;
+            border-radius: 50%;
+            font-size: 12px;
+            flex-shrink: 0;
+            font-weight: 700;
+        }
+        .guide-item span {
+            font-size: .95rem;
+            color: var(--ink);
+            font-weight: 500;
+        }
+
+        /* ---------- CTA ---------- */
+        .mission-cta {
+            background: var(--cream);
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+        .mission-cta .cta-inner {
+            max-width: 620px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .mission-cta h2 {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            color: var(--purple);
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+        .mission-cta .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 14px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <!-- ============ NAVIGATION ============ -->
+    <header class="nav" id="siteNav">
+        <div class="container nav-inner">
+            <a href="/" class="nav-logo" aria-label="Nobles Cooperative — Home">
+                <img class="nav-logo-mark" src="/asset/N1 Logo full.png" alt="Nobles Cooperative logo mark" width="50" height="55" />
+            </a>
+
+            <nav class="nav-links" aria-label="Primary navigation">
+                <!-- Products -->
+                <li>
+                    <button class="nav-link-label" aria-haspopup="true" aria-expanded="false" type="button">
+                        Products
+                        <span class="dropdown-arrow">▾</span>
+                    </button>
+                    <ul class="nav-dropdown">
+                        <li><a href="#">MarketLift</a></li>
+                        <li><a href="#">MarketPower</a></li>
+                        <li><a href="#">Unity Loan</a></li>
+                        <li><a href="#">EasyPay</a></li>
+                        <li><a href="#">Empower Loan</a></li>
+                        <li><a href="#">Kitchen Saver</a></li>
+                    </ul>
+                </li>
+
+                <!-- Save & Invest -->
+                <li>
+                    <button class="nav-link-label" aria-haspopup="true" aria-expanded="false" type="button">
+                        Save &amp; Invest
+                        <span class="dropdown-arrow">▾</span>
+                    </button>
+                    <ul class="nav-dropdown">
+                        <li><a href="#">EasySave</a></li>
+                        <li><a href="#">Future Fund</a></li>
+                        <li><a href="#">Gold Vault</a></li>
+                        <li><a href="#">EduSave</a></li>
+                        <li><a href="#">Group Savings</a></li>
+                        <li><a href="#">Monthly Savings Challenge</a></li>
+                        <li><a href="#">Food Vault</a></li>
+                    </ul>
+                </li>
+
+                <!-- About Us -->
+                <li>
+                    <button class="nav-link-label" aria-haspopup="true" aria-expanded="false" type="button">
+                        About Us
+                        <span class="dropdown-arrow">▾</span>
+                    </button>
+                    <ul class="nav-dropdown">
+                        <li><a href="/mission-vision-values">Mission &amp; Vision</a></li>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Founder's Story</a></li>
+                    </ul>
+                </li>
+
+                <!-- Partner -->
+                <li>
+                    <button class="nav-link-label" aria-haspopup="true" aria-expanded="false" type="button">
+                        Partner
+                        <span class="dropdown-arrow">▾</span>
+                    </button>
+                    <ul class="nav-dropdown">
+                        <li><a href="#">Investors</a></li>
+                        <li><a href="#">LegacyBuilders</a></li>
+                        <li><a href="#">Nobles Vault</a></li>
+                        <li><a href="#">Partners</a></li>
+                        <li>
+                            <a href="#">
+                                Resources
+                                <span class="sub-arrow">▸</span>
+                            </a>
+                            <ul class="nav-dropdown-nested">
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Financial Education</a></li>
+                                <li><a href="#">FAQs</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><a href="/gallery">Gallery</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </nav>
+
+            <div class="nav-cta">
+                <a href="https://play.google.com/store/apps/details?id=com.myminervahub.nobles_vault&pcampaignid=web_share" class="btn btn-secondary btn-sm">Download Nobles Vault</a>
+            </div>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ============ MOBILE MENU ============ -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-back" id="mobileMenuBack" type="button" aria-label="Close menu">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Back</span>
+        </button>
+        <div class="mobile-menu-inner">
+            <nav class="mobile-menu-links" aria-label="Mobile navigation">
+                <!-- Products -->
+                <div class="mm-item">
+                    <button class="mm-link" data-mm-accordion type="button">
+                        <span>Products</span>
+                        <span class="mm-arrow">▾</span>
+                    </button>
+                    <div class="mm-sublinks">
+                        <a href="#">MarketLift</a>
+                        <a href="#">MarketPower</a>
+                        <a href="#">Unity Loan</a>
+                        <a href="#">EasyPay</a>
+                        <a href="#">Empower Loan</a>
+                        <a href="#">Kitchen Saver</a>
+                    </div>
+                </div>
+                <!-- Save & Invest -->
+                <div class="mm-item">
+                    <button class="mm-link" data-mm-accordion type="button">
+                        <span>Save &amp; Invest</span>
+                        <span class="mm-arrow">▾</span>
+                    </button>
+                    <div class="mm-sublinks">
+                        <a href="#">EasySave</a>
+                        <a href="#">Future Fund</a>
+                        <a href="#">Gold Vault</a>
+                        <a href="#">EduSave</a>
+                        <a href="#">Group Savings</a>
+                        <a href="#">Monthly Savings Challenge</a>
+                        <a href="#">Food Vault</a>
+                    </div>
+                </div>
+                <!-- About Us -->
+                <div class="mm-item">
+                    <button class="mm-link" data-mm-accordion type="button">
+                        <span>About Us</span>
+                        <span class="mm-arrow">▾</span>
+                    </button>
+                    <div class="mm-sublinks">
+                        <a href="/mission-vision-values">Mission &amp; Vision</a>
+                        <a href="#">Our Story</a>
+                        <a href="#">Founder's Story</a>
+                    </div>
+                </div>
+                <!-- Partner -->
+                <div class="mm-item">
+                    <button class="mm-link" data-mm-accordion type="button">
+                        <span>Partner</span>
+                        <span class="mm-arrow">▾</span>
+                    </button>
+                    <div class="mm-sublinks">
+                        <a href="#">Investors</a>
+                        <a href="#">LegacyBuilders</a>
+                        <a href="#">Nobles Vault</a>
+                        <a href="#">Partners</a>
+                        <div class="mm-nested">
+                            <a href="#">Blog</a>
+                            <a href="#">Financial Education</a>
+                            <a href="#">FAQs</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mm-item"><a href="/gallery" class="mm-link" style="justify-content:flex-start;">Gallery</a></div>
+                <div class="mm-item"><a href="#" class="mm-link" style="justify-content:flex-start;">Contact Us</a></div>
+            </nav>
+            <div class="mobile-menu-actions">
+                <a href="https://play.google.com/store/apps/details?id=com.myminervahub.nobles_vault&pcampaignid=web_share" class="btn btn-primary btn-block">Download Nobles Vault</a>
+                <a href="#" class="btn btn-outline btn-block">Become a Member (₦1,000)</a>
+            </div>
+            <a href="https://wa.me/234800000000" target="_blank" class="mobile-menu-wa">Chat with Nola on WhatsApp →</a>
+        </div>
+    </div>
+
+    <!-- ============ MAIN ============ -->
+    <main id="main">
+
+        <!-- ===== HERO ===== -->
+        <section class="mission-hero">
+            <div class="hero-aurora" aria-hidden="true">
+                <span class="blob blob-a"></span>
+                <span class="blob blob-b"></span>
+                <span class="blob blob-c"></span>
+            </div>
+            <div class="container mission-hero-content">
+                <div class="mission-hero-text">
+                    <div class="eyebrow">
+                        <span class="dot"></span>
+                        Our Foundation
+                    </div>
+                    <h1>Guided by Purpose. Driven by Impact.</h1>
+                    <p>Everything we do is guided by a clear mission, a bold vision and values that place trust, responsibility and people at the centre of financial empowerment.</p>
+                    <div style="display:flex; flex-wrap:wrap; gap:14px;">
+                        <a href="#" class="btn btn-primary"><span>Become a Member</span></a>
+                        <a href="https://play.google.com/store/apps/details?id=com.myminervahub.nobles_vault&pcampaignid=web_share" class="btn btn-outline-invert"><span>Download Nobles Vault</span></a>
+                    </div>
+                </div>
+                <div class="mission-hero-image">
+                    <img src="/asset/tunde-buremo-cnVn4Gg4b00-unsplash.jpg" alt="Diverse South-East Nigerian members interacting confidently" loading="lazy" />
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== MISSION, VISION, PROMISE ===== -->
+        <section class="section-pad" style="background:var(--cream);">
+            <div class="container">
+                <div class="section-head reveal">
+                    <h2>Our Guiding Principles</h2>
+                    <p>Who we are, where we're going, and the promise we make to every member.</p>
+                </div>
+                <div class="mvp-grid reveal-stagger reveal">
+                    <!-- Mission -->
+                    <div class="mvp-card">
+                        <div class="mvp-image">
+                            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&h=400&fit=crop&crop=center" alt="Women collaborating in a professional setting" loading="lazy" />
+                        </div>
+                        <div class="mvp-body">
+                            <h3>Our Mission</h3>
+                            <p>To architect sustainable financial futures for women in South-East Nigeria by delivering inclusive, technology-driven savings, investment, and credit solutions that foster economic independence and generational wealth.</p>
+                        </div>
+                    </div>
+                    <!-- Vision -->
+                    <div class="mvp-card">
+                        <div class="mvp-image">
+                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop&crop=center" alt="Aerial view of a modern thriving city" loading="lazy" />
+                        </div>
+                        <div class="mvp-body">
+                            <h3>Our Vision</h3>
+                            <p>To be the undisputed leader in women-centric financial cooperatives across Africa, setting the global benchmark for trust, innovation, and socio-economic transformation.</p>
+                        </div>
+                    </div>
+                    <!-- Promise -->
+                    <div class="mvp-card promise">
+                        <div class="mvp-image">
+                            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&h=400&fit=crop&crop=center" alt="A supportive handshake between colleagues" loading="lazy" />
+                        </div>
+                        <div class="mvp-body">
+                            <h3>Our Promise</h3>
+                            <p>We pledge unwavering stewardship, transparent governance, and a relentless commitment to ensuring that every woman we serve achieves enduring financial security and prosperity.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CORE VALUES ===== -->
+        <section class="section-pad" style="background:var(--white);">
+            <div class="container">
+                <div class="section-head reveal">
+                    <h2>Our Core Values</h2>
+                    <p>The principles that guide every decision we make.</p>
+                </div>
+                <div class="values-grid reveal-stagger reveal">
+                    <div class="value-card">
+                        <span class="value-accent"></span>
+                        <h4>Integrity</h4>
+                        <p>We act honestly and transparently, ensuring every action aligns with our commitment to our members.</p>
+                    </div>
+                    <div class="value-card">
+                        <span class="value-accent"></span>
+                        <h4>Trust</h4>
+                        <p>We build lasting relationships through reliability, consistency, and an unwavering dedication to our community.</p>
+                    </div>
+                    <div class="value-card">
+                        <span class="value-accent"></span>
+                        <h4>Discipline</h4>
+                        <p>We promote responsible financial habits, encouraging a culture of savings and prudent investment.</p>
+                    </div>
+                    <div class="value-card">
+                        <span class="value-accent"></span>
+                        <h4>Innovation</h4>
+                        <p>We embrace practical solutions that improve member experience and drive financial inclusion.</p>
+                    </div>
+                    <div class="value-card">
+                        <span class="value-accent"></span>
+                        <h4>Service</h4>
+                        <p>We place members at the centre of every decision, delivering exceptional value and support.</p>
+                    </div>
+                    <div class="value-card">
+                        <span class="value-accent"></span>
+                        <h4>Community</h4>
+                        <p>We grow stronger by helping one another succeed, fostering an ecosystem of mutual growth and prosperity.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== HOW VALUES GUIDE US ===== -->
+        <section class="section-pad" style="background:var(--purple-tint);">
+            <div class="container">
+                <div class="section-head reveal">
+                    <h2>How Our Values Guide Us</h2>
+                    <p>Our values aren't just words — they are the foundation of everything we do.</p>
+                </div>
+                <div class="guide-grid reveal-stagger reveal">
+                    <div class="guide-item">
+                        <span class="check">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </span>
+                        <span>Treat every member with dignity and respect.</span>
+                    </div>
+                    <div class="guide-item">
+                        <span class="check">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </span>
+                        <span>Promote responsible savings and lending.</span>
+                    </div>
+                    <div class="guide-item">
+                        <span class="check">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </span>
+                        <span>Maintain transparency in all services.</span>
+                    </div>
+                    <div class="guide-item">
+                        <span class="check">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </span>
+                        <span>Support sustainable financial growth.</span>
+                    </div>
+                    <div class="guide-item" style="grid-column: 1 / -1; max-width: 480px; margin: 0 auto; justify-content:center;">
+                        <span class="check">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </span>
+                        <span>Build long-term relationships based on trust.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CALL-TO-ACTION ===== -->
+        <section class="mission-cta section-pad">
+            <div class="container">
+                <div class="cta-inner reveal">
+                    <h2>Join a Cooperative Built on Strong Values.</h2>
+                    <p style="color:var(--muted); font-size:1.05rem; margin-bottom:6px;">Be part of a community where your financial growth matters.</p>
+                    <div class="btn-group">
+                        <a href="https://play.google.com/store/apps/details?id=com.myminervahub.nobles_vault&pcampaignid=web_share" class="btn btn-primary"><span>Download Nobles Vault</span></a>
+                        <a href="#" class="btn btn-outline"><span>Become a Member</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo-chip">
+                    <img src="/assets/img/N1 Logo full.png" alt="Nobles Cooperative logo" />
+                </div>
+                <p style="color:rgba(255,255,255,.72); max-width:280px; line-height:1.7;">Plan. Save. Invest. Grow — with dignity. A women-first financial cooperative and strategic development ecosystem built for the South-East.</p>
+                <p class="footer-reg">Anambra State Cooperative — Reg. No. AN 17915</p>
+            </div>
+            <div class="footer-col">
+                <h4>Empowerment hubs</h4>
+                <ul>
+                    <li><a href="#">Save &amp; Invest</a></li>
+                    <li><a href="#">Borrow Responsibly</a></li>
+                    <li><a href="#">Financial Calculators</a></li>
+                    <li><a href="#">Impact Programs</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Partner With Us</h4>
+                <ul>
+                    <li><a href="#">Investors</a></li>
+                    <li><a href="#">LegacyBuilders</a></li>
+                    <li><a href="#">Nobles Vault</a></li>
+                    <li><a href="#">Partners</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Financial Education</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="/mission-vision-values">Mission &amp; Vision</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Immediate help</h4>
+                <ul>
+                    <li><a href="#">Vault Setup Support</a></li>
+                    <li><a href="https://wa.me/234800000000" target="_blank">Chat with Nola</a></li>
+                    <li><a href="#">Complaints Portal</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <div>&copy; 2025 Nobles Cooperative. All rights reserved.</div>
+            <div><strong>No woman is left behind.</strong></div>
+        </div>
+    </footer>
+
+    <!-- ============ BACK TO TOP ============ -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+    <!-- ============ MOBILE STICKY BAR ============ -->
+    <div class="mobile-sticky-bar">
+        <a href="https://play.google.com/store/apps/details?id=com.myminervahub.nobles_vault&pcampaignid=web_share" class="sticky-app">Download App</a>
+        <a href="https://wa.me/234800000000" target="_blank" class="sticky-wa">WhatsApp Help</a>
+    </div>
+
+    <!-- ============ SCRIPTS ============ -->
+    <script src="/assets/js/app.js"></script>
+    <script>
+        (function() {
+            "use strict";
+
+            // ---- Scroll reveal for this page (re-use existing) ----
+            var revealEls = document.querySelectorAll('.reveal');
+            if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                var io = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            io.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: .12, rootMargin: '0px 0px -60px 0px' });
+                revealEls.forEach(function(el) { io.observe(el); });
+            } else {
+                revealEls.forEach(function(el) { el.classList.add('is-visible'); });
+            }
+
+            // ---- Staggered reveal ----
+            var staggerEls = document.querySelectorAll('.reveal-stagger');
+            if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                var sio = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            sio.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: .15 });
+                staggerEls.forEach(function(el) { sio.observe(el); });
+            } else {
+                staggerEls.forEach(function(el) { el.classList.add('is-visible'); });
+            }
+        })();
+    </script>
+
+</body>
+</html>
