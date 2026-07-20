@@ -586,7 +586,9 @@
         }
         @media (min-width: 900px) {
             .nav-cta {
-                display: block;
+                display: flex;
+                align-items: center;
+                gap: 8px;
             }
         }
 
@@ -1441,8 +1443,14 @@
 
         @media (prefers-reduced-motion: reduce) {
             .ledger-track {
+                width: 100%;
                 animation: none;
+            }
+            .ledger-set:first-child {
+                width: 100%;
                 flex-wrap: wrap;
+                justify-content: center;
+                row-gap: 12px;
             }
             .ledger-set[aria-hidden="true"] {
                 display: none;
@@ -2312,6 +2320,10 @@
             align-items: center;
             justify-content: center;
             gap: 7px;
+        }
+        .sticky-staff {
+            background: var(--cream);
+            color: var(--purple);
         }
         .sticky-app {
             background: var(--grad-accent);

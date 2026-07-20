@@ -1,9 +1,60 @@
 {
+  "buildCommand": "node scripts/build.mjs",
+  "outputDirectory": "dist",
   "cleanUrls": true,
-  "rewrites": [
+  "redirects": [
     {
-      "source": "/(.*)",
-      "destination": "/$1.html"
+      "source": "/fqa",
+      "destination": "/faq/",
+      "permanent": true
+    },
+    {
+      "source": "/loans/market-power",
+      "destination": "/loans/marketpower/",
+      "permanent": true
+    },
+    {
+      "source": "/about-us/mission-vision-values",
+      "destination": "/mission-vision-values/",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/html; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)/",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/html; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/asset/css/(.*)",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/css; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/asset/js/(.*)",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/javascript; charset=utf-8"
+        }
+      ]
     }
   ]
 }
