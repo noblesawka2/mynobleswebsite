@@ -1,16 +1,4 @@
 {
   "name": "nobles-cooperative-website",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "build": "node scripts/build.mjs",
-    "validate:html": "node scripts/validate-html.mjs",
-    "check:links": "node scripts/check-links.mjs",
-    "lint": "node --check asset/js/navigation.js && node --check asset/js/homepage.js && node --check asset/js/calculators.js && node --check asset/js/faq.js",
-    "test": "node --test test/*.test.mjs"
-  },
-  "devDependencies": {
-    "@axe-core/playwright": "^4.12.1",
-    "@playwright/test": "^1.61.1"
-  }
+  "private": true
 }
