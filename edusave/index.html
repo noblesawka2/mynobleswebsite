@@ -1,0 +1,1041 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduSave — Planned School-Expense Account | Nobles Cooperative</title>
+    <meta name="description" content="EduSave helps parents, guardians and families contribute weekly or monthly toward school fees, books, uniforms and other education expenses before they become urgent." />
+    <link rel="icon" type="image/png" href="/asset/favicon.png" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- Global styles -->
+    <link rel="stylesheet" href="/asset/css/styles.css" />
+
+    <style>
+        /* ---------- EduSave page specific styles ---------- */
+        .es-hero {
+            position: relative;
+            padding: 160px 0 80px;
+            background: var(--purple-deep);
+            overflow: hidden;
+        }
+        .es-hero .hero-aurora .blob {
+            opacity: .4;
+        }
+        .es-hero-content {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        @media (max-width: 900px) {
+            .es-hero-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+        .es-hero-text h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.4rem, 5vw, 3.5rem);
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 18px;
+            letter-spacing: -.015em;
+        }
+        .es-hero-text p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, .82);
+            max-width: 540px;
+            margin-bottom: 30px;
+        }
+        .es-hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--r-lg);
+            box-shadow: var(--shadow-lg);
+            object-fit: cover;
+            aspect-ratio: 4/3;
+        }
+
+        /* ---------- Key Message Banner ---------- */
+        .key-message {
+            background: var(--grad-accent);
+            color: var(--ink);
+            padding: 20px 28px;
+            border-radius: var(--r-md);
+            text-align: center;
+            font-family: var(--font-display);
+            font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+            font-weight: 700;
+            margin-bottom: 8px;
+            box-shadow: var(--shadow-orange);
+        }
+
+        /* ---------- Benefits Grid ---------- */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+        @media (max-width: 900px) {
+            .benefits-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 600px) {
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .benefit-card {
+            background: var(--white);
+            border-radius: var(--r-md);
+            padding: 24px 22px;
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow-sm);
+            transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .benefit-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+        .benefit-card .benefit-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--purple-tint);
+            color: var(--purple);
+            font-size: 1.1rem;
+            margin-bottom: 14px;
+            flex-shrink: 0;
+        }
+        .benefit-card h4 {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            color: var(--purple);
+            margin-bottom: 4px;
+            font-weight: 700;
+        }
+        .benefit-card p {
+            color: var(--muted);
+            font-size: .9rem;
+            line-height: 1.6;
+        }
+
+        /* ---------- Covered Expenses ---------- */
+        .expenses-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            max-width: 720px;
+            margin: 20px auto 0;
+        }
+        @media (max-width: 700px) {
+            .expenses-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 450px) {
+            .expenses-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .expense-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 18px;
+            background: var(--white);
+            border-radius: var(--r-sm);
+            border: 1px solid var(--line);
+            transition: background .2s, border-color .2s;
+        }
+        .expense-item:hover {
+            background: var(--purple-tint);
+            border-color: var(--purple);
+        }
+        .expense-item .expense-icon {
+            color: var(--purple);
+            font-size: 1rem;
+            flex-shrink: 0;
+            width: 20px;
+            text-align: center;
+        }
+        .expense-item span {
+            font-size: .92rem;
+            color: var(--ink);
+            font-weight: 500;
+        }
+
+        /* ---------- How It Works ---------- */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+            margin-top: 24px;
+        }
+        @media (max-width: 900px) {
+            .steps-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        @media (max-width: 600px) {
+            .steps-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .step-item {
+            text-align: center;
+            padding: 20px 12px;
+            background: var(--white);
+            border-radius: var(--r-md);
+            border: 1px solid var(--line);
+            transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+        }
+        .step-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-sm);
+        }
+        .step-item .step-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--grad-accent);
+            color: var(--ink);
+            font-family: var(--font-mono);
+            font-weight: 700;
+            font-size: .95rem;
+            margin-bottom: 10px;
+        }
+        .step-item h5 {
+            font-family: var(--font-display);
+            font-size: .9rem;
+            color: var(--purple);
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .step-item p {
+            color: var(--muted);
+            font-size: .82rem;
+            line-height: 1.5;
+        }
+
+        /* ---------- Withdrawal Policy ---------- */
+        .withdrawal-policy {
+            background: var(--purple-tint);
+            border-radius: var(--r-md);
+            padding: 28px 32px;
+            border: 1px solid var(--line);
+            max-width: 640px;
+            margin: 0 auto;
+        }
+        .withdrawal-policy h4 {
+            font-family: var(--font-display);
+            color: var(--purple);
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .withdrawal-policy h4 i {
+            color: var(--orange);
+        }
+        .withdrawal-policy ul {
+            list-style: none;
+            padding: 0;
+        }
+        .withdrawal-policy ul li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(92, 0, 140, .08);
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            color: var(--ink);
+            font-size: .95rem;
+            line-height: 1.6;
+        }
+        .withdrawal-policy ul li:last-child {
+            border-bottom: none;
+        }
+        .withdrawal-policy ul li i {
+            color: var(--orange);
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        /* ---------- Who It Is For ---------- */
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            max-width: 640px;
+            margin: 20px auto 0;
+        }
+        @media (max-width: 600px) {
+            .audience-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .audience-item {
+            text-align: center;
+            padding: 20px 14px;
+            background: var(--white);
+            border-radius: var(--r-md);
+            border: 1px solid var(--line);
+            transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+        }
+        .audience-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-sm);
+        }
+        .audience-item .audience-icon {
+            font-size: 2rem;
+            color: var(--purple);
+            margin-bottom: 8px;
+            display: block;
+            opacity: .6;
+        }
+        .audience-item h5 {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            color: var(--purple);
+            font-weight: 700;
+        }
+
+        /* ---------- FAQ ---------- */
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            background: var(--white);
+            border-radius: var(--r-sm);
+            border: 1px solid var(--line);
+            margin-bottom: 12px;
+            overflow: hidden;
+            transition: border-color .2s;
+        }
+        .faq-item:hover {
+            border-color: var(--purple);
+        }
+        .faq-question {
+            width: 100%;
+            padding: 18px 24px;
+            background: none;
+            border: none;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--ink);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            text-align: left;
+            gap: 16px;
+            transition: color .2s;
+        }
+        .faq-question:hover {
+            color: var(--purple);
+        }
+        .faq-question .faq-arrow {
+            font-size: .8rem;
+            transition: transform .3s var(--ease);
+            flex-shrink: 0;
+            color: var(--muted);
+        }
+        .faq-question.open .faq-arrow {
+            transform: rotate(180deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .4s var(--ease), padding .3s var(--ease);
+            padding: 0 24px;
+        }
+        .faq-answer.open {
+            max-height: 250px;
+            padding: 0 24px 20px;
+        }
+        .faq-answer p {
+            color: var(--muted);
+            font-size: .95rem;
+            line-height: 1.7;
+        }
+
+        /* ---------- CTA ---------- */
+        .es-cta {
+            background: var(--cream);
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+        .es-cta .cta-inner {
+            max-width: 620px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .es-cta h2 {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            color: var(--purple);
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+        .es-cta .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 14px;
+            margin-top: 10px;
+        }
+
+        /* ---------- Tag / Badge ---------- */
+        .product-tag {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: .7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .06em;
+            padding: 5px 14px;
+            border-radius: 50px;
+            background: var(--orange);
+            color: var(--ink);
+            margin-bottom: 12px;
+        }
+
+        /* ---------- Supporting copy block ---------- */
+        .supporting-copy {
+            background: var(--cream);
+            border-left: 4px solid var(--orange);
+            padding: 20px 24px;
+            border-radius: var(--r-sm);
+            max-width: 640px;
+            margin: 16px auto 0;
+        }
+        .supporting-copy p {
+            color: var(--ink);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            font-weight: 500;
+        }
+        .supporting-copy p i {
+            color: var(--orange);
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <!-- ============ NAVIGATION ============ -->
+    <header class="nav" id="siteNav">
+        <div class="container nav-inner">
+            <a href="/" class="nav-logo" aria-label="Nobles Cooperative — Home">
+                <img class="nav-logo-mark" src="/asset/N1 Logo full.png" alt="Nobles Cooperative logo mark" width="50" height="55" />
+            </a>
+
+            <nav class="nav-links" aria-label="Primary navigation">
+                <li>
+                    <button class="nav-link-label" aria-haspopup="true" aria-expanded="false" type="button">
+                        Loans
+                        <span class="dropdown-arrow">▾</span>
+                    </button>
+                    <ul class="nav-dropdown">
+                        <li><a href="/loans/marketlift">MarketLift</a></li>
+                        <li><a href="/loans/marketpower">MarketPower</a></li>
+                        <li><a href="/loans/unity-loan">Unity Loan</a></li>
+                        <li><a href="/loans/easypay">EasyPay</a></li>
+                        <li><a href="/loans/empower-loan">Empower Loan</a></li>
+                        <li><a href="/loans/kitchen-saver">Kitchen Saver</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <button class="nav-link-label" aria-haspopup="true" aria-expanded="false" type="button">
+                        Save &amp; Invest
+                        <span class="dropdown-arrow">▾</span>
+                    </button>
+                    <ul class="nav-dropdown">
+                        <li><a href="/savings/edusave">EduSave</a></li>
+                        <li><a href="#">EasySave</a></li>
+                        <li><a href="#">Future Fund</a></li>
+                        <li><a href="#">Gold Vault</a></li>
+                        <li><a href="#">Group Savings</a></li>
+                        <li><a href="#">Monthly Savings Challenge</a></li>
+                        <li><a href="#">Food Vault</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <button class="nav-link-label" aria-haspopup="true" aria-expanded="false" type="button">
+                        About Us
+                        <span class="dropdown-arrow">▾</span>
+                    </button>
+                    <ul class="nav-dropdown">
+                        <li><a href="/mission-vision-values">Mission &amp; Vision</a></li>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Founder's Story</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <button class="nav-link-label" aria-haspopup="true" aria-expanded="false" type="button">
+                        Partner
+                        <span class="dropdown-arrow">▾</span>
+                    </button>
+                    <ul class="nav-dropdown">
+                        <li><a href="#">Investors</a></li>
+                        <li><a href="#">LegacyBuilders</a></li>
+                        <li><a href="#">Nobles Vault</a></li>
+                        <li><a href="#">Partners</a></li>
+                        <li>
+                            <a href="#">
+                                Resources
+                                <span class="sub-arrow">▸</span>
+                            </a>
+                            <ul class="nav-dropdown-nested">
+                                <li><a href="/blog">Blog</a></li>
+                                <li><a href="#">Financial Education</a></li>
+                                <li><a href="#">FAQs</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="/gallery">Gallery</a></li>
+                <li><a href="/contact-us">Contact Us</a></li>
+            </nav>
+
+            <div class="nav-cta">
+                <a href="https://play.google.com/store/apps/details?id=com.myminervahub.nobles_vault&pcampaignid=web_share" class="btn btn-secondary btn-sm">Download Nobles Vault</a>
+            </div>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ============ MOBILE MENU ============ -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-back" id="mobileMenuBack" type="button" aria-label="Close menu">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Back</span>
+        </button>
+        <div class="mobile-menu-inner">
+            <nav class="mobile-menu-links" aria-label="Mobile navigation">
+                <div class="mm-item">
+                    <button class="mm-link" data-mm-accordion type="button">
+                        <span>Loans</span>
+                        <span class="mm-arrow">▾</span>
+                    </button>
+                    <div class="mm-sublinks">
+                        <a href="/loans/marketlift">MarketLift</a>
+                        <a href="/loans/marketpower">MarketPower</a>
+                        <a href="/loans/unity-loan">Unity Loan</a>
+                        <a href="/loans/easypay">EasyPay</a>
+                        <a href="/loans/empower-loan">Empower Loan</a>
+                        <a href="/loans/kitchen-saver">Kitchen Saver</a>
+                    </div>
+                </div>
+                <div class="mm-item">
+                    <button class="mm-link" data-mm-accordion type="button">
+                        <span>Save &amp; Invest</span>
+                        <span class="mm-arrow">▾</span>
+                    </button>
+                    <div class="mm-sublinks">
+                        <a href="/savings/edusave">EduSave</a>
+                        <a href="#">EasySave</a>
+                        <a href="#">Future Fund</a>
+                        <a href="#">Gold Vault</a>
+                        <a href="#">Group Savings</a>
+                        <a href="#">Monthly Savings Challenge</a>
+                        <a href="#">Food Vault</a>
+                    </div>
+                </div>
+                <div class="mm-item">
+                    <button class="mm-link" data-mm-accordion type="button">
+                        <span>About Us</span>
+                        <span class="mm-arrow">▾</span>
+                    </button>
+                    <div class="mm-sublinks">
+                        <a href="/mission-vision-values">Mission &amp; Vision</a>
+                        <a href="#">Our Story</a>
+                        <a href="#">Founder's Story</a>
+                    </div>
+                </div>
+                <div class="mm-item">
+                    <button class="mm-link" data-mm-accordion type="button">
+                        <span>Partner</span>
+                        <span class="mm-arrow">▾</span>
+                    </button>
+                    <div class="mm-sublinks">
+                        <a href="#">Investors</a>
+                        <a href="#">LegacyBuilders</a>
+                        <a href="#">Nobles Vault</a>
+                        <a href="#">Partners</a>
+                        <div class="mm-nested">
+                            <a href="/blog">Blog</a>
+                            <a href="#">Financial Education</a>
+                            <a href="#">FAQs</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mm-item"><a href="/gallery" class="mm-link" style="justify-content:flex-start;">Gallery</a></div>
+                <div class="mm-item"><a href="/contact-us" class="mm-link" style="justify-content:flex-start;">Contact Us</a></div>
+            </nav>
+            <div class="mobile-menu-actions">
+                <a href="https://play.google.com/store/apps/details?id=com.myminervahub.nobles_vault&pcampaignid=web_share" class="btn btn-primary btn-block">Download Nobles Vault</a>
+                <a href="#" class="btn btn-outline btn-block">Become a Member (₦1,000)</a>
+            </div>
+            <a href="https://wa.me/234800000000" target="_blank" class="mobile-menu-wa">Chat with Nola on WhatsApp →</a>
+        </div>
+    </div>
+
+    <!-- ============ MAIN ============ -->
+    <main id="main">
+
+        <!-- ===== HERO ===== -->
+        <section class="es-hero">
+            <div class="hero-aurora" aria-hidden="true">
+                <span class="blob blob-a"></span>
+                <span class="blob blob-b"></span>
+                <span class="blob blob-c"></span>
+            </div>
+            <div class="container es-hero-content">
+                <div class="es-hero-text">
+                    <div class="eyebrow">
+                        <span class="dot"></span>
+                        Planned School-Expense Account
+                    </div>
+                    <h1>Secure Your Child's Education, One Savings at a Time.</h1>
+                    <p>EduSave helps parents, guardians and families prepare gradually for school fees and other education costs through disciplined weekly or monthly contributions.</p>
+                    <div style="display:flex; flex-wrap:wrap; gap:14px;">
+                        <a href="#" class="btn btn-primary"><span>Open EduSave</span></a>
+                        <a href="https://play.google.com/store/apps/details?id=com.myminervahub.nobles_vault&pcampaignid=web_share" class="btn btn-outline-invert"><span>Download Nobles Vault</span></a>
+                    </div>
+                </div>
+                <div class="es-hero-image">
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=450&fit=crop&crop=center" alt="Parent supporting a child with school materials while using the Nobles Vault App" loading="lazy" />
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== KEY MESSAGE ===== -->
+        <section class="section-pad" style="background:var(--cream); padding-top:20px;">
+            <div class="container">
+                <div class="key-message reveal">
+                    <i class="fa-regular fa-circle-check" style="margin-right:12px;"></i>
+                    Small planned contributions today. Less school-fee pressure tomorrow.
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ABOUT EDUSAVE ===== -->
+        <section class="section-pad" style="background:var(--cream); padding-top:0;">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="product-tag">Education Savings</span>
+                    <h2>What is EduSave?</h2>
+                    <p style="max-width:720px; margin:0 auto;">EduSave is Nobles Cooperative's planned school-expense account designed to help parents, guardians, teachers and families prepare gradually for school fees and other education costs. Members can make affordable weekly or monthly contributions toward fees, books, uniforms, examinations, transport and other approved school expenses.</p>
+                </div>
+                <!-- Supporting copy -->
+                <div class="supporting-copy reveal">
+                    <p><i class="fa-regular fa-message"></i> Do not wait until school resumes before looking for school fees. With Nobles EduSave, you can contribute a manageable amount every week or month and prepare ahead for your child's education expenses.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== KEY BENEFITS ===== -->
+        <section class="section-pad" style="background:var(--white);">
+            <div class="container">
+                <div class="section-head reveal">
+                    <h2>Key Benefits</h2>
+                    <p>EduSave helps you protect your family from school-fee pressure and last-minute borrowing.</p>
+                </div>
+                <div class="benefits-grid reveal-stagger reveal">
+                    <div class="benefit-card">
+                        <span class="benefit-icon"><i class="fa-regular fa-hand"></i></span>
+                        <h4>Prevent Last-Minute Borrowing</h4>
+                        <p>Save gradually for school fees so you never have to borrow urgently when school resumes.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <span class="benefit-icon"><i class="fa-regular fa-calendar-circle-plus"></i></span>
+                        <h4>Reduce School Resumption Pressure</h4>
+                        <p>Walk into every school term with confidence knowing your child's fees are already planned for.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <span class="benefit-icon"><i class="fa-solid fa-shield"></i></span>
+                        <h4>Protect Business Capital</h4>
+                        <p>Keep your business money separate from school expenses. No more emergency withdrawals from working capital.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <span class="benefit-icon"><i class="fa-regular fa-building-columns"></i></span>
+                        <h4>Keep School Money Separate</h4>
+                        <p>A dedicated account ensures education funds are never mixed with everyday spending.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <span class="benefit-icon"><i class="fa-regular fa-calendar"></i></span>
+                        <h4>Build Disciplined Habits</h4>
+                        <p>Develop a consistent weekly or monthly contribution habit that grows your education fund steadily.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <span class="benefit-icon"><i class="fa-regular fa-clock"></i></span>
+                        <h4>Reduce Interruption of Education</h4>
+                        <p>Ensure your children's schooling is never interrupted by delayed fee payments.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== WHAT EDUSAVE COVERS ===== -->
+        <section class="section-pad" style="background:var(--purple-tint);">
+            <div class="container">
+                <div class="section-head reveal">
+                    <h2>What EduSave Covers</h2>
+                    <p>Plan for all your child's education expenses with one dedicated account.</p>
+                </div>
+                <div class="expenses-grid reveal-stagger reveal">
+                    <div class="expense-item">
+                        <span class="expense-icon"><i class="fa-solid fa-school"></i></span>
+                        <span>School fees</span>
+                    </div>
+                    <div class="expense-item">
+                        <span class="expense-icon"><i class="fa-solid fa-book-open"></i></span>
+                        <span>Books and learning materials</span>
+                    </div>
+                    <div class="expense-item">
+                        <span class="expense-icon"><i class="fa-solid fa-shirt"></i></span>
+                        <span>Uniforms and shoes</span>
+                    </div>
+                    <div class="expense-item">
+                        <span class="expense-icon"><i class="fa-regular fa-file-lines"></i></span>
+                        <span>Examination fees</span>
+                    </div>
+                    <div class="expense-item">
+                        <span class="expense-icon"><i class="fa-solid fa-bus"></i></span>
+                        <span>Transportation</span>
+                    </div>
+                    <div class="expense-item">
+                        <span class="expense-icon"><i class="fa-solid fa-bed"></i></span>
+                        <span>Boarding and other approved expenses</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== HOW EDUSAVE WORKS ===== -->
+        <section class="section-pad" style="background:var(--white);">
+            <div class="container">
+                <div class="section-head reveal">
+                    <h2>How EduSave Works</h2>
+                    <p>Start planning for education expenses in five simple steps.</p>
+                </div>
+                <div class="steps-grid reveal-stagger reveal">
+                    <div class="step-item">
+                        <div class="step-num">1</div>
+                        <h5>Download Nobles Vault</h5>
+                        <p>Get the app from the Google Play Store.</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">2</div>
+                        <h5>Register as a Member</h5>
+                        <p>Join Nobles Cooperative with your ₦1,000 share.</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">3</div>
+                        <h5>Select EduSave</h5>
+                        <p>Choose EduSave as your savings goal.</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">4</div>
+                        <h5>Fund Your Account</h5>
+                        <p>Contribute weekly or monthly — whatever works for you.</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">5</div>
+                        <h5>Grow Your Education Fund</h5>
+                        <p>Watch your savings grow and prepare for school expenses with confidence.</p>
+                    </div>
+                </div>
+                <p style="text-align:center; color:var(--muted); font-size:.95rem; margin-top:20px;">
+                    <i class="fa-regular fa-headset" style="color:var(--orange);"></i>
+                    Need help? Request staff-assisted registration or visit the Nobles office.
+                </p>
+            </div>
+        </section>
+
+        <!-- ===== WITHDRAWAL POLICY ===== -->
+        <section class="section-pad" style="background:var(--cream);">
+            <div class="container">
+                <div class="section-head reveal">
+                    <h2>Withdrawal Policy</h2>
+                    <p>EduSave is designed to encourage disciplined savings for education expenses.</p>
+                </div>
+                <div class="withdrawal-policy reveal">
+                    <h4><i class="fa-regular fa-hand-holding-dollar"></i> Planned Withdrawals</h4>
+                    <ul>
+                        <li>
+                            <i class="fa-regular fa-circle-check"></i>
+                            <span><strong>One free withdrawal</strong> is allowed per calendar quarter.</span>
+                        </li>
+                        <li>
+                            <i class="fa-regular fa-circle-exclamation"></i>
+                            <span><strong>Additional withdrawals</strong> within the same quarter will result in forfeiture of the expected savings return, in line with the approved product policy.</span>
+                        </li>
+                        <li>
+                            <i class="fa-regular fa-lightbulb"></i>
+                            <span><strong>Plan ahead</strong> — use your quarterly withdrawal strategically for school resumption expenses.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== WHO IT IS FOR ===== -->
+        <section class="section-pad" style="background:var(--white);">
+            <div class="container">
+                <div class="section-head reveal">
+                    <h2>Who It Is For</h2>
+                    <p>EduSave is designed for everyone who wants to plan for education expenses.</p>
+                </div>
+                <div class="audience-grid reveal-stagger reveal">
+                    <div class="audience-item">
+                        <span class="audience-icon"><i class="fa-solid fa-people-group"></i></span>
+                        <h5>Parents</h5>
+                    </div>
+                    <div class="audience-item">
+                        <span class="audience-icon"><i class="fa-solid fa-user-tie"></i></span>
+                        <h5>Guardians</h5>
+                    </div>
+                    <div class="audience-item">
+                        <span class="audience-icon"><i class="fa-solid fa-user-graduate"></i></span>
+                        <h5>Students</h5>
+                    </div>
+                    <div class="audience-item">
+                        <span class="audience-icon"><i class="fa-regular fa-clock"></i></span>
+                        <h5>Anyone Planning for Education</h5>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FAQ ===== -->
+        <section class="section-pad" style="background:var(--purple-tint);">
+            <div class="container">
+                <div class="section-head reveal">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Quick answers to common questions about EduSave.</p>
+                </div>
+                <div class="faq-list reveal-stagger reveal">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            What is EduSave?
+                            <i class="fa-solid fa-chevron-down faq-arrow"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>EduSave is Nobles Cooperative's planned school-expense account designed to help parents, guardians and families prepare gradually for school fees and other education costs through weekly or monthly contributions.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            How do I open an EduSave account?
+                            <i class="fa-solid fa-chevron-down faq-arrow"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>You can open an EduSave account through the Nobles Vault app. First, download the app, register as a member, then select EduSave as your savings goal. You can also visit the Nobles office for staff-assisted registration.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            What expenses can EduSave cover?
+                            <i class="fa-solid fa-chevron-down faq-arrow"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>EduSave covers school fees, books and learning materials, uniforms and shoes, examination fees, transportation, boarding, and other approved education expenses.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            When can I withdraw from my EduSave account?
+                            <i class="fa-solid fa-chevron-down faq-arrow"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>You are allowed one free withdrawal per calendar quarter. Additional withdrawals within the same quarter will result in forfeiture of the expected savings return, in line with the approved product policy.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            Is EduSave a loan or scholarship?
+                            <i class="fa-solid fa-chevron-down faq-arrow"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>No. EduSave is a savings account, not a loan, scholarship, grant, or guaranteed school sponsorship programme. It helps you save your own money for education expenses through disciplined contributions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CTA ===== -->
+        <section class="es-cta section-pad">
+            <div class="container">
+                <div class="cta-inner reveal">
+                    <h2>Start Building Your Education Fund Today.</h2>
+                    <p style="color:var(--muted); font-size:1.05rem; margin-bottom:6px;">Open your EduSave account through the Nobles Vault app and start planning for school expenses with confidence.</p>
+                    <div class="btn-group">
+                        <a href="#" class="btn btn-primary"><span>Open EduSave</span></a>
+                        <a href="https://play.google.com/store/apps/details?id=com.myminervahub.nobles_vault&pcampaignid=web_share" class="btn btn-outline"><span>Download Nobles Vault</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo-chip">
+                    <img src="/asset/N1 Logo full.png" alt="Nobles Cooperative logo" />
+                </div>
+                <p style="color:rgba(255,255,255,.72); max-width:280px; line-height:1.7;">Plan. Save. Invest. Grow — with dignity. A women-first financial cooperative and strategic development ecosystem built for the South-East.</p>
+                <p class="footer-reg">Anambra State Cooperative — Reg. No. AN 17915</p>
+            </div>
+            <div class="footer-col">
+                <h4>Empowerment hubs</h4>
+                <ul>
+                    <li><a href="#">Save &amp; Invest</a></li>
+                    <li><a href="#">Borrow Responsibly</a></li>
+                    <li><a href="#">Financial Calculators</a></li>
+                    <li><a href="#">Impact Programs</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Partner With Us</h4>
+                <ul>
+                    <li><a href="#">Investors</a></li>
+                    <li><a href="#">LegacyBuilders</a></li>
+                    <li><a href="#">Nobles Vault</a></li>
+                    <li><a href="#">Partners</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="#">Financial Education</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="/mission-vision-values">Mission &amp; Vision</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Immediate help</h4>
+                <ul>
+                    <li><a href="#">Vault Setup Support</a></li>
+                    <li><a href="https://wa.me/234800000000" target="_blank">Chat with Nola</a></li>
+                    <li><a href="#">Complaints Portal</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <div>&copy; 2025 Nobles Cooperative. All rights reserved.</div>
+            <div><strong>No woman is left behind.</strong></div>
+        </div>
+    </footer>
+
+    <!-- ============ BACK TO TOP ============ -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+    <!-- ============ MOBILE STICKY BAR ============ -->
+    <div class="mobile-sticky-bar">
+        <a href="https://play.google.com/store/apps/details?id=com.myminervahub.nobles_vault&pcampaignid=web_share" class="sticky-app">Download App</a>
+        <a href="https://wa.me/234800000000" target="_blank" class="sticky-wa">WhatsApp Help</a>
+    </div>
+
+    <!-- ============ SCRIPTS ============ -->
+    <script src="/asset/js/app.js"></script>
+    <script>
+        (function() {
+            "use strict";
+
+            // ---- Scroll reveal ----
+            var revealEls = document.querySelectorAll('.reveal');
+            if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                var io = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            io.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: .12, rootMargin: '0px 0px -60px 0px' });
+                revealEls.forEach(function(el) { io.observe(el); });
+            } else {
+                revealEls.forEach(function(el) { el.classList.add('is-visible'); });
+            }
+
+            // ---- Staggered reveal ----
+            var staggerEls = document.querySelectorAll('.reveal-stagger');
+            if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                var sio = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            sio.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: .15 });
+                staggerEls.forEach(function(el) { sio.observe(el); });
+            } else {
+                staggerEls.forEach(function(el) { el.classList.add('is-visible'); });
+            }
+
+            // ---- FAQ Accordion ----
+            document.querySelectorAll('.faq-question').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    var answer = this.nextElementSibling;
+                    var isOpen = answer.classList.contains('open');
+                    document.querySelectorAll('.faq-answer').forEach(function(a) {
+                        if (a !== answer) a.classList.remove('open');
+                    });
+                    document.querySelectorAll('.faq-question').forEach(function(b) {
+                        if (b !== btn) b.classList.remove('open');
+                    });
+                    if (isOpen) {
+                        answer.classList.remove('open');
+                        btn.classList.remove('open');
+                    } else {
+                        answer.classList.add('open');
+                        btn.classList.add('open');
+                    }
+                });
+            });
+        })();
+    </script>
+
+</body>
+</html>
