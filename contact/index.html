@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
     <!-- Global styles -->
-    <link rel="stylesheet" href="../asset/css/styles.css" />
+    <link rel="stylesheet" href="/asset/css/styles.css" />
 
     <!-- Supabase JS -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -466,10 +466,10 @@
                     <ul class="nav-dropdown">
                         <li><a href="/loans/marketlift">MarketLift</a></li>
                         <li><a href="/loans/marketpower">MarketPower</a></li>
-                        <li><a href="#">Unity Loan</a></li>
-                        <li><a href="#">EasyPay</a></li>
-                        <li><a href="#">Empower Loan</a></li>
-                        <li><a href="#">Kitchen Saver</a></li>
+                        <li><a href="/loans/unityloan">Unity Loan</a></li>
+                        <li><a href="/loans/easypay">EasyPay</a></li>
+                        <li><a href="/loans/empowerloan">Empower Loan</a></li>
+                        <li><a href="/loans/kitchensaver">Kitchen Saver</a></li>
                     </ul>
                 </li>
                 <li>
@@ -478,13 +478,13 @@
                         <span class="dropdown-arrow">▾</span>
                     </button>
                     <ul class="nav-dropdown">
-                        <li><a href="#">EasySave</a></li>
-                        <li><a href="#">Future Fund</a></li>
-                        <li><a href="#">Gold Vault</a></li>
-                        <li><a href="#">EduSave</a></li>
-                        <li><a href="#">Group Savings</a></li>
-                        <li><a href="#">Monthly Savings Challenge</a></li>
-                        <li><a href="#">Food Vault</a></li>
+                        <li><a href="/easysave">EasySave</a></li>
+                        <li><a href="/futurefund">Future Fund</a></li>
+                        <li><a href="/goldvault">Gold Vault</a></li>
+                        <li><a href="/edusave">EduSave</a></li>
+                        <li><a href="/groupsavings">Group Savings</a></li>
+                        <li><a href="/monthlysavingschallenge">Monthly Savings Challenge</a></li>
+                        <li><a href="/foodvault">Food Vault</a></li>
                     </ul>
                 </li>
                 <li>
@@ -493,9 +493,9 @@
                         <span class="dropdown-arrow">▾</span>
                     </button>
                     <ul class="nav-dropdown">
-                        <li><a href="/mission-vision-values">Mission &amp; Vision</a></li>
-                        <li><a href="#">Our Story</a></li>
-                        <li><a href="#">Founder's Story</a></li>
+                        <li><a href="/about">Mission &amp; Vision</a></li>
+                        <li><a href="/about">Our Story</a></li>
+                        <li><a href="/about">Founder's Story</a></li>
                     </ul>
                 </li>
                 <li>
@@ -508,10 +508,21 @@
                         <li><a href="#">LegacyBuilders</a></li>
                         <li><a href="#">Nobles Vault</a></li>
                         <li><a href="#">Partners</a></li>
+                        <li>
+                            <a href="#">
+                                Resources
+                                <span class="sub-arrow">▸</span>
+                            </a>
+                            <ul class="nav-dropdown-nested">
+                                <li><a href="/blog">Blog</a></li>
+                                <li><a href="#">Financial Education</a></li>
+                                <li><a href="#">FAQs</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
                 <li><a href="/gallery">Gallery</a></li>
-                <li><a href="/contact-us">Contact Us</a></li>
+                <li><a href="/contact">Contact Us</a></li>
             </nav>
 
             <div class="nav-cta">
@@ -542,10 +553,10 @@
                     <div class="mm-sublinks">
                         <a href="/loans/marketlift">MarketLift</a>
                         <a href="/loans/marketpower">MarketPower</a>
-                        <a href="#">Unity Loan</a>
-                        <a href="#">EasyPay</a>
-                        <a href="#">Empower Loan</a>
-                        <a href="#">Kitchen Saver</a>
+                        <a href="/loans/unityloan">Unity Loan</a>
+                        <a href="/loans/easypay">EasyPay</a>
+                        <a href="/loans/empowerloan">Empower Loan</a>
+                        <a href="/loans/kitchensaver">Kitchen Saver</a>
                     </div>
                 </div>
                 <div class="mm-item">
@@ -554,13 +565,13 @@
                         <span class="mm-arrow">▾</span>
                     </button>
                     <div class="mm-sublinks">
-                        <a href="#">EasySave</a>
-                        <a href="#">Future Fund</a>
-                        <a href="#">Gold Vault</a>
-                        <a href="#">EduSave</a>
-                        <a href="#">Group Savings</a>
-                        <a href="#">Monthly Savings Challenge</a>
-                        <a href="#">Food Vault</a>
+                        <a href="/easysave">EasySave</a>
+                        <a href="/futurefund">Future Fund</a>
+                        <a href="/goldvault">Gold Vault</a>
+                        <a href="/edusave">EduSave</a>
+                        <a href="/groupsavings">Group Savings</a>
+                        <a href="/monthlysavingschallenge">Monthly Savings Challenge</a>
+                        <a href="/foodvault">Food Vault</a>
                     </div>
                 </div>
                 <div class="mm-item">
@@ -569,9 +580,9 @@
                         <span class="mm-arrow">▾</span>
                     </button>
                     <div class="mm-sublinks">
-                        <a href="/mission-vision-values">Mission &amp; Vision</a>
-                        <a href="#">Our Story</a>
-                        <a href="#">Founder's Story</a>
+                        <a href="/about">Mission &amp; Vision</a>
+                        <a href="/about">Our Story</a>
+                        <a href="/about">Founder's Story</a>
                     </div>
                 </div>
                 <div class="mm-item">
@@ -586,14 +597,25 @@
                         <a href="#">Partners</a>
                     </div>
                 </div>
+                <div class="mm-item">
+                    <button class="mm-link" data-mm-accordion type="button">
+                        <span>Resources</span>
+                        <span class="mm-arrow">▾</span>
+                    </button>
+                    <div class="mm-sublinks">
+                        <a href="/blog">Blog</a>
+                        <a href="#">Financial Education</a>
+                        <a href="#">FAQs</a>
+                    </div>
+                </div>
                 <div class="mm-item"><a href="/gallery" class="mm-link" style="justify-content:flex-start;">Gallery</a></div>
-                <div class="mm-item"><a href="/contact-us" class="mm-link" style="justify-content:flex-start;">Contact Us</a></div>
+                <div class="mm-item"><a href="/contact" class="mm-link" style="justify-content:flex-start;">Contact Us</a></div>
             </nav>
             <div class="mobile-menu-actions">
                 <a href="https://play.google.com/store/apps/details?id=com.myminervahub.nobles_vault&pcampaignid=web_share" class="btn btn-primary btn-block">Download Nobles Vault</a>
-                <a href="#" class="btn btn-outline btn-block">Become a Member (₦1,000)</a>
+                <a href="https://wa.me/2349151142355" target="_blank" class="btn btn-outline btn-block">Become a Member (₦1,000)</a>
             </div>
-            <a href="https://wa.me/234800000000" target="_blank" class="mobile-menu-wa">Chat with Nola on WhatsApp →</a>
+            <a href="https://wa.me/2349151142355" target="_blank" class="mobile-menu-wa">Chat with Nola on WhatsApp →</a>
         </div>
     </div>
 
@@ -616,7 +638,7 @@
                     <h1>We'd Love to Hear From You.</h1>
                     <p>Whether you have a question, need support or want to explore partnership opportunities, our team is ready to assist you.</p>
                     <div style="display:flex; flex-wrap:wrap; gap:14px;">
-                        <a href="tel:+234800000000" class="btn btn-primary"><span><i class="fa-solid fa-phone"></i> Call Us</span></a>
+                        <a href="tel:+2349151142355" class="btn btn-primary"><span><i class="fa-solid fa-phone"></i> Call Us</span></a>
                         <a href="#contact-form" class="btn btn-outline-invert"><span><i class="fa-regular fa-paper-plane"></i> Send a Message</span></a>
                     </div>
                 </div>
@@ -640,7 +662,7 @@
                             <i class="fa-solid fa-phone"></i>
                         </div>
                         <h4>Phone</h4>
-                        <p><a href="tel:+234800000000">+234 800 000 000</a></p>
+                        <p><a href="tel:+2349151142355">+234 915 114 2355</a></p>
                         <p style="font-size:.8rem; color:var(--muted);">Mon–Fri, 8AM–5PM</p>
                     </div>
                     <!-- Email -->
@@ -649,7 +671,7 @@
                             <i class="fa-regular fa-envelope"></i>
                         </div>
                         <h4>Email</h4>
-                        <p><a href="mailto:info@noblescooperative.com">info@noblescooperative.com</a></p>
+                        <p><a href="mailto:noblesawka2@gmail.com">noblesawka2@gmail.com</a></p>
                         <p style="font-size:.8rem; color:var(--muted);">We reply within 24 hours</p>
                     </div>
                     <!-- Address -->
@@ -658,7 +680,7 @@
                             <i class="fa-solid fa-location-dot"></i>
                         </div>
                         <h4>Office Address</h4>
-                        <p>No. 5 Awka Road,<br />Awka, Anambra State, Nigeria</p>
+                        <p>No. 331B Ziks Avenue (MTN Office),<br />Amaenyi, Awka, Anambra State</p>
                     </div>
                     <!-- WhatsApp -->
                     <div class="contact-info-card">
@@ -666,7 +688,7 @@
                             <i class="fa-brands fa-whatsapp"></i>
                         </div>
                         <h4>WhatsApp</h4>
-                        <p><a href="https://wa.me/234800000000" target="_blank">+234 800 000 000</a></p>
+                        <p><a href="https://wa.me/2349151142355" target="_blank">+234 915 114 2355</a></p>
                         <p style="font-size:.8rem; color:var(--muted);">Chat with Nola</p>
                     </div>
                 </div>
@@ -738,12 +760,12 @@
                             ></iframe>
                             <div class="map-overlay">
                                 <i class="fa-solid fa-location-dot"></i>
-                                <a href="https://www.google.com/maps/dir/?api=1&destination=Awka,+Anambra,+Nigeria" target="_blank" id="directionsLink">Get Directions</a>
+                                <a href="https://www.google.com/maps/dir/?api=1&destination=No.+331B+Ziks+Avenue+Amaenyi+Awka+Anambra+State" target="_blank" id="directionsLink">Get Directions</a>
                             </div>
                         </div>
                         <p style="font-size:.85rem; color:var(--muted); margin-top:12px; text-align:center;">
                             <i class="fa-regular fa-compass" style="margin-right:6px;"></i>
-                            <span id="locationStatus">No. 5 Awka Road, Awka, Anambra State</span>
+                            <span id="locationStatus">No. 331B Ziks Avenue (MTN Office), Amaenyi, Awka, Anambra State</span>
                         </p>
                     </div>
                 </div>
@@ -764,7 +786,7 @@
                     </div>
                     <div class="hours-item">
                         <span class="day">Saturday</span>
-                        <span class="time">9:00 AM – 2:00 PM</span>
+                        <span class="time">Closed</span>
                     </div>
                     <div class="hours-item">
                         <span class="day">Sunday</span>
@@ -786,13 +808,13 @@
                     <p>Follow us on social media for updates, financial tips, and community news.</p>
                 </div>
                 <div class="social-links-grid reveal-stagger reveal">
-                    <a href="#" target="_blank" class="social-link">
+                    <a href="https://facebook.com/noblescoop" target="_blank" class="social-link">
                         <i class="fa-brands fa-facebook social-icon"></i> Facebook
                     </a>
-                    <a href="#" target="_blank" class="social-link">
+                    <a href="https://instagram.com/noblescop" target="_blank" class="social-link">
                         <i class="fa-brands fa-instagram social-icon"></i> Instagram
                     </a>
-                    <a href="#" target="_blank" class="social-link">
+                    <a href="https://x.com/joinnobles" target="_blank" class="social-link">
                         <i class="fa-brands fa-x-twitter social-icon"></i> X (Twitter)
                     </a>
                     <a href="#" target="_blank" class="social-link">
@@ -819,7 +841,7 @@
                             <i class="fa-solid fa-chevron-down faq-arrow"></i>
                         </button>
                         <div class="faq-answer">
-                            <p>To become a member, simply download the Nobles Vault app or visit our office at No. 5 Awka Road, Awka. The membership fee is ₦1,000 (one-time lifetime share).</p>
+                            <p>To become a member, simply download the Nobles Vault app or visit our office at No. 331B Ziks Avenue (MTN Office), Amaenyi, Awka, Anambra State. The membership fee is ₦1,000 (one-time lifetime share).</p>
                         </div>
                     </div>
                     <div class="faq-item">
@@ -828,7 +850,7 @@
                             <i class="fa-solid fa-chevron-down faq-arrow"></i>
                         </button>
                         <div class="faq-answer">
-                            <p>We offer savings plans (EasySave, Future Fund, Gold Vault), loans (MarketLift, MarketPower, Unity Loan), and financial education. All services are designed for women in South-East Nigeria.</p>
+                            <p>We offer savings plans (EasySave, Future Fund, Gold Vault, EduSave), loans (MarketLift, MarketPower, Unity Loan, EasyPay, Empower Loan, Kitchen Saver), and financial education. All services are designed for women in South-East Nigeria.</p>
                         </div>
                     </div>
                     <div class="faq-item">
@@ -855,7 +877,7 @@
                             <i class="fa-solid fa-chevron-down faq-arrow"></i>
                         </button>
                         <div class="faq-answer">
-                            <p>Absolutely! Our Awka office is open Monday–Friday, 8AM–5PM and Saturday 9AM–2PM. Our friendly staff will be happy to assist you in person.</p>
+                            <p>Absolutely! Our Awka office is open Monday–Friday, 8AM–5PM. Our friendly staff will be happy to assist you in person.</p>
                         </div>
                     </div>
                 </div>
@@ -869,7 +891,7 @@
                     <h2>Let's Help You Get Started.</h2>
                     <p style="color:var(--muted); font-size:1.05rem; margin-bottom:6px;">Join a community where your financial growth matters.</p>
                     <div class="btn-group">
-                        <a href="#" class="btn btn-primary"><span>Become a Member</span></a>
+                        <a href="https://wa.me/2349151142355" target="_blank" class="btn btn-primary"><span><i class="fa-brands fa-whatsapp"></i> Become a Member</span></a>
                         <a href="https://play.google.com/store/apps/details?id=com.myminervahub.nobles_vault&pcampaignid=web_share" class="btn btn-outline"><span>Download Nobles Vault</span></a>
                     </div>
                 </div>
@@ -886,7 +908,7 @@
         <div class="container footer-grid">
             <div class="footer-brand">
                 <div class="footer-logo-chip">
-                    <img src="/assets/img/N1 Logo full.png" alt="Nobles Cooperative logo" />
+                    <img src="/asset/N1 Logo full.png" alt="Nobles Cooperative logo" />
                 </div>
                 <p style="color:rgba(255,255,255,.72); max-width:280px; line-height:1.7;">Plan. Save. Invest. Grow — with dignity. A women-first financial cooperative and strategic development ecosystem built for the South-East.</p>
                 <p class="footer-reg">Anambra State Cooperative — Reg. No. AN 17915</p>
@@ -915,14 +937,14 @@
                     <li><a href="/blog">Blog</a></li>
                     <li><a href="#">Financial Education</a></li>
                     <li><a href="#">FAQs</a></li>
-                    <li><a href="/mission-vision-values">Mission &amp; Vision</a></li>
+                    <li><a href="/about">About Us</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Immediate help</h4>
                 <ul>
                     <li><a href="#">Vault Setup Support</a></li>
-                    <li><a href="https://wa.me/234800000000" target="_blank">Chat with Nola</a></li>
+                    <li><a href="https://wa.me/2349151142355" target="_blank">Chat with Nola</a></li>
                     <li><a href="#">Complaints Portal</a></li>
                 </ul>
             </div>
@@ -937,7 +959,7 @@
     <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
     <!-- ============ SCRIPTS ============ -->
-    <script src="/assets/js/app.js"></script>
+    <script src="/asset/js/app.js"></script>
     <script>
         (function() {
             "use strict";
@@ -953,11 +975,12 @@
             const toast = document.getElementById('toast');
 
             // ---- Toast ----
-            function showToast(msg, type = 'info') {
+            function showToast(msg, type) {
+                type = type || 'info';
                 toast.textContent = msg;
                 toast.className = 'toast ' + type + ' show';
                 clearTimeout(toast._timeout);
-                toast._timeout = setTimeout(() => toast.classList.remove('show'), 5000);
+                toast._timeout = setTimeout(function() { toast.classList.remove('show'); }, 5000);
             }
 
             // ---- Form submission (Supabase) ----
@@ -1018,7 +1041,7 @@
                     function(position) {
                         const lat = position.coords.latitude;
                         const lng = position.coords.longitude;
-                        const dest = encodeURIComponent('Awka, Anambra, Nigeria');
+                        const dest = encodeURIComponent('No. 331B Ziks Avenue Amaenyi Awka Anambra State');
                         directionsLink.href = 'https://www.google.com/maps/dir/?api=1&origin=' + lat + ',' + lng +
                             '&destination=' + dest;
                         if (locationStatus) {
@@ -1027,7 +1050,7 @@
                     },
                     function() {
                         if (locationStatus) {
-                            locationStatus.textContent = 'No. 5 Awka Road, Awka, Anambra State';
+                            locationStatus.textContent = 'No. 331B Ziks Avenue (MTN Office), Amaenyi, Awka, Anambra State';
                         }
                     }
                 );
@@ -1089,6 +1112,83 @@
             // ---- Toast click to dismiss ----
             toast.addEventListener('click', function() {
                 this.classList.remove('show');
+            });
+
+            // ---- Mobile hamburger toggle (fix) ----
+            var toggle = document.getElementById('navToggle');
+            var menu = document.getElementById('mobileMenu');
+            var backBtn = document.getElementById('mobileMenuBack');
+
+            if (toggle && menu) {
+                // Remove any existing listeners by cloning
+                var newToggle = toggle.cloneNode(true);
+                toggle.parentNode.replaceChild(newToggle, toggle);
+                var newMenu = menu.cloneNode(true);
+                menu.parentNode.replaceChild(newMenu, menu);
+
+                // Reassign references
+                var menuToggle = document.getElementById('navToggle');
+                var mobileMenu = document.getElementById('mobileMenu');
+                var mobileBackBtn = document.getElementById('mobileMenuBack');
+
+                menuToggle.addEventListener('click', function() {
+                    var isOpen = mobileMenu.classList.contains('is-open');
+                    if (isOpen) {
+                        mobileMenu.classList.remove('is-open');
+                        menuToggle.classList.remove('is-open');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                        document.body.classList.remove('menu-open');
+                    } else {
+                        mobileMenu.classList.add('is-open');
+                        menuToggle.classList.add('is-open');
+                        menuToggle.setAttribute('aria-expanded', 'true');
+                        document.body.classList.add('menu-open');
+                    }
+                });
+
+                if (mobileBackBtn) {
+                    mobileBackBtn.addEventListener('click', function() {
+                        mobileMenu.classList.remove('is-open');
+                        menuToggle.classList.remove('is-open');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                        document.body.classList.remove('menu-open');
+                    });
+                }
+
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && mobileMenu.classList.contains('is-open')) {
+                        mobileMenu.classList.remove('is-open');
+                        menuToggle.classList.remove('is-open');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                        document.body.classList.remove('menu-open');
+                    }
+                });
+            }
+
+            // ---- Mobile accordion dropdowns ----
+            document.querySelectorAll('[data-mm-accordion]').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    var parent = this.closest('.mm-item');
+                    if (!parent) return;
+                    var sub = parent.querySelector('.mm-sublinks');
+                    if (!sub) return;
+                    var isOpen = sub.classList.contains('open');
+                    // Close all siblings
+                    var allItems = parent.parentElement.querySelectorAll('.mm-item');
+                    allItems.forEach(function(item) {
+                        var s = item.querySelector('.mm-sublinks');
+                        var b = item.querySelector('.mm-link');
+                        if (s && s !== sub) { s.classList.remove('open'); }
+                        if (b && b !== btn) { b.classList.remove('open'); }
+                    });
+                    if (isOpen) {
+                        sub.classList.remove('open');
+                        btn.classList.remove('open');
+                    } else {
+                        sub.classList.add('open');
+                        btn.classList.add('open');
+                    }
+                });
             });
 
         })();

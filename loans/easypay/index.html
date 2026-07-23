@@ -451,186 +451,180 @@
 
     <!-- ============ NAVIGATION ============ -->
     <header class="nav" id="siteNav">
-        <div class="container nav-inner">
-            <a href="#top" class="nav-logo" aria-label="Nobles Cooperative — Home">
-                <img class="nav-logo-mark" src="/asset/N1 Logo full.png" alt="Nobles Cooperative logo mark" width="50" height="55" />
-            </a>
+    <div class="container nav-inner">
+        <!-- Logo points to homepage -->
+        <a href="/" class="nav-logo" aria-label="Nobles Cooperative — Home">
+            <img class="nav-logo-mark" src="/asset/N1 Logo full.png" alt="Nobles Cooperative logo mark" width="50" height="55" />
+        </a>
 
-            <nav class="nav-links" aria-label="Primary navigation">
-                <!-- Products (was Loan Hub / Products) -->
-                <li>
-                    <button class="nav-link-label" aria-haspopup="true" aria-expanded="false" type="button">
-                        Loans
-                        <span class="dropdown-arrow">▾</span>
-                    </button>
-                    <ul class="nav-dropdown">
-                        <li><a href="/loans/marketlift">MarketLift</a></li>
-                        <li><a href="/loans/marketpower">MarketPower</a></li>
-                        <li><a href="/loans/unityloan">Unity Loan</a></li>
-                        <li><a href="/loans/easypay">EasyPay</a></li>
-                        <li><a href="/loans/empowerloan">Empower Loan</a></li>
-                        <li><a href="/loans/kitchensaver">Kitchen Saver</a></li>
-                    </ul>
-                </li>
+        <nav class="nav-links" aria-label="Primary navigation">
+            <!-- Loans -->
+            <li>
+                <button class="nav-link-label" aria-haspopup="true" aria-expanded="false" type="button">
+                    Loans
+                    <span class="dropdown-arrow">▾</span>
+                </button>
+                <ul class="nav-dropdown">
+                    <li><a href="/loans/marketlift">MarketLift</a></li>
+                    <li><a href="/loans/marketpower">MarketPower</a></li>
+                    <li><a href="/loans/unityloan">Unity Loan</a></li>
+                    <li><a href="/loans/easypay">EasyPay</a></li>
+                    <li><a href="/loans/empowerloan">Empower Loan</a></li>
+                    <li><a href="/loans/kitchensaver">Kitchen Saver</a></li>
+                </ul>
+            </li>
 
-                <!-- Save & Invest -->
-                <li>
-                    <button class="nav-link-label" aria-haspopup="true" aria-expanded="false" type="button">
-                        Save &amp; Invest
-                        <span class="dropdown-arrow">▾</span>
-                    </button>
-                    <ul class="nav-dropdown">
-                        <li><a href="/easysave">EasySave</a></li>
-                        <li><a href="/futurefund">Future Fund</a></li>
-                        <li><a href="/goldvault">Gold Vault</a></li>
-                        <li><a href="/edusave">EduSave</a></li>
-                        <li><a href="/groupsavings">Group Savings</a></li>
-                        <li><a href="/monthlysavingschallenge">Monthly Savings Challenge</a></li>
-                        <li><a href="/foodvault">Food Vault</a></li>
-                    </ul>
-                </li>
+            <!-- Save & Invest – all at root level (no /savings/) -->
+            <li>
+                <button class="nav-link-label" aria-haspopup="true" aria-expanded="false" type="button">
+                    Save &amp; Invest
+                    <span class="dropdown-arrow">▾</span>
+                </button>
+                <ul class="nav-dropdown">
+                    <li><a href="/easysave">EasySave</a></li>
+                    <li><a href="/futurefund">Future Fund</a></li>
+                    <li><a href="/goldvault">Gold Vault</a></li>
+                    <li><a href="/edusave">EduSave</a></li>
+                    <li><a href="/groupsavings">Group Savings</a></li>
+                    <li><a href="/monthlysavingschallenge">Monthly Savings Challenge</a></li>
+                    <li><a href="/foodvault">Food Vault</a></li>
+                </ul>
+            </li>
 
-                <!-- About Us -->
+            <!-- About Us (single link, no dropdown) -->
+            <li><a href="/about">About Us</a></li>
 
-                <!-- Partner -->
-                <li>
-                    <button class="nav-link-label" aria-haspopup="true" aria-expanded="false" type="button">
-                        Partner
-                        <span class="dropdown-arrow">▾</span>
-                    </button>
-                    <ul class="nav-dropdown">
-                        <li><a href="/investors/">Investors</a></li>
-                        <li><a href="/legacybuilders/">LegacyBuilders</a></li>
-                        <li><a href="/nobles-vault/">Nobles Vault</a></li>
-                        <li><a href="/partner-enquiry/">Partners</a></li>
-                        <li>
-                            <a href="#">
-                                Resources
-                                <span class="sub-arrow">▸</span>
-                            </a>
-                            <ul class="nav-dropdown-nested">
-                                <li><a href="/blog">Blog</a></li>
-                                <li><a href="/financialeducation">Financial Education</a></li>
-                                <li><a href="/fqa">FAQs</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
+            <!-- Partner -->
+            <li>
+                <button class="nav-link-label" aria-haspopup="true" aria-expanded="false" type="button">
+                    Partner
+                    <span class="dropdown-arrow">▾</span>
+                </button>
+                <ul class="nav-dropdown">
+                    <li><a href="/investors">Investors</a></li>
+                    <li><a href="/legacybuilders">LegacyBuilders</a></li>
+                    <li><a href="/nobles-vault">Nobles Vault</a></li>
+                    <li><a href="/partner-enquiry">Partners</a></li>
+                    <li>
+                        <a href="#">
+                            Resources
+                            <span class="sub-arrow">▸</span>
+                        </a>
+                        <ul class="nav-dropdown-nested">
+                            <li><a href="/blog">Blog</a></li>
+                            <li><a href="/financialeducation">Financial Education</a></li>
+                            <li><a href="/faq">FAQs</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
 
-                <!-- Regular links -->
-                <li><a href="/gallery">Gallery</a></li>
-                <li><a href="/about-us/">About us</a></li>
-                <li><a href="/contact">Contact Us</a></li>
-            </nav>
+            <!-- Regular links -->
+            <li><a href="/gallery">Gallery</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+        </nav>
 
-            <div class="nav-cta">
-                <a href="https://play.google.com/store/apps/details?id=com.myminervahub.nobles_vault&pcampaignid=web_share" class="btn btn-secondary btn-sm">Download Nobles Vault</a>
-            </div>
-
-            <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-                <span></span><span></span><span></span>
-            </button>
+        <div class="nav-cta">
+            <a href="https://play.google.com/store/apps/details?id=com.myminervahub.nobles_vault&pcampaignid=web_share" class="btn btn-secondary btn-sm">Download Nobles Vault</a>
         </div>
-    </header>
 
-    <!-- ============ MOBILE FULLSCREEN MENU ============ -->
-    <div class="mobile-menu" id="mobileMenu">
-        <button class="mobile-menu-back" id="mobileMenuBack" type="button" aria-label="Close menu and return to page">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <span>Back</span>
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+            <span></span><span></span><span></span>
         </button>
-        <div class="mobile-menu-inner">
-            <nav class="mobile-menu-links" aria-label="Mobile navigation">
-
-                <!-- Products -->
-                <div class="mm-item">
-                    <button class="mm-link" data-mm-accordion type="button">
-                        <span>Products</span>
-                        <span class="mm-arrow">▾</span>
-                    </button>
-                    <div class="mm-sublinks">
-                        <a href="/marketlift">MarketLift</a>
-                        <a href="/marketpower">MarketPower</a>
-                        <a href="/unityloan">Unity Loan</a>
-                        <a href="/easypay">EasyPay</a>
-                        <a href="/empowerloan">Empower Loan</a>
-                        <a href="/kitchensaver">Kitchen Saver</a>
-                    </div>
-                </div>
-
-                <!-- Save & Invest -->
-                <div class="mm-item">
-                    <button class="mm-link" data-mm-accordion type="button">
-                        <span>Save &amp; Invest</span>
-                        <span class="mm-arrow">▾</span>
-                    </button>
-                    <div class="mm-sublinks">
-                        <a href="/easysave">EasySave</a>
-                        <a href="/futurefund">Future Fund</a>
-                        <a href="/goldvault">Gold Vault</a>
-                        <a href="/edusave">EduSave</a>
-                        <a href="/groupsavings">Group Savings</a>
-                        <a href="/monthlysavingschallenge">Monthly Savings Challenge</a>
-                        <a href="/foodvault">Food Vault</a>
-                    </div>
-                </div>
-
-                <!-- About Us -->
-                <div class="mm-item">
-                    <button class="mm-link" data-mm-accordion type="button">
-                        <span>About Us</span>
-                        <span class="mm-arrow">▾</span>
-                    </button>
-                    <div class="mm-sublinks">
-                        <a href="/mission-vision-values">Mission &amp; Vision</a>
-                        <a href="/our-story">Our Story</a>
-                        <a href="/founder-story">Founder's Story</a>
-                    </div>
-                </div>
-
-                <!-- Partner -->
-                <div class="mm-item">
-                    <button class="mm-link" data-mm-accordion type="button">
-                        <span>Partner</span>
-                        <span class="mm-arrow">▾</span>
-                    </button>
-                    <div class="mm-sublinks">
-                        <a href="/investors">Investors</a>
-                        <a href="/legacybuilders">LegacyBuilders</a>
-                        <a href="/nobles-vault">Nobles Vault</a>
-                        <a href="/partners">Partners</a>
-                    </div>
-                </div>
-                <div class="mm-item">
-                    <button class="mm-link" data-mm-accordion type="button">
-                        <span>Resources</span>
-                        <span class="mm-arrow">▾</span>
-                    </button>
-                    <div class="mm-sublinks">
-                            <a href="/blog">Blog</a>
-                            <a href="/financialeducation">Financial Education</a>
-                            <a href="/faq">FAQs</a>
-                        </div>
-                </div>
-
-                <!-- Regular links -->
-                <div class="mm-item">
-                    <a href="/gallery" class="mm-link" style="justify-content:flex-start;">Gallery</a>
-                </div>
-                <div class="mm-item">
-                    <a href="/contact" class="mm-link" style="justify-content:flex-start;">Contact Us</a>
-                </div>
-            </nav>
-
-            <div class="mobile-menu-actions">
-                <a href="https://play.google.com/store/apps/details?id=com.myminervahub.nobles_vault&pcampaignid=web_share" class="btn btn-primary btn-block">Download Nobles Vault</a>
-                <a href="#" class="btn btn-outline btn-block">Become a Member (₦1,000)</a>
-            </div>
-            <a href="https://wa.me/2349151142355" target="_blank" class="mobile-menu-wa">Chat with Nola on WhatsApp →</a>
-        </div>
     </div>
+</header>
+
+<!-- ============ MOBILE FULLSCREEN MENU ============ -->
+<div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu-back" id="mobileMenuBack" type="button" aria-label="Close menu and return to page">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Back</span>
+    </button>
+    <div class="mobile-menu-inner">
+        <nav class="mobile-menu-links" aria-label="Mobile navigation">
+
+            <!-- Loans -->
+            <div class="mm-item">
+                <button class="mm-link" data-mm-accordion type="button">
+                    <span>Loans</span>
+                    <span class="mm-arrow">▾</span>
+                </button>
+                <div class="mm-sublinks">
+                    <a href="/loans/marketlift">MarketLift</a>
+                    <a href="/loans/marketpower">MarketPower</a>
+                    <a href="/loans/unityloan">Unity Loan</a>
+                    <a href="/loans/easypay">EasyPay</a>
+                    <a href="/loans/empowerloan">Empower Loan</a>
+                    <a href="/loans/kitchensaver">Kitchen Saver</a>
+                </div>
+            </div>
+
+            <!-- Save & Invest (root level) -->
+            <div class="mm-item">
+                <button class="mm-link" data-mm-accordion type="button">
+                    <span>Save &amp; Invest</span>
+                    <span class="mm-arrow">▾</span>
+                </button>
+                <div class="mm-sublinks">
+                    <a href="/easysave">EasySave</a>
+                    <a href="/futurefund">Future Fund</a>
+                    <a href="/goldvault">Gold Vault</a>
+                    <a href="/edusave">EduSave</a>
+                    <a href="/groupsavings">Group Savings</a>
+                    <a href="/monthlysavingschallenge">Monthly Savings Challenge</a>
+                    <a href="/foodvault">Food Vault</a>
+                </div>
+            </div>
+
+            <!-- About Us (single link) -->
+            <div class="mm-item">
+                <a href="/about" class="mm-link" style="justify-content:flex-start;">About Us</a>
+            </div>
+
+            <!-- Partner -->
+            <div class="mm-item">
+                <button class="mm-link" data-mm-accordion type="button">
+                    <span>Partner</span>
+                    <span class="mm-arrow">▾</span>
+                </button>
+                <div class="mm-sublinks">
+                    <a href="/investors">Investors</a>
+                    <a href="/legacybuilders">LegacyBuilders</a>
+                    <a href="/nobles-vault">Nobles Vault</a>
+                    <a href="/partner-enquiry">Partners</a>
+                </div>
+            </div>
+
+            <!-- Resources (separate) -->
+            <div class="mm-item">
+                <button class="mm-link" data-mm-accordion type="button">
+                    <span>Resources</span>
+                    <span class="mm-arrow">▾</span>
+                </button>
+                <div class="mm-sublinks">
+                    <a href="/blog">Blog</a>
+                    <a href="/financialeducation">Financial Education</a>
+                    <a href="/faq">FAQs</a>
+                </div>
+            </div>
+
+            <!-- Regular links -->
+            <div class="mm-item">
+                <a href="/gallery" class="mm-link" style="justify-content:flex-start;">Gallery</a>
+            </div>
+            <div class="mm-item">
+                <a href="/contact" class="mm-link" style="justify-content:flex-start;">Contact Us</a>
+            </div>
+        </nav>
+
+        <div class="mobile-menu-actions">
+            <a href="https://play.google.com/store/apps/details?id=com.myminervahub.nobles_vault&pcampaignid=web_share" class="btn btn-primary btn-block">Download Nobles Vault</a>
+        </div>
+        <a href="https://wa.me/2349151142355" target="_blank" class="mobile-menu-wa">Chat with Nola on WhatsApp →</a>
+    </div>
+</div>
 
     <!-- ============ MAIN ============ -->
     <main id="main">

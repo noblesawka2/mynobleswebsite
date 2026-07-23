@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog — Nobles Cooperative</title>
     <meta name="description" content="Read financial experiences and advice from the Nobles community. Share your own story and learn from others." />
-    <link rel="icon" type="image/png" href="../asset/favicon.png" />
+    <link rel="icon" type="image/png" href="/asset/favicon.png" />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
     <!-- Global styles -->
-    <link rel="stylesheet" href="../asset/css/styles.css" />
+    <link rel="stylesheet" href="/asset/css/styles.css" />
 
     <!-- Supabase JS -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -52,7 +52,6 @@
             margin-bottom: 24px;
         }
 
-        /* Blog grid */
         .blog-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -133,7 +132,6 @@
             margin-right: 4px;
         }
 
-        /* Post detail view */
         .post-detail {
             display: none;
             background: var(--white);
@@ -227,7 +225,6 @@
             line-height: 1.7;
         }
 
-        /* Comments section */
         .comments-section {
             margin-top: 24px;
         }
@@ -322,7 +319,6 @@
             padding-left: 16px;
         }
 
-        /* Comment form */
         .comment-form {
             margin-top: 20px;
             background: var(--cream);
@@ -363,7 +359,6 @@
             margin-top: 8px;
         }
 
-        /* Submit blog form modal */
         .submit-modal {
             display: none;
             position: fixed;
@@ -438,7 +433,6 @@
             min-height: 150px;
         }
 
-        /* Toast */
         .toast {
             position: fixed;
             bottom: 30px;
@@ -464,21 +458,24 @@
         .toast.error {
             background: #dc3545;
         }
+
+        /* ---- Mobile menu (already in global styles, but ensure classes) ---- */
+        /* We'll rely on the global CSS for .mobile-menu, .nav, etc. */
     </style>
 </head>
 <body>
 
     <a href="#main" class="skip-link">Skip to content</a>
 
-    <!-- ============ NAVIGATION (same as gallery) ============ -->
+    <!-- ============ STANDARD NAVIGATION ============ -->
     <header class="nav" id="siteNav">
         <div class="container nav-inner">
-            <a href="#top" class="nav-logo" aria-label="Nobles Cooperative — Home">
+            <a href="/" class="nav-logo" aria-label="Nobles Cooperative — Home">
                 <img class="nav-logo-mark" src="/asset/N1 Logo full.png" alt="Nobles Cooperative logo mark" width="50" height="55" />
             </a>
 
             <nav class="nav-links" aria-label="Primary navigation">
-                <!-- Products (was Loan Hub / Products) -->
+                <!-- Loans -->
                 <li>
                     <button class="nav-link-label" aria-haspopup="true" aria-expanded="false" type="button">
                         Loans
@@ -511,7 +508,8 @@
                     </ul>
                 </li>
 
-                <!-- About Us -->
+                <!-- About Us (single link) -->
+                <li><a href="/about">About Us</a></li>
 
                 <!-- Partner -->
                 <li>
@@ -520,10 +518,10 @@
                         <span class="dropdown-arrow">▾</span>
                     </button>
                     <ul class="nav-dropdown">
-                        <li><a href="/investors/">Investors</a></li>
-                        <li><a href="/legacybuilders/">LegacyBuilders</a></li>
-                        <li><a href="/nobles-vault/">Nobles Vault</a></li>
-                        <li><a href="/partner-enquiry/">Partners</a></li>
+                        <li><a href="/investors">Investors</a></li>
+                        <li><a href="/legacybuilders">LegacyBuilders</a></li>
+                        <li><a href="/nobles-vault">Nobles Vault</a></li>
+                        <li><a href="/partner-enquiry">Partners</a></li>
                         <li>
                             <a href="#">
                                 Resources
@@ -532,7 +530,7 @@
                             <ul class="nav-dropdown-nested">
                                 <li><a href="/blog">Blog</a></li>
                                 <li><a href="/financialeducation">Financial Education</a></li>
-                                <li><a href="/fqa">FAQs</a></li>
+                                <li><a href="/faq">FAQs</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -540,7 +538,6 @@
 
                 <!-- Regular links -->
                 <li><a href="/gallery">Gallery</a></li>
-                <li><a href="/about-us/">About us</a></li>
                 <li><a href="/contact">Contact Us</a></li>
             </nav>
 
@@ -565,19 +562,19 @@
         <div class="mobile-menu-inner">
             <nav class="mobile-menu-links" aria-label="Mobile navigation">
 
-                <!-- Products -->
+                <!-- Loans -->
                 <div class="mm-item">
                     <button class="mm-link" data-mm-accordion type="button">
-                        <span>Products</span>
+                        <span>Loans</span>
                         <span class="mm-arrow">▾</span>
                     </button>
                     <div class="mm-sublinks">
-                        <a href="/marketlift">MarketLift</a>
-                        <a href="/marketpower">MarketPower</a>
-                        <a href="/unityloan">Unity Loan</a>
-                        <a href="/easypay">EasyPay</a>
-                        <a href="/empowerloan">Empower Loan</a>
-                        <a href="/kitchensaver">Kitchen Saver</a>
+                        <a href="/loans/marketlift">MarketLift</a>
+                        <a href="/loans/marketpower">MarketPower</a>
+                        <a href="/loans/unityloan">Unity Loan</a>
+                        <a href="/loans/easypay">EasyPay</a>
+                        <a href="/loans/empowerloan">Empower Loan</a>
+                        <a href="/loans/kitchensaver">Kitchen Saver</a>
                     </div>
                 </div>
 
@@ -600,15 +597,7 @@
 
                 <!-- About Us -->
                 <div class="mm-item">
-                    <button class="mm-link" data-mm-accordion type="button">
-                        <span>About Us</span>
-                        <span class="mm-arrow">▾</span>
-                    </button>
-                    <div class="mm-sublinks">
-                        <a href="/mission-vision-values">Mission &amp; Vision</a>
-                        <a href="/our-story">Our Story</a>
-                        <a href="/founder-story">Founder's Story</a>
-                    </div>
+                    <a href="/about" class="mm-link" style="justify-content:flex-start;">About Us</a>
                 </div>
 
                 <!-- Partner -->
@@ -621,19 +610,21 @@
                         <a href="/investors">Investors</a>
                         <a href="/legacybuilders">LegacyBuilders</a>
                         <a href="/nobles-vault">Nobles Vault</a>
-                        <a href="/partners">Partners</a>
+                        <a href="/partner-enquiry">Partners</a>
                     </div>
                 </div>
+
+                <!-- Resources (separate) -->
                 <div class="mm-item">
                     <button class="mm-link" data-mm-accordion type="button">
                         <span>Resources</span>
                         <span class="mm-arrow">▾</span>
                     </button>
                     <div class="mm-sublinks">
-                            <a href="/blog">Blog</a>
-                            <a href="/financialeducation">Financial Education</a>
-                            <a href="/faq">FAQs</a>
-                        </div>
+                        <a href="/blog">Blog</a>
+                        <a href="/financialeducation">Financial Education</a>
+                        <a href="/faq">FAQs</a>
+                    </div>
                 </div>
 
                 <!-- Regular links -->
@@ -647,7 +638,7 @@
 
             <div class="mobile-menu-actions">
                 <a href="https://play.google.com/store/apps/details?id=com.myminervahub.nobles_vault&pcampaignid=web_share" class="btn btn-primary btn-block">Download Nobles Vault</a>
-                <a href="#" class="btn btn-outline btn-block">Become a Member (₦1,000)</a>
+                <a href="https://wa.me/2349151142355" target="_blank" class="btn btn-outline btn-block">Become a Member (₦1,000)</a>
             </div>
             <a href="https://wa.me/2349151142355" target="_blank" class="mobile-menu-wa">Chat with Nola on WhatsApp →</a>
         </div>
@@ -728,12 +719,12 @@
     <!-- ============ TOAST ============ -->
     <div id="toast" class="toast"></div>
 
-    <!-- ============ FOOTER (same as gallery) ============ -->
+    <!-- ============ FOOTER ============ -->
     <footer>
         <div class="container footer-grid">
             <div class="footer-brand">
                 <div class="footer-logo-chip">
-                    <img src="/assets/img/N1 Logo full.png" alt="Nobles Cooperative logo" />
+                    <img src="/asset/N1 Logo full.png" alt="Nobles Cooperative logo" />
                 </div>
                 <p style="color:rgba(255,255,255,.72); max-width:280px; line-height:1.7;">Plan. Save. Invest. Grow — with dignity. A women-first financial cooperative and strategic development ecosystem built for the South-East.</p>
                 <p class="footer-reg">Anambra State Cooperative — Reg. No. AN 17915</p>
@@ -762,14 +753,14 @@
                     <li><a href="/blog">Blog</a></li>
                     <li><a href="#">Financial Education</a></li>
                     <li><a href="#">FAQs</a></li>
-                    <li><a href="/mission-vision-values">Mission &amp; Vision</a></li>
+                    <li><a href="/about">About Us</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Immediate help</h4>
                 <ul>
                     <li><a href="#">Vault Setup Support</a></li>
-                    <li><a href="https://wa.me/234800000000" target="_blank">Chat with Nola</a></li>
+                    <li><a href="https://wa.me/2349151142355" target="_blank">Chat with Nola</a></li>
                     <li><a href="#">Complaints Portal</a></li>
                 </ul>
             </div>
@@ -783,8 +774,14 @@
     <!-- ============ BACK TO TOP ============ -->
     <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
+    <!-- ============ MOBILE STICKY BAR ============ -->
+    <div class="mobile-sticky-bar">
+        <a href="https://play.google.com/store/apps/details?id=com.myminervahub.nobles_vault&pcampaignid=web_share" class="sticky-app">Download App</a>
+        <a href="https://wa.me/2349151142355" target="_blank" class="sticky-wa">WhatsApp Help</a>
+    </div>
+
     <!-- ============ SCRIPTS ============ -->
-    <script src="/assets/js/app.js"></script>
+    <!-- <script src="/asset/js/app.js"></script> -->
     <script>
         (function() {
             "use strict";
@@ -801,28 +798,29 @@
             const postDetailContent = document.getElementById('postDetailContent');
             const backToList = document.getElementById('backToList');
             const blogListing = document.getElementById('blogListing');
+            const toast = document.getElementById('toast');
 
             let currentPostId = null;
 
             // ---- Helper functions ----
-            function showToast(msg, type = 'success') {
-                const toast = document.getElementById('toast');
+            function showToast(msg, type) {
+                type = type || 'success';
                 if (!toast) return;
                 toast.textContent = msg;
                 toast.className = 'toast ' + type + ' show';
                 clearTimeout(toast._timeout);
-                toast._timeout = setTimeout(() => toast.classList.remove('show'), 4000);
+                toast._timeout = setTimeout(function() { toast.classList.remove('show'); }, 4000);
             }
 
             function formatDate(dateStr) {
-                const d = new Date(dateStr);
+                var d = new Date(dateStr);
                 return d.toLocaleDateString('en-NG', { day: 'numeric', month: 'short', year: 'numeric' });
             }
 
             function timeAgo(dateStr) {
-                const now = new Date();
-                const past = new Date(dateStr);
-                const diff = Math.floor((now - past) / 1000);
+                var now = new Date();
+                var past = new Date(dateStr);
+                var diff = Math.floor((now - past) / 1000);
                 if (diff < 60) return 'just now';
                 if (diff < 3600) return Math.floor(diff / 60) + 'm ago';
                 if (diff < 86400) return Math.floor(diff / 3600) + 'h ago';
@@ -832,28 +830,30 @@
 
             function getInitials(name) {
                 if (!name) return '?';
-                const parts = name.trim().split(' ');
+                var parts = name.trim().split(' ');
                 if (parts.length === 1) return parts[0].substring(0, 2).toUpperCase();
                 return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
             }
 
             function getAvatarUrl(name, avatar) {
                 if (avatar) return avatar;
-                const initials = getInitials(name);
-                return `https://ui-avatars.com/api/?name=${encodeURIComponent(initials)}&background=7E23B4&color=fff&size=128&bold=true`;
+                var initials = getInitials(name);
+                return 'https://ui-avatars.com/api/?name=' + encodeURIComponent(initials) + '&background=7E23B4&color=fff&size=128&bold=true';
             }
 
             // ---- Load approved posts ----
             async function loadPosts() {
-                const { data, error } = await supabaseClient
+                var result = await supabaseClient
                     .from('blog_posts')
                     .select('*')
                     .eq('status', 'approved')
                     .order('created_at', { ascending: false });
+                var data = result.data;
+                var error = result.error;
 
                 if (error) {
                     console.error('Error loading posts:', error);
-                    grid.innerHTML = `<p style="grid-column:1/-1; text-align:center; color:red;">Error loading stories.</p>`;
+                    grid.innerHTML = '<p style="grid-column:1/-1; text-align:center; color:red;">Error loading stories.</p>';
                     return;
                 }
 
@@ -864,30 +864,30 @@
                 }
                 noPosts.style.display = 'none';
 
-                grid.innerHTML = data.map(post => `
-                    <div class="blog-card" data-id="${post.id}">
-                        <div class="blog-meta">
-                            <div class="blog-avatar">
-                                <img src="${getAvatarUrl(post.author_name, post.author_avatar)}" alt="${post.author_name}" />
-                            </div>
-                            <div>
-                                <div class="blog-author">${post.author_name}</div>
-                                <div class="blog-date">${timeAgo(post.created_at)}</div>
-                            </div>
-                        </div>
-                        <h3>${post.title}</h3>
-                        <div class="blog-excerpt">${post.content.substring(0, 160)}${post.content.length > 160 ? '...' : ''}</div>
-                        <div class="blog-stats">
-                            <span><i class="fa-regular fa-heart"></i> ${post.likes_count || 0}</span>
-                            <span><i class="fa-regular fa-comment"></i> ${post.comments_count || 0}</span>
-                            ${post.admin_reply ? `<span><i class="fa-solid fa-check-circle" style="color:var(--gold);"></i> Admin reply</span>` : ''}
-                        </div>
-                    </div>
-                `).join('');
+                grid.innerHTML = data.map(function(post) {
+                    return '<div class="blog-card" data-id="' + post.id + '">' +
+                        '<div class="blog-meta">' +
+                            '<div class="blog-avatar">' +
+                                '<img src="' + getAvatarUrl(post.author_name, post.author_avatar) + '" alt="' + post.author_name + '" />' +
+                            '</div>' +
+                            '<div>' +
+                                '<div class="blog-author">' + post.author_name + '</div>' +
+                                '<div class="blog-date">' + timeAgo(post.created_at) + '</div>' +
+                            '</div>' +
+                        '</div>' +
+                        '<h3>' + post.title + '</h3>' +
+                        '<div class="blog-excerpt">' + post.content.substring(0, 160) + (post.content.length > 160 ? '...' : '') + '</div>' +
+                        '<div class="blog-stats">' +
+                            '<span><i class="fa-regular fa-heart"></i> ' + (post.likes_count || 0) + '</span>' +
+                            '<span><i class="fa-regular fa-comment"></i> ' + (post.comments_count || 0) + '</span>' +
+                            (post.admin_reply ? '<span><i class="fa-solid fa-check-circle" style="color:var(--gold);"></i> Admin reply</span>' : '') +
+                        '</div>' +
+                    '</div>';
+                }).join('');
 
-                grid.querySelectorAll('.blog-card').forEach(card => {
+                grid.querySelectorAll('.blog-card').forEach(function(card) {
                     card.addEventListener('click', function() {
-                        const id = this.dataset.id;
+                        var id = this.dataset.id;
                         openPost(id);
                     });
                 });
@@ -896,144 +896,135 @@
             // ---- Open post detail ----
             async function openPost(postId) {
                 currentPostId = postId;
-                const { data: post, error } = await supabaseClient
-                    .from('blog_posts')
-                    .select('*')
-                    .eq('id', postId)
-                    .single();
-
+                var result = await supabaseClient.from('blog_posts').select('*').eq('id', postId).single();
+                var post = result.data;
+                var error = result.error;
                 if (error || !post) {
                     showToast('Post not found', 'error');
                     return;
                 }
 
-                const { data: comments } = await supabaseClient
+                // Fetch only approved comments
+                var commentsResult = await supabaseClient
                     .from('blog_comments')
                     .select('*')
                     .eq('post_id', postId)
+                    .eq('status', 'approved')
                     .order('created_at', { ascending: true });
+                var comments = commentsResult.data;
 
-                let adminReplyHtml = '';
+                var adminReplyHtml = '';
                 if (post.admin_reply) {
-                    adminReplyHtml = `
-                        <div class="admin-reply">
-                            <div class="admin-badge">
-                                <i class="fa-solid fa-circle-check" style="color:var(--gold);"></i>
-                                Nobles Cooperative
-                                <span style="font-size:.7rem; background:var(--gold); color:var(--ink); padding:2px 10px; border-radius:50px; font-weight:700;">Verified</span>
-                            </div>
-                            <p>${post.admin_reply}</p>
-                            <div style="font-size:.8rem; color:var(--muted); margin-top:4px;">${post.admin_reply_date ? timeAgo(post.admin_reply_date) : ''}</div>
-                        </div>
-                    `;
+                    adminReplyHtml = '<div class="admin-reply">' +
+                        '<div class="admin-badge">' +
+                            '<i class="fa-solid fa-circle-check" style="color:var(--gold);"></i> Nobles Cooperative' +
+                            '<span style="font-size:.7rem; background:var(--gold); color:var(--ink); padding:2px 10px; border-radius:50px; font-weight:700;">Verified</span>' +
+                        '</div>' +
+                        '<p>' + post.admin_reply + '</p>' +
+                        '<div style="font-size:.8rem; color:var(--muted); margin-top:4px;">' + (post.admin_reply_date ? timeAgo(post.admin_reply_date) : '') + '</div>' +
+                    '</div>';
                 }
 
-                let commentsHtml = '';
+                var commentsHtml = '';
                 if (comments && comments.length > 0) {
-                    const topComments = comments.filter(c => !c.parent_id);
-                    const replyMap = {};
-                    comments.forEach(c => {
+                    var topComments = comments.filter(function(c) { return !c.parent_id; });
+                    var replyMap = {};
+                    comments.forEach(function(c) {
                         if (c.parent_id) {
                             if (!replyMap[c.parent_id]) replyMap[c.parent_id] = [];
                             replyMap[c.parent_id].push(c);
                         }
                     });
 
-                    commentsHtml = topComments.map(c => {
-                        const replies = replyMap[c.id] || [];
-                        return `
-                            <div class="comment-item">
-                                <div class="comment-avatar">
-                                    <img src="${getAvatarUrl(c.author_name, c.author_avatar)}" alt="${c.author_name}" />
-                                </div>
-                                <div class="comment-body">
-                                    <div class="comment-author">
-                                        ${c.author_name}
-                                        ${c.is_admin ? `<span class="admin-badge"><i class="fa-solid fa-circle-check" style="color:var(--gold);"></i> Nobles</span>` : ''}
-                                        <span class="comment-date">${timeAgo(c.created_at)}</span>
-                                    </div>
-                                    <div class="comment-content">${c.content}</div>
-                                    <div class="comment-actions">
-                                        <button class="reply-comment-btn" data-id="${c.id}" data-author="${c.author_name}"><i class="fa-regular fa-reply"></i> Reply</button>
-                                    </div>
-                                    ${replies.length > 0 ? `
-                                        <div class="replies">
-                                            ${replies.map(r => `
-                                                <div class="comment-item" style="border-bottom:none; padding:8px 0;">
-                                                    <div class="comment-avatar" style="width:32px; height:32px;">
-                                                        <img src="${getAvatarUrl(r.author_name, r.author_avatar)}" alt="${r.author_name}" />
-                                                    </div>
-                                                    <div class="comment-body">
-                                                        <div class="comment-author" style="font-size:.9rem;">
-                                                            ${r.author_name}
-                                                            ${r.is_admin ? `<span class="admin-badge" style="font-size:.6rem;"><i class="fa-solid fa-circle-check" style="color:var(--gold);"></i> Nobles</span>` : ''}
-                                                            <span class="comment-date">${timeAgo(r.created_at)}</span>
-                                                        </div>
-                                                        <div class="comment-content" style="font-size:.9rem;">${r.content}</div>
-                                                    </div>
-                                                </div>
-                                            `).join('')}
-                                        </div>
-                                    ` : ''}
-                                </div>
-                            </div>
-                        `;
+                    commentsHtml = topComments.map(function(c) {
+                        var replies = replyMap[c.id] || [];
+                        return '<div class="comment-item">' +
+                            '<div class="comment-avatar">' +
+                                '<img src="' + getAvatarUrl(c.author_name, c.author_avatar) + '" alt="' + c.author_name + '" />' +
+                            '</div>' +
+                            '<div class="comment-body">' +
+                                '<div class="comment-author">' +
+                                    c.author_name +
+                                    (c.is_admin ? '<span class="admin-badge"><i class="fa-solid fa-circle-check" style="color:var(--gold);"></i> Nobles</span>' : '') +
+                                    '<span class="comment-date">' + timeAgo(c.created_at) + '</span>' +
+                                '</div>' +
+                                '<div class="comment-content">' + c.content + '</div>' +
+                                '<div class="comment-actions">' +
+                                    '<button class="reply-comment-btn" data-id="' + c.id + '" data-author="' + c.author_name + '"><i class="fa-regular fa-reply"></i> Reply</button>' +
+                                '</div>' +
+                                (replies.length > 0 ? '<div class="replies">' +
+                                    replies.map(function(r) {
+                                        return '<div class="comment-item" style="border-bottom:none; padding:8px 0;">' +
+                                            '<div class="comment-avatar" style="width:32px; height:32px;">' +
+                                                '<img src="' + getAvatarUrl(r.author_name, r.author_avatar) + '" alt="' + r.author_name + '" />' +
+                                            '</div>' +
+                                            '<div class="comment-body">' +
+                                                '<div class="comment-author" style="font-size:.9rem;">' +
+                                                    r.author_name +
+                                                    (r.is_admin ? '<span class="admin-badge" style="font-size:.6rem;"><i class="fa-solid fa-circle-check" style="color:var(--gold);"></i> Nobles</span>' : '') +
+                                                    '<span class="comment-date">' + timeAgo(r.created_at) + '</span>' +
+                                                '</div>' +
+                                                '<div class="comment-content" style="font-size:.9rem;">' + r.content + '</div>' +
+                                            '</div>' +
+                                        '</div>';
+                                    }).join('') +
+                                '</div>' : '') +
+                            '</div>' +
+                        '</div>';
                     }).join('');
                 }
 
                 // Check if user already liked
-                let liked = false;
-                const identifier = localStorage.getItem('nobles_user_id') || 'user_' + Math.random().toString(36).substring(2, 10);
-                const { data: likeData } = await supabaseClient
+                var liked = false;
+                var identifier = localStorage.getItem('nobles_user_id') || 'user_' + Math.random().toString(36).substring(2, 10);
+                var likeResult = await supabaseClient
                     .from('blog_likes')
                     .select('id')
                     .eq('post_id', postId)
                     .eq('user_identifier', identifier)
                     .maybeSingle();
-                if (likeData) liked = true;
+                if (likeResult.data) liked = true;
 
-                postDetailContent.innerHTML = `
-                    <div class="post-header">
-                        <h2>${post.title}</h2>
-                        <div class="blog-meta">
-                            <div class="blog-avatar" style="width:48px; height:48px;">
-                                <img src="${getAvatarUrl(post.author_name, post.author_avatar)}" alt="${post.author_name}" />
-                            </div>
-                            <div>
-                                <div class="blog-author" style="font-size:1rem;">${post.author_name}</div>
-                                <div class="blog-date">${formatDate(post.created_at)}</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="post-content">${post.content}</div>
-                    <div class="post-actions">
-                        <button class="like-btn ${liked ? 'liked' : ''}" id="likeBtn">
-                            <i class="${liked ? 'fa-solid' : 'fa-regular'} fa-heart"></i>
-                            <span id="likeCount">${post.likes_count || 0}</span>
-                        </button>
-                        <span style="color:var(--muted);">|</span>
-                        <span style="color:var(--muted);"><i class="fa-regular fa-comment"></i> ${post.comments_count || 0} comments</span>
-                    </div>
-                    ${adminReplyHtml}
-                    <div class="comments-section">
-                        <h4>Comments (${post.comments_count || 0})</h4>
-                        ${commentsHtml || '<p style="color:var(--muted);">No comments yet. Be the first!</p>'}
-                        <div class="comment-form" id="commentFormContainer">
-                            <div id="replyContext" style="display:none; background:var(--purple-tint); padding:8px 14px; border-radius:var(--r-sm); margin-bottom:10px; font-size:.9rem;">
-                                Replying to <strong id="replyToName"></strong>
-                                <button id="cancelReply" style="background:none; border:none; color:var(--orange); cursor:pointer; margin-left:10px;">Cancel</button>
-                            </div>
-                            <form id="commentForm">
-                                <div class="form-row">
-                                    <input type="text" id="commentAuthor" placeholder="Your name *" required />
-                                    <input type="text" id="commentQuote" placeholder="Quote something (optional)" />
-                                </div>
-                                <textarea id="commentContent" placeholder="Write your comment..." required></textarea>
-                                <button type="submit" class="btn btn-primary btn-sm btn-submit-comment"><i class="fa-regular fa-paper-plane"></i> Post Comment</button>
-                            </form>
-                        </div>
-                    </div>
-                `;
+                postDetailContent.innerHTML = '<div class="post-header">' +
+                        '<h2>' + post.title + '</h2>' +
+                        '<div class="blog-meta">' +
+                            '<div class="blog-avatar" style="width:48px; height:48px;">' +
+                                '<img src="' + getAvatarUrl(post.author_name, post.author_avatar) + '" alt="' + post.author_name + '" />' +
+                            '</div>' +
+                            '<div>' +
+                                '<div class="blog-author" style="font-size:1rem;">' + post.author_name + '</div>' +
+                                '<div class="blog-date">' + formatDate(post.created_at) + '</div>' +
+                            '</div>' +
+                        '</div>' +
+                    '</div>' +
+                    '<div class="post-content">' + post.content + '</div>' +
+                    '<div class="post-actions">' +
+                        '<button class="like-btn ' + (liked ? 'liked' : '') + '" id="likeBtn">' +
+                            '<i class="' + (liked ? 'fa-solid' : 'fa-regular') + ' fa-heart"></i>' +
+                            '<span id="likeCount">' + (post.likes_count || 0) + '</span>' +
+                        '</button>' +
+                        '<span style="color:var(--muted);">|</span>' +
+                        '<span style="color:var(--muted);"><i class="fa-regular fa-comment"></i> ' + (post.comments_count || 0) + ' comments</span>' +
+                    '</div>' +
+                    adminReplyHtml +
+                    '<div class="comments-section">' +
+                        '<h4>Comments (' + (post.comments_count || 0) + ')</h4>' +
+                        (commentsHtml || '<p style="color:var(--muted);">No comments yet. Be the first!</p>') +
+                        '<div class="comment-form" id="commentFormContainer">' +
+                            '<div id="replyContext" style="display:none; background:var(--purple-tint); padding:8px 14px; border-radius:var(--r-sm); margin-bottom:10px; font-size:.9rem;">' +
+                                'Replying to <strong id="replyToName"></strong>' +
+                                '<button id="cancelReply" style="background:none; border:none; color:var(--orange); cursor:pointer; margin-left:10px;">Cancel</button>' +
+                            '</div>' +
+                            '<form id="commentForm">' +
+                                '<div class="form-row">' +
+                                    '<input type="text" id="commentAuthor" placeholder="Your name *" required />' +
+                                    '<input type="text" id="commentQuote" placeholder="Quote something (optional)" />' +
+                                '</div>' +
+                                '<textarea id="commentContent" placeholder="Write your comment..." required></textarea>' +
+                                '<button type="submit" class="btn btn-primary btn-sm btn-submit-comment"><i class="fa-regular fa-paper-plane"></i> Post Comment</button>' +
+                            '</form>' +
+                        '</div>' +
+                    '</div>';
 
                 blogListing.style.display = 'none';
                 postDetail.classList.add('active');
@@ -1041,28 +1032,21 @@
 
                 // ---- Like button ----
                 document.getElementById('likeBtn').addEventListener('click', async function() {
-                    const btn = this;
-                    const isLiked = btn.classList.contains('liked');
-                    const countSpan = document.getElementById('likeCount');
-                    let count = parseInt(countSpan.textContent) || 0;
-
+                    var btn = this;
+                    var isLiked = btn.classList.contains('liked');
+                    var countSpan = document.getElementById('likeCount');
+                    var count = parseInt(countSpan.textContent) || 0;
                     if (isLiked) {
-                        const { error } = await supabaseClient
-                            .from('blog_likes')
-                            .delete()
-                            .eq('post_id', postId)
-                            .eq('user_identifier', identifier);
-                        if (error) { showToast('Error unliking', 'error'); return; }
+                        var del = await supabaseClient.from('blog_likes').delete().eq('post_id', postId).eq('user_identifier', identifier);
+                        if (del.error) { showToast('Error unliking', 'error'); return; }
                         btn.classList.remove('liked');
                         btn.querySelector('i').className = 'fa-regular fa-heart';
                         count--;
                         countSpan.textContent = count;
                         await supabaseClient.from('blog_posts').update({ likes_count: count }).eq('id', postId);
                     } else {
-                        const { error } = await supabaseClient
-                            .from('blog_likes')
-                            .insert({ post_id: postId, user_identifier: identifier });
-                        if (error) { showToast('Error liking', 'error'); return; }
+                        var ins = await supabaseClient.from('blog_likes').insert({ post_id: postId, user_identifier: identifier });
+                        if (ins.error) { showToast('Error liking', 'error'); return; }
                         btn.classList.add('liked');
                         btn.querySelector('i').className = 'fa-solid fa-heart';
                         count++;
@@ -1072,7 +1056,7 @@
                 });
 
                 // ---- Reply to comment ----
-                document.querySelectorAll('.reply-comment-btn').forEach(btn => {
+                document.querySelectorAll('.reply-comment-btn').forEach(function(btn) {
                     btn.addEventListener('click', function() {
                         document.getElementById('replyContext').style.display = 'block';
                         document.getElementById('replyToName').textContent = this.dataset.author;
@@ -1089,43 +1073,54 @@
                 // ---- Comment form ----
                 document.getElementById('commentForm').addEventListener('submit', async function(e) {
                     e.preventDefault();
-                    const author = document.getElementById('commentAuthor').value.trim();
-                    const content = document.getElementById('commentContent').value.trim();
-                    const quote = document.getElementById('commentQuote').value.trim();
+                    var author = document.getElementById('commentAuthor').value.trim();
+                    var content = document.getElementById('commentContent').value.trim();
+                    var quote = document.getElementById('commentQuote').value.trim();
                     if (!author || !content) {
                         showToast('Please fill in your name and comment.', 'error');
                         return;
                     }
-                    const replyTo = this.dataset.replyTo || null;
-                    const finalContent = quote ? `"${quote}"\n\n${content}` : content;
+                    var replyTo = this.dataset.replyTo || null;
+                    var finalContent = quote ? '"' + quote + '"\n\n' + content : content;
 
-                    const { error } = await supabaseClient
+                    // Insert comment with status = 'pending'
+                    var ins = await supabaseClient
                         .from('blog_comments')
                         .insert({
                             post_id: postId,
                             author_name: author,
                             content: finalContent,
                             parent_id: replyTo,
-                            is_admin: false
+                            is_admin: false,
+                            status: 'pending'
                         });
-                    if (error) {
+                    if (ins.error) {
                         showToast('Error posting comment', 'error');
                         return;
                     }
-                    const { data: postData } = await supabaseClient
-                        .from('blog_posts')
-                        .select('comments_count')
-                        .eq('id', postId)
-                        .single();
-                    const newCount = (postData.comments_count || 0) + 1;
-                    await supabaseClient.from('blog_posts').update({ comments_count: newCount }).eq('id', postId);
-
-                    showToast('Comment posted!');
+                    // Update comments count on the post (we'll increment, but the admin will recalc when approving)
+                    // For now, we increment locally but the admin panel will update the count on approval.
+                    // We'll just show a success message.
+                    showToast('Your comment has been submitted and is awaiting moderation.', 'info');
                     document.getElementById('commentContent').value = '';
                     document.getElementById('commentQuote').value = '';
                     document.getElementById('replyContext').style.display = 'none';
                     delete this.dataset.replyTo;
-                    openPost(postId);
+                    // Reload post to reflect the count (but comment won't show until approved)
+                    // We'll just reload the post so the count updates if the admin approved it elsewhere.
+                    // But we want to show the pending message, so we'll keep the post as is.
+                    // We'll increment the comments count locally for the user to see the count increase.
+                    var countSpan = document.querySelector('.comments-section h4');
+                    if (countSpan) {
+                        var match = countSpan.textContent.match(/\d+/);
+                        if (match) {
+                            var newCount = parseInt(match[0]) + 1;
+                            countSpan.textContent = 'Comments (' + newCount + ')';
+                        }
+                    }
+                    // Also update the post's comments_count in the database
+                    var current = post.comments_count || 0;
+                    await supabaseClient.from('blog_posts').update({ comments_count: current + 1 }).eq('id', postId);
                 });
             }
 
@@ -1138,18 +1133,15 @@
                 loadPosts();
             });
 
-            // ---- Submit blog modal (wrapped in IIFE) ----
+            // ---- Submit blog modal ----
             (function() {
-                const openSubmitBtn = document.getElementById('openSubmitModal');
-                const submitModal = document.getElementById('submitModal');
-                const closeModalBtn = document.getElementById('closeModal');
-                const submitForm = document.getElementById('submitBlogForm');
-                const submitStatus = document.getElementById('submitStatus');
+                var openSubmitBtn = document.getElementById('openSubmitModal');
+                var submitModal = document.getElementById('submitModal');
+                var closeModalBtn = document.getElementById('closeModal');
+                var submitForm = document.getElementById('submitBlogForm');
+                var submitStatus = document.getElementById('submitStatus');
 
-                if (!openSubmitBtn || !submitModal) {
-                    console.warn('Modal elements not found – skipping blog modal init.');
-                    return;
-                }
+                if (!openSubmitBtn || !submitModal) { return; }
 
                 openSubmitBtn.addEventListener('click', function() {
                     submitModal.classList.add('active');
@@ -1167,40 +1159,32 @@
                 if (submitForm) {
                     submitForm.addEventListener('submit', async function(e) {
                         e.preventDefault();
-                        const title = document.getElementById('blogTitle').value.trim();
-                        const author = document.getElementById('blogAuthor').value.trim();
-                        const content = document.getElementById('blogContent').value.trim();
+                        var title = document.getElementById('blogTitle').value.trim();
+                        var author = document.getElementById('blogAuthor').value.trim();
+                        var content = document.getElementById('blogContent').value.trim();
 
                         if (!title || !author || !content) {
-                            if (submitStatus) {
-                                submitStatus.innerHTML = '<span style="color:#dc3545;">Please fill in all fields.</span>';
-                            }
+                            if (submitStatus) submitStatus.innerHTML = '<span style="color:#dc3545;">Please fill in all fields.</span>';
                             return;
                         }
 
                         if (submitStatus) submitStatus.innerHTML = 'Submitting...';
 
-                        const { data, error } = await supabaseClient
-                            .from('blog_posts')
-                            .insert({
-                                title,
-                                author_name: author,
-                                content,
-                                status: 'pending'
-                            });
+                        var ins = await supabaseClient.from('blog_posts').insert({
+                            title: title,
+                            author_name: author,
+                            content: content,
+                            status: 'pending'
+                        });
 
-                        if (error) {
-                            if (submitStatus) {
-                                submitStatus.innerHTML = `<span style="color:#dc3545;">Error: ${error.message}</span>`;
-                            }
+                        if (ins.error) {
+                            if (submitStatus) submitStatus.innerHTML = '<span style="color:#dc3545;">Error: ' + ins.error.message + '</span>';
                             return;
                         }
 
-                        if (submitStatus) {
-                            submitStatus.innerHTML = '<span style="color:#28a745;">✅ Your story has been submitted for review. Thank you!</span>';
-                        }
+                        if (submitStatus) submitStatus.innerHTML = '<span style="color:#28a745;">✅ Your story has been submitted for review. Thank you!</span>';
                         submitForm.reset();
-                        setTimeout(() => {
+                        setTimeout(function() {
                             submitModal.classList.remove('active');
                             if (submitStatus) submitStatus.innerHTML = '';
                         }, 3000);
@@ -1212,16 +1196,16 @@
             loadPosts();
 
             // ---- Check for post in URL hash ----
-            const hash = window.location.hash;
+            var hash = window.location.hash;
             if (hash.startsWith('#post-')) {
-                const id = hash.replace('#post-', '');
-                if (id) setTimeout(() => openPost(id), 500);
+                var id = hash.replace('#post-', '');
+                if (id) setTimeout(function() { openPost(id); }, 500);
             }
 
             // ---- Scroll reveal ----
-            const revealEls = document.querySelectorAll('.reveal');
+            var revealEls = document.querySelectorAll('.reveal');
             if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                const io = new IntersectionObserver(function(entries) {
+                var io = new IntersectionObserver(function(entries) {
                     entries.forEach(function(entry) {
                         if (entry.isIntersecting) {
                             entry.target.classList.add('is-visible');
@@ -1233,6 +1217,71 @@
             } else {
                 revealEls.forEach(function(el) { el.classList.add('is-visible'); });
             }
+
+            // ---- Mobile menu toggle (app.js handles it, but let's ensure it's loaded) ----
+            // The global app.js should handle the hamburger and accordion.
+            // We'll also add a fallback in case app.js is not loaded.
+            var toggle = document.getElementById('navToggle');
+            var menu = document.getElementById('mobileMenu');
+            var backBtn = document.getElementById('mobileMenuBack');
+            if (toggle && menu) {
+                toggle.addEventListener('click', function() {
+                    var isOpen = menu.classList.contains('is-open');
+                    if (isOpen) {
+                        menu.classList.remove('is-open');
+                        toggle.classList.remove('is-open');
+                        toggle.setAttribute('aria-expanded', 'false');
+                        document.body.classList.remove('menu-open');
+                    } else {
+                        menu.classList.add('is-open');
+                        toggle.classList.add('is-open');
+                        toggle.setAttribute('aria-expanded', 'true');
+                        document.body.classList.add('menu-open');
+                    }
+                });
+                if (backBtn) {
+                    backBtn.addEventListener('click', function() {
+                        menu.classList.remove('is-open');
+                        toggle.classList.remove('is-open');
+                        toggle.setAttribute('aria-expanded', 'false');
+                        document.body.classList.remove('menu-open');
+                    });
+                }
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && menu.classList.contains('is-open')) {
+                        menu.classList.remove('is-open');
+                        toggle.classList.remove('is-open');
+                        toggle.setAttribute('aria-expanded', 'false');
+                        document.body.classList.remove('menu-open');
+                    }
+                });
+            }
+
+            // ---- Mobile accordion (app.js also handles this) ----
+            document.querySelectorAll('[data-mm-accordion]').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    var parent = this.closest('.mm-item');
+                    if (!parent) return;
+                    var sub = parent.querySelector('.mm-sublinks');
+                    if (!sub) return;
+                    var isOpen = sub.classList.contains('open');
+                    var allItems = parent.parentElement.querySelectorAll('.mm-item');
+                    allItems.forEach(function(item) {
+                        var s = item.querySelector('.mm-sublinks');
+                        var b = item.querySelector('.mm-link');
+                        if (s && s !== sub) s.classList.remove('open');
+                        if (b && b !== btn) b.classList.remove('open');
+                    });
+                    if (isOpen) {
+                        sub.classList.remove('open');
+                        btn.classList.remove('open');
+                    } else {
+                        sub.classList.add('open');
+                        btn.classList.add('open');
+                    }
+                });
+            });
+
         })();
     </script>
 </body>

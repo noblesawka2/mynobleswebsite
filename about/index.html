@@ -612,6 +612,14 @@ footer {
 .toast.success { background: #28a745; }
 .toast.error { background: #dc3545; }
 .toast.info { background: var(--purple); }
+
+/* ---------- Content editing (data-content) ---------- */
+[data-content] {
+  transition: opacity .2s ease;
+}
+[data-content].loading {
+  opacity: 0.6;
+}
 </style>
 </head>
 <body>
@@ -641,16 +649,17 @@ footer {
           Save &amp; Invest <span class="dropdown-arrow">▾</span>
         </button>
         <ul class="nav-dropdown">
-          <li><a href="/savings/edusave">EduSave</a></li>
-          <li><a href="#">EasySave</a></li>
-          <li><a href="#">Future Fund</a></li>
-          <li><a href="#">Gold Vault</a></li>
-          <li><a href="#">Group Savings</a></li>
-          <li><a href="#">Monthly Savings Challenge</a></li>
-          <li><a href="#">Food Vault</a></li>
+          <li><a href="/easysave">EasySave</a></li>
+          <li><a href="/futurefund">Future Fund</a></li>
+          <li><a href="/goldvault">Gold Vault</a></li>
+          <li><a href="/edusave">EduSave</a></li>
+          <li><a href="/groupsavings">Group Savings</a></li>
+          <li><a href="/monthlysavingschallenge">Monthly Savings Challenge</a></li>
+          <li><a href="/foodvault">Food Vault</a></li>
         </ul>
       </li>
       <!-- About Us -->
+      <li><a href="/about">About Us</a></li>
       <!-- Partner -->
       <li>
         <button class="nav-link-label" aria-haspopup="true" aria-expanded="false" type="button">
@@ -672,11 +681,10 @@ footer {
         </ul>
       </li>
       <li><a href="/gallery">Gallery</a></li>
-      <li><a href="/about-us/">About</a></li>
-      <li><a href="/contact-us">Contact Us</a></li>
+      <li><a href="/contact">Contact Us</a></li>
     </ul>
     <div class="nav-right">
-      <a href="https://wa.me/234800000000" target="_blank" rel="noopener" class="btn btn-ghost">Chat with Nola</a>
+      <a href="https://wa.me/2349151142355" target="_blank" rel="noopener" class="btn btn-ghost">Chat with Nola</a>
       <a href="https://play.google.com/store/apps/details?id=com.myminervahub.nobles_vault&amp;pcampaignid=web_share" class="btn btn-primary">Download App</a>
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -691,10 +699,16 @@ footer {
     <div class="mm-item"><a href="/loans/easypay">EasyPay</a></div>
     <div class="mm-item"><a href="/loans/empower-loan">Empower Loan</a></div>
     <div class="mm-item"><a href="/loans/kitchen-saver">Kitchen Saver</a></div>
-    <div class="mm-item"><a href="/savings/edusave">EduSave</a></div>
+    <div class="mm-item"><a href="/easysave">EasySave</a></div>
+    <div class="mm-item"><a href="/futurefund">Future Fund</a></div>
+    <div class="mm-item"><a href="/goldvault">Gold Vault</a></div>
+    <div class="mm-item"><a href="/edusave">EduSave</a></div>
+    <div class="mm-item"><a href="/groupsavings">Group Savings</a></div>
+    <div class="mm-item"><a href="/monthlysavingschallenge">Monthly Savings Challenge</a></div>
+    <div class="mm-item"><a href="/foodvault">Food Vault</a></div>
     <div class="mm-item"><a href="/about">About Us</a></div>
     <div class="mm-item"><a href="/gallery">Gallery</a></div>
-    <div class="mm-item"><a href="/contact-us">Contact Us</a></div>
+    <div class="mm-item"><a href="/contact">Contact Us</a></div>
     <a href="https://play.google.com/store/apps/details?id=com.myminervahub.nobles_vault&amp;pcampaignid=web_share" class="btn btn-primary">Download App</a>
   </div>
 </header>
@@ -705,9 +719,9 @@ footer {
   <section class="section hero-about split-section media-first" id="about">
     <div class="container split">
       <div class="split-content">
-        <span class="eyebrow reveal">About Nobles Cooperative</span>
-        <h1 class="reveal">Built on trust.<br>Rooted in community.</h1>
-        <p class="lead reveal">Nobles Cooperative is a women-first financial cooperative and strategic development ecosystem built for the South-East. We help women, families and small business owners plan, save, invest and grow — with the discipline of a bank and the warmth of a village.</p>
+        <span class="eyebrow reveal" data-content="about:hero:eyebrow">About Nobles Cooperative</span>
+        <h1 class="reveal" data-content="about:hero:headline">Built on trust.<br>Rooted in community.</h1>
+        <p class="lead reveal" data-content="about:hero:lead">Nobles Cooperative is a women-first financial cooperative and strategic development ecosystem built for the South-East. We help women, families and small business owners plan, save, invest and grow — with the discipline of a bank and the warmth of a village.</p>
         <div class="cta-row reveal">
           <a href="https://play.google.com/store/apps/details?id=com.myminervahub.nobles_vault&amp;pcampaignid=web_share" class="btn btn-primary">Download the App</a>
           <a href="#who-we-are" class="btn btn-ghost">Learn Who We Are</a>
@@ -742,9 +756,9 @@ footer {
   <section class="section split-section" id="who-we-are">
     <div class="container split">
       <div class="split-content">
-        <span class="eyebrow reveal">Who We Are</span>
-        <h2 class="reveal">A cooperative built by women, for women.</h2>
-        <p class="lead reveal">Nobles Cooperative is a women-first financial cooperative helping women, families, salary earners and small business owners build financial stability through disciplined savings, responsible credit, business support and practical financial education. Through Nobles Vault and our physical support system in Awka, we make it easier for members to plan, save, grow and access fair cooperative opportunities with dignity. At Nobles, no woman is left behind.</p>
+        <span class="eyebrow reveal" data-content="about:who:eyebrow">Who We Are</span>
+        <h2 class="reveal" data-content="about:who:headline">A cooperative built by women, for women.</h2>
+        <p class="lead reveal" data-content="about:who:lead">Nobles Cooperative is a women-first financial cooperative helping women, families, salary earners and small business owners build financial stability through disciplined savings, responsible credit, business support and practical financial education. Through Nobles Vault and our physical support system in Awka, we make it easier for members to plan, save, grow and access fair cooperative opportunities with dignity. At Nobles, no woman is left behind.</p>
       </div>
       <div class="split-media">
         <div class="media-frame" data-section="who_we_are">
@@ -766,9 +780,9 @@ footer {
   <section class="section split-section media-first" id="mission-vision" style="background:var(--cream);">
     <div class="container split">
       <div class="split-content">
-        <span class="eyebrow reveal">Mission, Vision &amp; Promise</span>
-        <h2 class="section-statement reveal">Guided by Purpose.<br>Driven by Impact.</h2>
-        <p class="lead reveal">Everything we do is guided by a clear mission, a bold vision and values that place trust, responsibility and people at the centre of financial empowerment.</p>
+        <span class="eyebrow reveal" data-content="about:mission:eyebrow">Mission, Vision &amp; Promise</span>
+        <h2 class="section-statement reveal" data-content="about:mission:headline">Guided by Purpose.<br>Driven by Impact.</h2>
+        <p class="lead reveal" data-content="about:mission:lead">Everything we do is guided by a clear mission, a bold vision and values that place trust, responsibility and people at the centre of financial empowerment.</p>
 
         <div class="pillar-list" data-reveal-group="pillars">
           <div class="pillar reveal">
@@ -776,8 +790,8 @@ footer {
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M14.5 9.5L12.8 12.8L9.5 14.5L11.2 11.2L14.5 9.5Z" fill="currentColor" stroke="none"></path></svg>
             </span>
             <div>
-              <h3>Our Mission</h3>
-              <p>To provide inclusive financial services, savings-based empowerment and practical financial education that help members save, invest and thrive sustainably.</p>
+              <h3 data-content="about:mission:mission_title">Our Mission</h3>
+              <p data-content="about:mission:mission_text">To provide inclusive financial services, savings-based empowerment and practical financial education that help members save, invest and thrive sustainably.</p>
             </div>
           </div>
           <div class="pillar reveal">
@@ -785,8 +799,8 @@ footer {
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12C2 12 5.5 6 12 6s10 6 10 6-3.5 6-10 6S2 12 2 12Z"></path><circle cx="12" cy="12" r="2.6"></circle></svg>
             </span>
             <div>
-              <h3>Our Vision</h3>
-              <p>To become the most trusted women-focused cooperative in South-East Nigeria.</p>
+              <h3 data-content="about:mission:vision_title">Our Vision</h3>
+              <p data-content="about:mission:vision_text">To become the most trusted women-focused cooperative in South-East Nigeria.</p>
             </div>
           </div>
           <div class="pillar reveal">
@@ -794,8 +808,8 @@ footer {
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"></path><path d="M9 12l2 2 4-4"></path></svg>
             </span>
             <div>
-              <h3>Our Promise</h3>
-              <p>No woman is left behind.</p>
+              <h3 data-content="about:mission:promise_title">Our Promise</h3>
+              <p data-content="about:mission:promise_text">No woman is left behind.</p>
             </div>
           </div>
         </div>
@@ -820,39 +834,39 @@ footer {
   <section class="section split-section media-first" id="core-values">
     <div class="container split">
       <div class="split-content">
-        <span class="eyebrow reveal">Core Values</span>
-        <h2 class="reveal">What guides every decision we make.</h2>
+        <span class="eyebrow reveal" data-content="about:values:eyebrow">Core Values</span>
+        <h2 class="reveal" data-content="about:values:headline">What guides every decision we make.</h2>
 
         <div class="values-grid" data-reveal-group="values">
           <div class="value-card reveal">
             <span class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"></path></svg></span>
-            <h3>Integrity</h3>
-            <p>We act honestly and transparently.</p>
+            <h3 data-content="about:values:value_1_title">Integrity</h3>
+            <p data-content="about:values:value_1_desc">We act honestly and transparently.</p>
           </div>
           <div class="value-card reveal">
             <span class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="12" r="5"></circle><circle cx="15" cy="12" r="5"></circle></svg></span>
-            <h3>Trust</h3>
-            <p>We build lasting relationships through reliability.</p>
+            <h3 data-content="about:values:value_2_title">Trust</h3>
+            <p data-content="about:values:value_2_desc">We build lasting relationships through reliability.</p>
           </div>
           <div class="value-card reveal">
             <span class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.5 2"></path></svg></span>
-            <h3>Discipline</h3>
-            <p>We promote responsible financial habits.</p>
+            <h3 data-content="about:values:value_3_title">Discipline</h3>
+            <p data-content="about:values:value_3_desc">We promote responsible financial habits.</p>
           </div>
           <div class="value-card reveal">
             <span class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"></path><path d="M10 21h4"></path><path d="M12 3a6 6 0 0 0-3.6 10.8c.6.5 1.1 1.3 1.1 2.2h5c0-.9.5-1.7 1.1-2.2A6 6 0 0 0 12 3Z"></path></svg></span>
-            <h3>Innovation</h3>
-            <p>We embrace practical solutions that improve member experience.</p>
+            <h3 data-content="about:values:value_4_title">Innovation</h3>
+            <p data-content="about:values:value_4_desc">We embrace practical solutions that improve member experience.</p>
           </div>
           <div class="value-card reveal">
             <span class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-9.5-9C.9 7.8 2.6 4.5 6 4.5c2 0 3.4 1.2 4 2.4.6-1.2 2-2.4 4-2.4 3.4 0 5.1 3.3 3.5 6.5C19 15.6 12 20 12 20Z"></path></svg></span>
-            <h3>Service</h3>
-            <p>We place members at the centre of every decision.</p>
+            <h3 data-content="about:values:value_5_title">Service</h3>
+            <p data-content="about:values:value_5_desc">We place members at the centre of every decision.</p>
           </div>
           <div class="value-card reveal">
             <span class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="9" r="3"></circle><circle cx="16" cy="9" r="3"></circle><path d="M3 19c0-3 2.5-5 5-5s5 2 5 5"></path><path d="M11 19c0-3 2.5-5 5-5s5 2 5 5"></path></svg></span>
-            <h3>Community</h3>
-            <p>We grow stronger by helping one another succeed.</p>
+            <h3 data-content="about:values:value_6_title">Community</h3>
+            <p data-content="about:values:value_6_desc">We grow stronger by helping one another succeed.</p>
           </div>
         </div>
       </div>
@@ -885,29 +899,29 @@ footer {
       <circle cx="900" cy="150" r="8" fill="white" stroke="none"></circle>
     </svg>
     <div class="container">
-      <span class="eyebrow reveal" style="justify-content:center; display:flex; color:var(--gold);">Our Commitment</span>
-      <h2 class="reveal">How Our Values Guide Us</h2>
-      <p class="lead reveal">Not just words — this is how we show up for every member, every day.</p>
+      <span class="eyebrow reveal" style="justify-content:center; display:flex; color:var(--gold);" data-content="about:guide:eyebrow">Our Commitment</span>
+      <h2 class="reveal" data-content="about:guide:headline">How Our Values Guide Us</h2>
+      <p class="lead reveal" data-content="about:guide:lead">Not just words — this is how we show up for every member, every day.</p>
       <div class="guide-list" data-reveal-group="guide">
         <div class="guide-item reveal">
           <span class="guide-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg></span>
-          <p>Treat every member with dignity and respect.</p>
+          <p data-content="about:guide:item_1">Treat every member with dignity and respect.</p>
         </div>
         <div class="guide-item reveal">
           <span class="guide-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg></span>
-          <p>Promote responsible savings and lending.</p>
+          <p data-content="about:guide:item_2">Promote responsible savings and lending.</p>
         </div>
         <div class="guide-item reveal">
           <span class="guide-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg></span>
-          <p>Maintain transparency in all services.</p>
+          <p data-content="about:guide:item_3">Maintain transparency in all services.</p>
         </div>
         <div class="guide-item reveal">
           <span class="guide-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg></span>
-          <p>Support sustainable financial growth.</p>
+          <p data-content="about:guide:item_4">Support sustainable financial growth.</p>
         </div>
         <div class="guide-item reveal" style="grid-column: 1 / -1; justify-content:center; text-align:center; max-width:340px; margin-inline:auto;">
           <span class="guide-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg></span>
-          <p>Build long-term relationships based on trust.</p>
+          <p data-content="about:guide:item_5">Build long-term relationships based on trust.</p>
         </div>
       </div>
     </div>
@@ -916,26 +930,36 @@ footer {
   <!-- ============ OUR IMPACT ============ -->
   <section class="section" id="impact">
     <div class="container">
-      <span class="eyebrow reveal">Our Impact</span>
-      <h2 class="reveal">Measured in stability, not just numbers.</h2>
-      <p class="lead reveal" style="max-width:680px;">Nobles Cooperative helps women and families move from financial pressure to greater stability through disciplined savings, responsible credit, business support and financial education. We support members to plan for school fees, emergencies, food, business growth and long-term goals while building stronger financial habits. Through Nobles Vault and our physical support in Awka, we are expanding access to trusted cooperative finance and ensuring that no woman is left behind.</p>
+      <span class="eyebrow reveal" data-content="about:impact:eyebrow">Our Impact</span>
+      <h2 class="reveal" data-content="about:impact:headline">Building financial stability—one woman, one family and one business at a time..</h2>
+      <pb class="lead reveal" style="max-width:680px;" data-content="about:impact:lead">At Nobles Cooperative, impact is measured not only by numbers, but by the financial stability our members build.
+
+We help women and families move from financial pressure to greater security through disciplined savings, responsible credit, practical financial education and business support.
+
+Our members are better equipped to prepare for school fees, household food needs, emergencies, business growth and long-term family goals—without depending entirely on last-minute borrowing.
+
+Through the Nobles Vault App and our physical support centre in Awka, we are making trusted cooperative financial services more accessible, structured and convenient for women, families and small businesses.
+
+Every funded account, completed savings plan, responsibly repaid loan and strengthened business brings us closer to our promise:
+
+<b>No woman is left behind.</b></p>
 
       <div class="impact-grid" data-reveal-group="impact">
         <div class="stat-card reveal">
           <span class="stat-number" data-target="337000">0</span>
-          <span class="stat-label">Performance reviews and check-ins completed</span>
+          <span class="stat-label" data-content="about:impact:stat_1">Performance reviews and check-ins completed</span>
         </div>
         <div class="stat-card reveal">
           <span class="stat-number" data-target="70" data-suffix="%">0</span>
-          <span class="stat-label">Companies that are embracing 360-degree feedback</span>
+          <span class="stat-label" data-content="about:impact:stat_2">Companies that are embracing 360-degree feedback</span>
         </div>
         <div class="stat-card reveal">
           <span class="stat-number" data-target="321000">0</span>
-          <span class="stat-label">Business grows together with recharge.</span>
+          <span class="stat-label" data-content="about:impact:stat_3">Business grows together with recharge.</span>
         </div>
         <div class="stat-card reveal">
           <span class="stat-number" data-target="930000">0</span>
-          <span class="stat-label">Revisions made to goals and individual growth plans.</span>
+          <span class="stat-label" data-content="about:impact:stat_4">Revisions made to goals and individual growth plans.</span>
         </div>
       </div>
     </div>
@@ -944,9 +968,9 @@ footer {
   <!-- ============ PARTNERS AND FUNDED BY ============ -->
   <section class="section" id="partners" style="background:var(--cream); padding-block: clamp(56px,8vw,100px);">
     <div class="container">
-      <span class="eyebrow reveal">Partners &amp; Funders</span>
-      <h2 class="reveal">Partners and Funded By</h2>
-      <p class="lead reveal">Placeholder marks below — swap in real partner and funder logos anytime.</p>
+      <span class="eyebrow reveal" data-content="about:partners:eyebrow">Partners &amp; Funders</span>
+      <h2 class="reveal" data-content="about:partners:headline">Partners and Funded By</h2>
+      <p class="lead reveal" data-content="about:partners:lead">Placeholder marks below — swap in real partner and funder logos anytime.</p>
       <div class="partners-grid" data-reveal-group="partners">
         <div class="partner-logo reveal"><span>Partner Studio</span></div>
         <div class="partner-logo reveal"><span>Northbridge</span></div>
@@ -962,11 +986,11 @@ footer {
   <section class="chat-cta section">
     <div class="container">
       <div class="cta-inner reveal">
-        <h2>Need Help? Chat with Nola.</h2>
-        <p style="color:var(--muted); font-size:1.05rem; margin-bottom:6px;">Have questions about membership, savings, loans or our services? Nola is here to assist you.</p>
+        <h2 data-content="about:chat:headline">Need Help? Chat with Nola.</h2>
+        <p style="color:var(--muted); font-size:1.05rem; margin-bottom:6px;" data-content="about:chat:subtext">Have questions about membership, savings, loans or our services? Nola is here to assist you.</p>
         <div class="btn-group">
-          <a href="https://wa.me/234800000000" target="_blank" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Chat with Nola</a>
-          <a href="/contact-us" class="btn btn-outline">Contact Us</a>
+          <a href="https://wa.me/2349151142355" target="_blank" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Chat with Nola</a>
+          <a href="/contact" class="btn btn-outline">Contact Us</a>
         </div>
       </div>
     </div>
@@ -1008,14 +1032,14 @@ footer {
         <li><a href="/blog">Blog</a></li>
         <li><a href="#">Financial Education</a></li>
         <li><a href="#">FAQs</a></li>
-        <li><a href="/mission-vision-values">Mission &amp; Vision</a></li>
+        <li><a href="/about">About Us</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Immediate help</h4>
       <ul>
         <li><a href="#">Vault Setup Support</a></li>
-        <li><a href="https://wa.me/234800000000" target="_blank">Chat with Nola</a></li>
+        <li><a href="https://wa.me/2349151142355" target="_blank">Chat with Nola</a></li>
         <li><a href="#">Complaints Portal</a></li>
       </ul>
     </div>
@@ -1032,7 +1056,7 @@ footer {
 <!-- ============ MOBILE STICKY BAR ============ -->
 <div class="mobile-sticky-bar">
   <a href="https://play.google.com/store/apps/details?id=com.myminervahub.nobles_vault&pcampaignid=web_share" class="sticky-app">Download App</a>
-  <a href="https://wa.me/234800000000" target="_blank" class="sticky-wa">WhatsApp Help</a>
+  <a href="https://wa.me/2349151142355" target="_blank" class="sticky-wa">WhatsApp Help</a>
 </div>
 
 <!-- ============ TOAST ============ -->
@@ -1092,12 +1116,9 @@ document.addEventListener('DOMContentLoaded', () => {
   async function checkAuth() {
     const { data: { session } } = await supabaseClient.auth.getSession();
     isAdmin = !!session;
-    // Show/hide admin controls
     document.querySelectorAll('.admin-controls').forEach(el => {
       el.style.display = isAdmin ? 'flex' : 'none';
     });
-    // Show/hide an admin toggle button if desired (we can add a small one)
-    // For now we rely on the session.
     return isAdmin;
   }
 
@@ -1110,7 +1131,6 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error('Error loading images:', error);
       return;
     }
-    // data is array of { id, section_key, image_url, alt_text }
     data.forEach(item => {
       const section = item.section_key;
       const img = document.getElementById(`img-${section}`);
@@ -1130,12 +1150,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // ---- Upload image ----
   async function uploadImage(sectionKey, file) {
     if (!file) return;
-    // Validate file size (5MB max)
     if (file.size > 5 * 1024 * 1024) {
       showToast('File too large (max 5MB)', 'error');
       return;
     }
-    // Upload to Supabase Storage
     const fileExt = file.name.split('.').pop();
     const filePath = `about/${sectionKey}_${Date.now()}.${fileExt}`;
     const { data, error } = await supabaseClient.storage
@@ -1148,27 +1166,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const { data: urlData } = supabaseClient.storage.from('about').getPublicUrl(filePath);
     const imageUrl = urlData.publicUrl;
 
-    // Check if entry exists
-    const { data: existing, error: fetchError } = await supabaseClient
+    const { data: existing } = await supabaseClient
       .from('about_images')
       .select('id')
       .eq('section_key', sectionKey)
       .maybeSingle();
 
-    if (fetchError) {
-      showToast('Error checking existing image: ' + fetchError.message, 'error');
-      return;
-    }
-
     let result;
     if (existing) {
-      // Update existing
       result = await supabaseClient
         .from('about_images')
         .update({ image_url: imageUrl, alt_text: file.name })
         .eq('section_key', sectionKey);
     } else {
-      // Insert new
       result = await supabaseClient
         .from('about_images')
         .insert([{ section_key: sectionKey, image_url: imageUrl, alt_text: file.name }]);
@@ -1178,14 +1188,12 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
     showToast('Image uploaded successfully!', 'success');
-    // Reload images
     await loadImages();
   }
 
   // ---- Delete image ----
   async function deleteImage(sectionKey) {
     if (!confirm('Delete image for this section?')) return;
-    // Get current image URL to delete from storage
     const { data, error } = await supabaseClient
       .from('about_images')
       .select('image_url')
@@ -1196,11 +1204,9 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
     if (data && data.image_url) {
-      // Delete from storage
       const filePath = data.image_url.split('/').pop();
       await supabaseClient.storage.from('about').remove([filePath]);
     }
-    // Delete from database
     const { error: deleteError } = await supabaseClient
       .from('about_images')
       .delete()
@@ -1215,11 +1221,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ---- Attach admin events ----
   function attachAdminEvents() {
-    // Upload buttons
     document.querySelectorAll('.upload-btn').forEach(btn => {
       btn.addEventListener('click', function() {
         const section = this.dataset.section;
-        // Create a hidden file input
         const input = document.createElement('input');
         input.type = 'file';
         input.accept = 'image/*';
@@ -1231,7 +1235,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Delete buttons
     document.querySelectorAll('.delete-btn').forEach(btn => {
       btn.addEventListener('click', function() {
         const section = this.dataset.section;
@@ -1240,20 +1243,50 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ---- Content loader (for admin text editing) ----
+  async function loadContent() {
+    const pageId = 'about';
+    try {
+      const { data, error } = await supabaseClient
+        .from('page_content')
+        .select('section, key, value')
+        .eq('page', pageId);
+      if (error) throw error;
+
+      const contentMap = {};
+      data.forEach(item => {
+        const lookupKey = item.section + ':' + item.key;
+        contentMap[lookupKey] = item.value;
+      });
+
+      document.querySelectorAll('[data-content]').forEach(el => {
+        const key = el.dataset.content;
+        const parts = key.split(':');
+        if (parts.length >= 3) {
+          const lookupKey = parts[1] + ':' + parts[2];
+          if (contentMap[lookupKey]) {
+            el.textContent = contentMap[lookupKey];
+          }
+        }
+        el.classList.remove('loading');
+      });
+    } catch (err) {
+      console.log('Content load skipped:', err.message);
+    }
+  }
+
   // ---- Init ----
   async function init() {
     await checkAuth();
     await loadImages();
     attachAdminEvents();
+    await loadContent();
   }
 
   // ---- Auth state listener ----
   supabaseClient.auth.onAuthStateChange((event, session) => {
     if (event === 'SIGNED_IN' || event === 'SIGNED_OUT') {
-      checkAuth().then(() => {
-        // Reload images to show/hide admin controls properly
-        // Admin controls visibility already handled by checkAuth
-      });
+      checkAuth();
     }
   });
 
