@@ -52,6 +52,319 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./asset/css/styles.css" />
+
+
+    <!-- ============ NOBLES WEBSITE SURVEY MODAL ============ -->
+    <style>
+        :root {
+            --survey-purple: #5C008C;
+            --survey-purple-dark: #3E005F;
+            --survey-gold: #F49C00;
+            --survey-ink: #0D0D14;
+            --survey-cream: #FFF7E9;
+            --survey-border: #E8DDED;
+        }
+
+        .survey-modal[hidden] { display: none !important; }
+
+        .survey-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            display: grid;
+            place-items: center;
+            padding: 20px;
+        }
+
+        .survey-modal__backdrop {
+            position: absolute;
+            inset: 0;
+            background: rgba(13, 13, 20, .68);
+            backdrop-filter: blur(7px);
+            -webkit-backdrop-filter: blur(7px);
+        }
+
+        .survey-modal__panel {
+            position: relative;
+            width: min(100%, 660px);
+            max-height: min(90vh, 820px);
+            overflow-y: auto;
+            border-radius: 24px;
+            background: #fff;
+            box-shadow: 0 30px 90px rgba(13, 13, 20, .34);
+            border: 1px solid rgba(255,255,255,.55);
+            transform: translateY(10px) scale(.985);
+            opacity: 0;
+            animation: surveyPanelIn .24s ease forwards;
+        }
+
+        @keyframes surveyPanelIn {
+            to { transform: translateY(0) scale(1); opacity: 1; }
+        }
+
+        .survey-modal__topline {
+            height: 7px;
+            background: linear-gradient(90deg, var(--survey-purple), var(--survey-gold));
+        }
+
+        .survey-modal__body { padding: 30px; }
+
+        .survey-modal__close {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            width: 38px;
+            height: 38px;
+            border: 1px solid var(--survey-border);
+            border-radius: 50%;
+            background: #fff;
+            color: var(--survey-ink);
+            font-size: 22px;
+            line-height: 1;
+            cursor: pointer;
+            display: grid;
+            place-items: center;
+        }
+
+        .survey-modal__close:hover,
+        .survey-modal__close:focus-visible {
+            border-color: var(--survey-purple);
+            color: var(--survey-purple);
+            outline: none;
+        }
+
+        .survey-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+            color: var(--survey-purple);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+
+        .survey-kicker::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--survey-gold);
+        }
+
+        .survey-title {
+            margin: 0 44px 12px 0;
+            color: var(--survey-ink);
+            font-family: "Fraunces", Georgia, serif;
+            font-size: clamp(28px, 5vw, 40px);
+            line-height: 1.08;
+        }
+
+        .survey-copy {
+            margin: 0;
+            color: #5D5663;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .survey-choice-row {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 10px;
+            margin-top: 26px;
+        }
+
+        .survey-btn {
+            min-height: 48px;
+            border-radius: 12px;
+            border: 1px solid var(--survey-border);
+            padding: 12px 16px;
+            font: inherit;
+            font-weight: 800;
+            cursor: pointer;
+            transition: transform .15s ease, border-color .15s ease, background .15s ease;
+        }
+
+        .survey-btn:hover { transform: translateY(-1px); }
+        .survey-btn:focus-visible { outline: 3px solid rgba(92, 0, 140, .2); outline-offset: 2px; }
+        .survey-btn--primary { background: var(--survey-purple); color: #fff; border-color: var(--survey-purple); }
+        .survey-btn--primary:hover { background: var(--survey-purple-dark); }
+        .survey-btn--secondary { background: var(--survey-cream); color: var(--survey-ink); border-color: #F3D7A5; }
+        .survey-btn--ghost { background: #fff; color: #625B67; }
+
+        .survey-progress {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            margin: 22px 0 8px;
+            font-size: 12px;
+            font-weight: 800;
+            color: #756C79;
+        }
+
+        .survey-progress__track {
+            flex: 1;
+            height: 7px;
+            overflow: hidden;
+            border-radius: 99px;
+            background: #EEE8F1;
+        }
+
+        .survey-progress__bar {
+            width: 50%;
+            height: 100%;
+            border-radius: inherit;
+            background: linear-gradient(90deg, var(--survey-purple), var(--survey-gold));
+            transition: width .2s ease;
+        }
+
+        .survey-step[hidden] { display: none !important; }
+        .survey-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+        .survey-field--full { grid-column: 1 / -1; }
+
+        .survey-field label,
+        .survey-field legend {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--survey-ink);
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .survey-field input,
+        .survey-field select,
+        .survey-field textarea {
+            width: 100%;
+            border: 1px solid #DCCFE2;
+            border-radius: 11px;
+            background: #fff;
+            padding: 13px 14px;
+            color: var(--survey-ink);
+            font: inherit;
+            font-size: 14px;
+        }
+
+        .survey-field textarea { min-height: 90px; resize: vertical; }
+        .survey-field input:focus,
+        .survey-field select:focus,
+        .survey-field textarea:focus {
+            border-color: var(--survey-purple);
+            outline: 3px solid rgba(92, 0, 140, .10);
+        }
+
+        .survey-radio-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .survey-radio-card {
+            position: relative;
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            min-height: 64px;
+            padding: 12px;
+            border: 1px solid #DFD4E4;
+            border-radius: 12px;
+            cursor: pointer;
+            background: #fff;
+        }
+
+        .survey-radio-card:hover { border-color: #B58BC8; background: #FCF9FD; }
+        .survey-radio-card input { width: 18px; height: 18px; margin: 2px 0 0; accent-color: var(--survey-purple); flex: 0 0 auto; }
+        .survey-radio-card span { color: #3F3942; font-size: 13px; font-weight: 700; line-height: 1.4; }
+        .survey-radio-card:has(input:checked) { border-color: var(--survey-purple); background: #F8F0FB; box-shadow: 0 0 0 2px rgba(92,0,140,.08); }
+
+        .survey-note {
+            margin-top: 16px;
+            padding: 12px 14px;
+            border-radius: 10px;
+            background: #F8F4FA;
+            color: #655D69;
+            font-size: 12px;
+            line-height: 1.55;
+        }
+
+        .survey-consent {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-top: 14px;
+            color: #5D5663;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+        .survey-consent input { width: 18px; height: 18px; margin-top: 1px; accent-color: var(--survey-purple); flex: 0 0 auto; }
+
+        .survey-error {
+            min-height: 20px;
+            margin-top: 10px;
+            color: #B42318;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .survey-actions {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            margin-top: 18px;
+        }
+
+        .survey-success-icon {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 18px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: #F4E8F8;
+            color: var(--survey-purple);
+            font-size: 30px;
+            font-weight: 900;
+        }
+
+        .survey-launcher {
+            position: fixed;
+            left: 18px;
+            bottom: 18px;
+            z-index: 8999;
+            border: 0;
+            border-radius: 999px;
+            background: var(--survey-purple);
+            color: #fff;
+            box-shadow: 0 12px 36px rgba(54, 0, 82, .28);
+            padding: 12px 16px;
+            font: inherit;
+            font-size: 12px;
+            font-weight: 800;
+            cursor: pointer;
+        }
+        .survey-launcher:hover { background: var(--survey-purple-dark); }
+
+        body.survey-open { overflow: hidden; }
+
+        @media (max-width: 680px) {
+            .survey-modal { padding: 10px; align-items: end; }
+            .survey-modal__panel { width: 100%; max-height: 92vh; border-radius: 22px 22px 0 0; }
+            .survey-modal__body { padding: 24px 18px 22px; }
+            .survey-choice-row, .survey-grid, .survey-radio-grid { grid-template-columns: 1fr; }
+            .survey-field--full { grid-column: auto; }
+            .survey-choice-row .survey-btn { width: 100%; }
+            .survey-actions { flex-direction: column-reverse; }
+            .survey-actions .survey-btn { width: 100%; }
+            .survey-launcher { bottom: 76px; left: 12px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .survey-modal__panel { animation: none; transform: none; opacity: 1; }
+            .survey-btn, .survey-progress__bar { transition: none; }
+        }
+    </style>
+
 </head>
 <body>
 
@@ -643,6 +956,153 @@
     <!-- ============ BACK TO TOP ============ -->
     <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
     
+
+
+    <!-- ============ NOBLES WEBSITE SURVEY ============ -->
+    <button class="survey-launcher" id="surveyLauncher" type="button" aria-haspopup="dialog">
+        Help me choose a Nobles plan
+    </button>
+
+    <div class="survey-modal" id="noblesSurveyModal" role="dialog" aria-modal="true" aria-labelledby="surveyModalTitle" hidden>
+        <div class="survey-modal__backdrop" data-survey-dismiss="remind" aria-hidden="true"></div>
+        <div class="survey-modal__panel" role="document">
+            <div class="survey-modal__topline"></div>
+            <button class="survey-modal__close" id="surveyClose" type="button" aria-label="Close survey">&times;</button>
+
+            <div class="survey-modal__body">
+                <!-- Invitation screen -->
+                <section id="surveyInviteView">
+                    <span class="survey-kicker">30-second visitor survey</span>
+                    <h2 class="survey-title" id="surveyModalTitle">Would you like to take our short survey?</h2>
+                    <p class="survey-copy">Tell us what brought you to Nobles. We will use your answers to guide you to the right cooperative product or support channel.</p>
+                    <div class="survey-choice-row" aria-label="Survey invitation choices">
+                        <button class="survey-btn survey-btn--primary" id="surveyYes" type="button">Yes</button>
+                        <button class="survey-btn survey-btn--ghost" id="surveyNo" type="button">No</button>
+                        <button class="survey-btn survey-btn--secondary" id="surveyLater" type="button">Remind me later</button>
+                    </div>
+                    <div class="survey-note">For your protection, never enter your BVN, NIN, card details, password, PIN, OTP or bank account details in this survey.</div>
+                </section>
+
+                <!-- Survey form -->
+                <form id="noblesSurveyForm" novalidate hidden>
+                    <span class="survey-kicker">Let us guide you</span>
+                    <h2 class="survey-title">What can Nobles help you achieve?</h2>
+                    <p class="survey-copy">Your answers help our team understand your need before you contact us.</p>
+
+                    <div class="survey-progress" aria-live="polite">
+                        <span id="surveyProgressText">Step 1 of 2</span>
+                        <div class="survey-progress__track" aria-hidden="true"><div class="survey-progress__bar" id="surveyProgressBar"></div></div>
+                    </div>
+
+                    <section class="survey-step" id="surveyStep1" data-step="1">
+                        <div class="survey-grid">
+                            <div class="survey-field">
+                                <label for="surveyName">What should we call you?</label>
+                                <input id="surveyName" name="name" type="text" autocomplete="name" maxlength="80" required placeholder="Your full name" />
+                            </div>
+                            <div class="survey-field">
+                                <label for="surveyPhone">Your WhatsApp number</label>
+                                <input id="surveyPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="20" required placeholder="e.g. 0803 000 0000" />
+                            </div>
+                            <div class="survey-field">
+                                <label for="surveyLocation">Where are you located?</label>
+                                <input id="surveyLocation" name="location" type="text" autocomplete="address-level2" maxlength="80" required placeholder="Town and state" />
+                            </div>
+                            <div class="survey-field">
+                                <label for="surveyProfile">Which best describes you?</label>
+                                <select id="surveyProfile" name="profile" required>
+                                    <option value="">Select one</option>
+                                    <option>Trader or market woman</option>
+                                    <option>Small-business owner</option>
+                                    <option>Salary earner or civil servant</option>
+                                    <option>Parent or guardian</option>
+                                    <option>Young woman or student</option>
+                                    <option>Cooperative, church or community group</option>
+                                    <option>Investor or funding partner</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="survey-error" id="surveyStep1Error" role="alert"></div>
+                        <div class="survey-actions">
+                            <button class="survey-btn survey-btn--ghost" type="button" data-survey-dismiss="remind">Remind me later</button>
+                            <button class="survey-btn survey-btn--primary" id="surveyNext" type="button">Next</button>
+                        </div>
+                    </section>
+
+                    <section class="survey-step" id="surveyStep2" data-step="2" hidden>
+                        <fieldset class="survey-field survey-field--full" style="border:0;padding:0;margin:20px 0 0;">
+                            <legend>What would you like Nobles to help you with?</legend>
+                            <div class="survey-radio-grid" id="surveyInterestGrid">
+                                <label class="survey-radio-card"><input type="radio" name="interest" value="Start saving consistently" required /><span>Start saving consistently</span></label>
+                                <label class="survey-radio-card"><input type="radio" name="interest" value="Plan school expenses with EduSave" /><span>Plan school expenses with EduSave</span></label>
+                                <label class="survey-radio-card"><input type="radio" name="interest" value="Plan food or December expenses with Food Vault" /><span>Plan food or December expenses</span></label>
+                                <label class="survey-radio-card"><input type="radio" name="interest" value="Grow or protect money with Future Fund or Gold Vault" /><span>Grow or protect a lump sum</span></label>
+                                <label class="survey-radio-card"><input type="radio" name="interest" value="Business restock or expansion loan" /><span>Business restock or expansion loan</span></label>
+                                <label class="survey-radio-card"><input type="radio" name="interest" value="Salary-based loan" /><span>Salary-based loan</span></label>
+                                <label class="survey-radio-card"><input type="radio" name="interest" value="Group Savings or cooperative membership" /><span>Group Savings or membership</span></label>
+                                <label class="survey-radio-card"><input type="radio" name="interest" value="Business training or LegacyBuilders support" /><span>Business training or LegacyBuilders support</span></label>
+                                <label class="survey-radio-card"><input type="radio" name="interest" value="Partnership or investment enquiry" /><span>Partnership or investment enquiry</span></label>
+                                <label class="survey-radio-card"><input type="radio" name="interest" value="I am only browsing and do not need a product now" /><span>I am only browsing; no product now</span></label>
+                            </div>
+                        </fieldset>
+
+                        <div class="survey-grid">
+                            <div class="survey-field">
+                                <label for="surveyContactTime">When should we follow up?</label>
+                                <select id="surveyContactTime" name="contactTime" required>
+                                    <option value="">Select one</option>
+                                    <option>As soon as possible</option>
+                                    <option>Within 24 hours</option>
+                                    <option>Within this week</option>
+                                    <option>I will contact Nobles myself</option>
+                                    <option>No follow-up needed</option>
+                                </select>
+                            </div>
+                            <div class="survey-field">
+                                <label for="surveyChannel">Preferred support channel</label>
+                                <select id="surveyChannel" name="channel" required>
+                                    <option value="">Select one</option>
+                                    <option>WhatsApp</option>
+                                    <option>Phone call</option>
+                                    <option>Office visit</option>
+                                    <option>Nobles Vault app support</option>
+                                </select>
+                            </div>
+                            <div class="survey-field survey-field--full">
+                                <label for="surveyMessage">Anything specific you want us to know? <span style="font-weight:500;color:#7B7280;">(optional)</span></label>
+                                <textarea id="surveyMessage" name="message" maxlength="500" placeholder="Briefly describe your goal, challenge or question"></textarea>
+                            </div>
+                        </div>
+
+                        <label class="survey-consent">
+                            <input id="surveyConsent" name="consent" type="checkbox" required />
+                            <span>I agree that Nobles Cooperative may use these details to respond to my enquiry and provide relevant product guidance. Nobles will not ask for my PIN, password or OTP.</span>
+                        </label>
+
+                        <div class="survey-error" id="surveyStep2Error" role="alert"></div>
+                        <div class="survey-actions">
+                            <button class="survey-btn survey-btn--ghost" id="surveyBack" type="button">Back</button>
+                            <button class="survey-btn survey-btn--primary" id="surveySubmit" type="submit">Submit enquiry</button>
+                        </div>
+                    </section>
+                </form>
+
+                <!-- Completion screen -->
+                <section id="surveySuccessView" hidden>
+                    <div class="survey-success-icon" aria-hidden="true">✓</div>
+                    <span class="survey-kicker">Response received</span>
+                    <h2 class="survey-title" id="surveySuccessTitle">Thank you for helping us understand your need.</h2>
+                    <p class="survey-copy" id="surveySuccessCopy">Your response has been recorded.</p>
+                    <div class="survey-choice-row" style="grid-template-columns:1fr;margin-top:22px;">
+                        <button class="survey-btn survey-btn--primary" id="surveyDone" type="button">Continue browsing</button>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+
     <script src="https://cdn.botpress.cloud/webchat/v3.7/inject.js"></script>
 <script src="https://files.bpcontent.cloud/2026/05/12/08/20260512081608-LAB3BK6K.js" defer></script>
     
@@ -1027,5 +1487,346 @@
 
         })();
     </script>
+
+
+    <script>
+        /* ============ NOBLES WEBSITE SURVEY LOGIC ============ */
+        (function () {
+            "use strict";
+
+            /*
+             * Google Apps Script Web App endpoint.
+             * Completed survey responses are saved to Google Sheets and
+             * emailed by the connected Apps Script deployment.
+             */
+            var SURVEY_API_ENDPOINT = "https://script.google.com/macros/s/AKfycbwapBvOPZkm87XLMDlznIr3pJrLGEVVlNbcN4GJSXa6E00FFCeH1SSMf51B_9k5zgxLnA/exec";
+
+            var modal = document.getElementById("noblesSurveyModal");
+            var inviteView = document.getElementById("surveyInviteView");
+            var form = document.getElementById("noblesSurveyForm");
+            var successView = document.getElementById("surveySuccessView");
+            var launcher = document.getElementById("surveyLauncher");
+            var yesBtn = document.getElementById("surveyYes");
+            var noBtn = document.getElementById("surveyNo");
+            var laterBtn = document.getElementById("surveyLater");
+            var closeBtn = document.getElementById("surveyClose");
+            var nextBtn = document.getElementById("surveyNext");
+            var backBtn = document.getElementById("surveyBack");
+            var doneBtn = document.getElementById("surveyDone");
+            var submitBtn = document.getElementById("surveySubmit");
+            var step1 = document.getElementById("surveyStep1");
+            var step2 = document.getElementById("surveyStep2");
+            var progressText = document.getElementById("surveyProgressText");
+            var progressBar = document.getElementById("surveyProgressBar");
+            var step1Error = document.getElementById("surveyStep1Error");
+            var step2Error = document.getElementById("surveyStep2Error");
+            var successTitle = document.getElementById("surveySuccessTitle");
+            var successCopy = document.getElementById("surveySuccessCopy");
+            var previousFocus = null;
+            var autoOpenTimer = null;
+
+            if (!modal || !form) return;
+
+            function nowIso() {
+                return new Date().toISOString();
+            }
+
+            function safeStorageGet(key) {
+                try { return localStorage.getItem(key); } catch (e) { return null; }
+            }
+
+            function safeStorageSet(key, value) {
+                try { localStorage.setItem(key, value); } catch (e) { /* storage may be unavailable */ }
+            }
+
+            function shouldAutoOpen() {
+                var remindAt = parseInt(safeStorageGet("noblesSurveyRemindAt") || "0", 10);
+                var dismissedUntil = parseInt(safeStorageGet("noblesSurveyDismissedUntil") || "0", 10);
+                var completedUntil = parseInt(safeStorageGet("noblesSurveyCompletedUntil") || "0", 10);
+                var now = Date.now();
+
+                if (completedUntil > now || dismissedUntil > now) return false;
+                if (remindAt && remindAt > now) return false;
+                return true;
+            }
+
+            function openModal(startForm) {
+                previousFocus = document.activeElement;
+                modal.hidden = false;
+                document.body.classList.add("survey-open");
+
+                if (startForm) showForm();
+                else showInvite();
+
+                window.setTimeout(function () {
+                    var focusTarget = modal.querySelector("button:not([hidden]), input:not([hidden]), select:not([hidden])");
+                    if (focusTarget) focusTarget.focus();
+                }, 30);
+            }
+
+            function closeModal() {
+                modal.hidden = true;
+                document.body.classList.remove("survey-open");
+                if (previousFocus && typeof previousFocus.focus === "function") previousFocus.focus();
+            }
+
+            function showInvite() {
+                inviteView.hidden = false;
+                form.hidden = true;
+                successView.hidden = true;
+            }
+
+            function showForm() {
+                inviteView.hidden = true;
+                successView.hidden = true;
+                form.hidden = false;
+                showStep(1);
+            }
+
+            function showSuccess(isBrowsingOnly) {
+                inviteView.hidden = true;
+                form.hidden = true;
+                successView.hidden = false;
+                if (isBrowsingOnly) {
+                    successTitle.textContent = "Thank you. Your response has been recorded.";
+                    successCopy.textContent = "You indicated that you do not need a product right now. You can reopen this survey at any time using the button at the bottom of the page.";
+                } else {
+                    successTitle.textContent = "Your enquiry has been received.";
+                    successCopy.textContent = "Your response has been saved securely. A Nobles representative will contact you through your selected support channel.";
+                }
+                safeStorageSet("noblesSurveyCompletedUntil", String(Date.now() + (30 * 24 * 60 * 60 * 1000)));
+            }
+
+            function showStep(number) {
+                var first = number === 1;
+                step1.hidden = !first;
+                step2.hidden = first;
+                progressText.textContent = "Step " + number + " of 2";
+                progressBar.style.width = first ? "50%" : "100%";
+                step1Error.textContent = "";
+                step2Error.textContent = "";
+
+                var target = first ? document.getElementById("surveyName") : document.querySelector('input[name="interest"]');
+                if (target) window.setTimeout(function () { target.focus(); }, 20);
+            }
+
+            function normalizePhone(phone) {
+                return String(phone || "").replace(/[^0-9+]/g, "");
+            }
+
+            function isReasonablePhone(phone) {
+                var digits = normalizePhone(phone).replace(/\D/g, "");
+                return digits.length >= 10 && digits.length <= 15;
+            }
+
+            function validateStep1() {
+                var name = document.getElementById("surveyName");
+                var phone = document.getElementById("surveyPhone");
+                var location = document.getElementById("surveyLocation");
+                var profile = document.getElementById("surveyProfile");
+
+                if (!name.value.trim()) {
+                    step1Error.textContent = "Please enter your name.";
+                    name.focus();
+                    return false;
+                }
+                if (!isReasonablePhone(phone.value)) {
+                    step1Error.textContent = "Please enter a valid WhatsApp phone number.";
+                    phone.focus();
+                    return false;
+                }
+                if (!location.value.trim()) {
+                    step1Error.textContent = "Please enter your town and state.";
+                    location.focus();
+                    return false;
+                }
+                if (!profile.value) {
+                    step1Error.textContent = "Please select the description that fits you best.";
+                    profile.focus();
+                    return false;
+                }
+                step1Error.textContent = "";
+                return true;
+            }
+
+            function validateStep2() {
+                var interest = form.querySelector('input[name="interest"]:checked');
+                var contactTime = document.getElementById("surveyContactTime");
+                var channel = document.getElementById("surveyChannel");
+                var consent = document.getElementById("surveyConsent");
+
+                if (!interest) {
+                    step2Error.textContent = "Please select what you would like Nobles to help you with.";
+                    return false;
+                }
+                if (!contactTime.value) {
+                    step2Error.textContent = "Please select when you would like a follow-up.";
+                    contactTime.focus();
+                    return false;
+                }
+                if (!channel.value) {
+                    step2Error.textContent = "Please select your preferred support channel.";
+                    channel.focus();
+                    return false;
+                }
+                if (!consent.checked) {
+                    step2Error.textContent = "Please give consent so Nobles can respond to your enquiry.";
+                    consent.focus();
+                    return false;
+                }
+                step2Error.textContent = "";
+                return true;
+            }
+
+            function collectAnswers() {
+                var data = new FormData(form);
+                return {
+                    event: "survey_completed",
+                    name: String(data.get("name") || "").trim(),
+                    phone: normalizePhone(data.get("phone")),
+                    location: String(data.get("location") || "").trim(),
+                    profile: String(data.get("profile") || ""),
+                    interest: String(data.get("interest") || ""),
+                    contactTime: String(data.get("contactTime") || ""),
+                    preferredChannel: String(data.get("channel") || ""),
+                    message: String(data.get("message") || "").trim(),
+                    consent: data.get("consent") === "on",
+                    pageTitle: document.title,
+                    pageUrl: window.location.href,
+                    submittedAt: nowIso()
+                };
+            }
+
+            function postToEndpoint(payload) {
+                if (!SURVEY_API_ENDPOINT) {
+                    return Promise.reject(new Error("Survey endpoint is not configured."));
+                }
+
+                var body = new URLSearchParams();
+                Object.keys(payload).forEach(function (key) {
+                    var value = payload[key];
+                    body.append(key, value == null ? "" : String(value));
+                });
+
+                // Honeypot field expected by the Apps Script backend.
+                body.append("website", "");
+
+                /*
+                 * Google Apps Script is hosted on another domain.
+                 * no-cors allows the browser to send the form without exposing
+                 * credentials or triggering a CORS preflight. The response is
+                 * intentionally opaque, while the Sheet/email work happens server-side.
+                 */
+                return fetch(SURVEY_API_ENDPOINT, {
+                    method: "POST",
+                    mode: "no-cors",
+                    cache: "no-store",
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+                    },
+                    body: body.toString(),
+                    keepalive: true
+                });
+            }
+
+            function recordChoice(choice) {
+                postToEndpoint({
+                    event: "survey_invitation_choice",
+                    choice: choice,
+                    pageTitle: document.title,
+                    pageUrl: window.location.href,
+                    submittedAt: nowIso()
+                }).catch(function (error) {
+                    console.warn("Survey choice could not be recorded.", error);
+                });
+            }
+
+            yesBtn.addEventListener("click", function () {
+                recordChoice("yes");
+                showForm();
+            });
+
+            noBtn.addEventListener("click", function () {
+                recordChoice("no");
+                safeStorageSet("noblesSurveyDismissedUntil", String(Date.now() + (30 * 24 * 60 * 60 * 1000)));
+                closeModal();
+            });
+
+            function remindLater() {
+                recordChoice("remind_me_later");
+                safeStorageSet("noblesSurveyRemindAt", String(Date.now() + (24 * 60 * 60 * 1000)));
+                closeModal();
+            }
+
+            laterBtn.addEventListener("click", remindLater);
+            closeBtn.addEventListener("click", remindLater);
+            modal.querySelectorAll('[data-survey-dismiss="remind"]').forEach(function (el) {
+                el.addEventListener("click", remindLater);
+            });
+
+            nextBtn.addEventListener("click", function () {
+                if (validateStep1()) showStep(2);
+            });
+
+            backBtn.addEventListener("click", function () { showStep(1); });
+            doneBtn.addEventListener("click", closeModal);
+            launcher.addEventListener("click", function () { openModal(false); });
+
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
+                if (!validateStep1()) { showStep(1); return; }
+                if (!validateStep2()) return;
+
+                var answers = collectAnswers();
+                var browsingOnly = answers.interest === "I am only browsing and do not need a product now";
+
+                submitBtn.disabled = true;
+                submitBtn.textContent = "Submitting securely...";
+                step2Error.textContent = "";
+
+                postToEndpoint(answers)
+                    .then(function () {
+                        showSuccess(browsingOnly);
+                        form.reset();
+                    })
+                    .catch(function (error) {
+                        console.error("Survey submission failed.", error);
+                        step2Error.textContent = "We could not submit your response. Please check your connection and try again.";
+                    })
+                    .then(function () {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = "Submit enquiry";
+                    });
+            });
+
+            document.addEventListener("keydown", function (event) {
+                if (modal.hidden) return;
+                if (event.key === "Escape") remindLater();
+                if (event.key !== "Tab") return;
+
+                var focusable = Array.prototype.slice.call(modal.querySelectorAll('button:not([disabled]):not([hidden]), input:not([disabled]):not([hidden]), select:not([disabled]):not([hidden]), textarea:not([disabled]):not([hidden]), a[href]'))
+                    .filter(function (el) { return el.offsetParent !== null; });
+                if (!focusable.length) return;
+                var first = focusable[0];
+                var last = focusable[focusable.length - 1];
+                if (event.shiftKey && document.activeElement === first) {
+                    event.preventDefault();
+                    last.focus();
+                } else if (!event.shiftKey && document.activeElement === last) {
+                    event.preventDefault();
+                    first.focus();
+                }
+            });
+
+            if (shouldAutoOpen()) {
+                autoOpenTimer = window.setTimeout(function () { openModal(false); }, 4500);
+            }
+
+            window.addEventListener("beforeunload", function () {
+                if (autoOpenTimer) window.clearTimeout(autoOpenTimer);
+            });
+        })();
+    </script>
+
 </body>
 </html>
