@@ -420,10 +420,8 @@
                     <span class="dropdown-arrow">▾</span>
                 </button>
                 <ul class="nav-dropdown">
-                    <li><a href="/investors">Investors</a></li>
-                    <li><a href="/legacybuilders">LegacyBuilders</a></li>
-                    <li><a href="/nobles-vault">Nobles Vault</a></li>
                     <li><a href="/partner-enquiry">Partners</a></li>
+                    <li><a href="/nobles-vault">Nobles Vault</a></li>
                     <li>
                         <a href="#">
                             Resources
@@ -509,10 +507,8 @@
                     <span class="mm-arrow">▾</span>
                 </button>
                 <div class="mm-sublinks">
-                    <a href="/investors">Investors</a>
-                    <a href="/legacybuilders">LegacyBuilders</a>
-                    <a href="/nobles-vault">Nobles Vault</a>
                     <a href="/partner-enquiry">Partners</a>
+                    <a href="/nobles-vault">Nobles Vault</a>
                 </div>
             </div>
 
@@ -656,14 +652,14 @@
                 </div>
 
                 <div class="goal-grid reveal-stagger reveal" id="goalGrid">
-                    <button class="goal-card active" data-goal="save-small"><h4>Start Saving Small-Small</h4><p>Build discipline with micro daily allocations.</p></button>
-                    <button class="goal-card" data-goal="grow-money"><h4>Grow My Money</h4><p>Protect bulk cash reserves safely.</p></button>
-                    <button class="goal-card" data-goal="restock"><h4>Restock My Business</h4><p>Boost shelf capacity with ease.</p></button>
-                    <button class="goal-card" data-goal="school-fees"><h4>Plan School Fees</h4><p>Avoid last-minute term rushes.</p></button>
-                    <button class="goal-card" data-goal="december"><h4>Stress-Free December</h4><p>Save systematically for end-of-year feasts.</p></button>
-                    <button class="goal-card" data-goal="emergency"><h4>Build an Emergency Fund</h4><p>Insulate against family curveballs.</p></button>
-                    <button class="goal-card" data-goal="retirement"><h4>Prepare for Retirement</h4><p>Structure dignity for elderhood.</p></button>
-                    <button class="goal-card" data-goal="biz-support"><h4>Get Business Support</h4><p>Scale with training and mentorship.</p></button>
+                    <button type="button" class="goal-card active" data-goal="save-small" aria-pressed="true"><h4>Start Saving Small-Small</h4><p>Build discipline with micro daily allocations.</p></button>
+                    <button type="button" class="goal-card" data-goal="grow-money" aria-pressed="false"><h4>Grow My Money</h4><p>Protect bulk cash reserves safely.</p></button>
+                    <button type="button" class="goal-card" data-goal="restock" aria-pressed="false"><h4>Restock My Business</h4><p>Boost shelf capacity with ease.</p></button>
+                    <button type="button" class="goal-card" data-goal="school-fees" aria-pressed="false"><h4>Plan School Fees</h4><p>Avoid last-minute term rushes.</p></button>
+                    <button type="button" class="goal-card" data-goal="december" aria-pressed="false"><h4>Stress-Free December</h4><p>Save systematically for end-of-year feasts.</p></button>
+                    <button type="button" class="goal-card" data-goal="emergency" aria-pressed="false"><h4>Build an Emergency Fund</h4><p>Insulate against family curveballs.</p></button>
+                    <button type="button" class="goal-card" data-goal="retirement" aria-pressed="false"><h4>Prepare for Retirement</h4><p>Structure dignity for elderhood.</p></button>
+                    <button type="button" class="goal-card" data-goal="biz-support" aria-pressed="false"><h4>Get Business Support</h4><p>Scale with training and mentorship.</p></button>
                 </div>
 
                 <div class="goal-result reveal">
@@ -780,7 +776,7 @@
         </section>
 
         <!-- ============ STORIES ============ -->
-        <section id="stories" class="stories-section section-pad"><div class="container"><div class="section-head"><span class="eyebrow">Verified founder introduction</span><h2>Chinelo Ekwonu</h2><p>Founder of Nobles Cooperative, with 16+ years of founder experience. A fuller founder story will be published only from owner-approved source content.</p><a class="btn btn-outline" href="/founder-story/">Read the verified introduction</a></div></div></section>
+        <!-- <section id="stories" class="stories-section section-pad"><div class="container"><div class="section-head"><span class="eyebrow">Verified founder introduction</span><h2>Chinelo Ekwonu</h2><p>Founder of Nobles Cooperative, with 16+ years of founder experience. A fuller founder story will be published only from owner-approved source content.</p><a class="btn btn-outline" href="/founder-story/">Read the verified introduction</a></div></div></section> -->
 
         <!-- ============ CALCULATORS ============ -->
         <section id="tools" class="calculator-section section-pad">
@@ -914,9 +910,9 @@
             <div class="footer-col">
                 <h4>Empowerment hubs</h4>
                 <ul>
-                    <li><a href="#star-products">Save &amp; Invest</a></li>
-                    <li><a href="#star-products">Borrow Responsibly</a></li>
-                    <li><a href="/#tools">Financial Calculators</a></li>
+                    <li><a href="/futurefund">Save &amp; Invest</a></li>
+                    <li><a href="/loans/easypay">Borrow Responsibly</a></li>
+                    <!-- <li><a href="/#tools">Financial Calculators</a></li> -->
                     <li><a href="/impact-programs">Impact Programs</a></li>
                 </ul>
             </div>
@@ -1349,23 +1345,30 @@
             }
 
             /* ---------- Goal selector ---------- */
+            var NOBLES_VAULT_APP_URL = "https://play.google.com/store/apps/details?id=com.myminervahub.nobles_vault&pcampaignid=web_share";
+            var NOBLES_ENQUIRY_WHATSAPP_URL = "https://wa.link/9sucf7";
+            var LEGACY_BUILDERS_WHATSAPP_URL = "https://wa.link/a2aptn";
+
+            /* Replace this value after creating the MarketLift Google Form. */
+            var MARKETLIFT_APPLICATION_URL = "https://forms.gle/K3AFWXAh9AgcZ7cw7";
+
             var goalsData = {
                 'save-small': { title: "Start Saving Small-Small", desc: "Never let tiny surplus cash disappear into household margins. Separate and lock micro savings daily or weekly. Our simple ledger system handles tiny fractions securely.",
-                    cta: "Start Daily Challenge on Vault", product: "Savings Challenge" },
+                    cta: "Start Daily Challenge on Vault", product: "Savings Challenge", url: NOBLES_VAULT_APP_URL },
                 'grow-money': { title: "Grow My Money", desc: "Guard major profits and bulk revenue securely from domestic pressure and inflation. Secure competitive interest rates and protect your long-term capital in the Gold Vault.",
-                    cta: "Inquire Gold Vault Terms", product: "Gold Vault" },
+                    cta: "Inquire Gold Vault Terms", product: "Gold Vault", url: NOBLES_ENQUIRY_WHATSAPP_URL },
                 'restock': { title: "Restock My Business", desc: "Boost your wholesale buying power easily. Access friendly, transparent micro loans on cooperative schedules so you never run out of inventory during market rush seasons.",
-                    cta: "Apply for MarketLift", product: "MarketLift" },
+                    cta: "Apply for MarketLift", product: "MarketLift", url: MARKETLIFT_APPLICATION_URL, requiresFormLink: true },
                 'school-fees': { title: "Plan School Fees Securely", desc: "Accumulate fees systematically week by week. No frantic borrow cycles when terms start. Lock target savings specifically designed to settle directly with the school of choice.",
-                    cta: "Activate EduSave Track", product: "EduSave" },
+                    cta: "Activate EduSave Track", product: "EduSave", url: NOBLES_VAULT_APP_URL },
                 'december': { title: "Stress-Free December", desc: "Avoid expensive festive-season inflation rates. Set up a secure grain, flour or oil target pool months in advance. We supply bulk inventory directly before the holiday peaks.",
-                    cta: "Plan Food Vault Plan", product: "Food Vault" },
+                    cta: "Plan Food Vault Plan", product: "Food Vault", url: NOBLES_VAULT_APP_URL },
                 'emergency': { title: "Build an Emergency Fund", desc: "Build a reliable protective buffer for home repairs, unexpected health costs, or family demands. Save automatically on your salary or store turnover dates before spending.",
-                    cta: "Launch Emergency Vault", product: "Future Fund" },
+                    cta: "Launch Emergency Vault", product: "Future Fund", url: NOBLES_VAULT_APP_URL },
                 'retirement': { title: "Prepare for Retirement", desc: "Structure reliable elderhood plans to preserve and hold your economic dignity. We build tailored investment plans using highly safe and proven capital protection reserves.",
-                    cta: "Secure Legacy Account", product: "Legacy Builders" },
+                    cta: "Secure Legacy Account", product: "Legacy Builders", url: LEGACY_BUILDERS_WHATSAPP_URL },
                 'biz-support': { title: "Get Business Support", desc: "Don't walk alone. Our Awka physical branch and GrowthDesk counselors provide business clinic checks, registration assist plans, and wholesale trade linking resources.",
-                    cta: "Schedule GrowthDesk Session", product: "SmartBiz Clinics" }
+                    cta: "Schedule GrowthDesk Session", product: "SmartBiz Clinics", url: NOBLES_ENQUIRY_WHATSAPP_URL }
             };
 
             var goalGrid = document.getElementById('goalGrid');
@@ -1374,12 +1377,19 @@
             function renderGoal(key) {
                 var data = goalsData[key];
                 if (!data) return;
+
+                var hasFormLink = !data.requiresFormLink || /^https?:\/\//i.test(data.url);
+                var ctaHref = hasFormLink ? data.url : '#';
+                var ctaAttributes = hasFormLink
+                    ? ' target="_blank" rel="noopener noreferrer"'
+                    : ' data-missing-form-link="true" aria-disabled="true"';
+
                 goalTarget.innerHTML =
                     '<div class="goal-result-text">' +
                     '<span class="eyebrow"><span class="dot"></span>Tailored goal solution</span>' +
                     '<h3>' + data.title + '</h3>' +
                     '<p>' + data.desc + '</p>' +
-                    '<a href="#" class="btn btn-secondary">' + data.cta + '</a>' +
+                    '<a href="' + ctaHref + '" class="btn btn-secondary"' + ctaAttributes + '>' + data.cta + '</a>' +
                     '</div>' +
                     '<div class="goal-result-side">' +
                     '<h5>Recommended channel</h5>' +
@@ -1389,24 +1399,48 @@
                     '</div>';
             }
 
-            function activateGoal(key) {
+            function scrollToGoalExplanation() {
+                var resultPanel = goalTarget.closest('.goal-result') || goalTarget;
+                var navOffset = nav ? nav.offsetHeight : 0;
+                var top = resultPanel.getBoundingClientRect().top + window.pageYOffset - navOffset - 20;
+                window.scrollTo({ top: Math.max(0, top), behavior: reduceMotion ? 'auto' : 'smooth' });
+            }
+
+            function activateGoal(key, shouldScroll) {
                 goalGrid.querySelectorAll('.goal-card').forEach(function(c) {
-                    c.classList.toggle('active', c.getAttribute('data-goal') === key);
+                    var isActive = c.getAttribute('data-goal') === key;
+                    c.classList.toggle('active', isActive);
+                    c.setAttribute('aria-pressed', isActive ? 'true' : 'false');
                 });
-                if (reduceMotion) { renderGoal(key); return; }
+
+                if (reduceMotion) {
+                    renderGoal(key);
+                    if (shouldScroll) requestAnimationFrame(scrollToGoalExplanation);
+                    return;
+                }
+
                 goalTarget.classList.add('is-swapping');
                 setTimeout(function() {
                     renderGoal(key);
                     goalTarget.classList.remove('is-swapping');
+                    if (shouldScroll) requestAnimationFrame(scrollToGoalExplanation);
                 }, 220);
             }
 
             goalGrid.addEventListener('click', function(e) {
                 var btn = e.target.closest('.goal-card');
                 if (!btn) return;
-                activateGoal(btn.getAttribute('data-goal'));
+                activateGoal(btn.getAttribute('data-goal'), true);
             });
-            activateGoal('save-small');
+
+            goalTarget.addEventListener('click', function(e) {
+                var missingFormLink = e.target.closest('[data-missing-form-link="true"]');
+                if (!missingFormLink) return;
+                e.preventDefault();
+                alert('The MarketLift application form is being connected. Please replace PASTE_GOOGLE_FORM_LINK_HERE with the published Google Form link.');
+            });
+
+            activateGoal('save-small', false);
 
             /* ---------- Calculator tabs ---------- */
             document.querySelectorAll('.calc-tab').forEach(function(tab) {
@@ -1822,7 +1856,7 @@
                 autoOpenTimer = window.setTimeout(function () { openModal(false); }, 4500);
             }
 
-            window.addEventListener("beforeunload", function () {
+            window.addEventListener("beforeunload", function () { 
                 if (autoOpenTimer) window.clearTimeout(autoOpenTimer);
             });
         })();

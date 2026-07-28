@@ -465,6 +465,7 @@
     <a href="#main" class="skip-link">Skip to content</a>
 
     <!-- ============ NAVIGATION ============ -->
+    <!-- ============ NAVIGATION ============ -->
     <header class="nav" id="siteNav">
     <div class="container nav-inner">
         <!-- Logo points to homepage -->
@@ -514,10 +515,8 @@
                     <span class="dropdown-arrow">▾</span>
                 </button>
                 <ul class="nav-dropdown">
-                    <li><a href="/investors">Investors</a></li>
-                    <li><a href="/legacybuilders">LegacyBuilders</a></li>
-                    <li><a href="/nobles-vault">Nobles Vault</a></li>
                     <li><a href="/partner-enquiry">Partners</a></li>
+                    <li><a href="/nobles-vault">Nobles Vault</a></li>
                     <li>
                         <a href="#">
                             Resources
@@ -603,10 +602,8 @@
                     <span class="mm-arrow">▾</span>
                 </button>
                 <div class="mm-sublinks">
-                    <a href="/investors">Investors</a>
-                    <a href="/legacybuilders">LegacyBuilders</a>
-                    <a href="/nobles-vault">Nobles Vault</a>
                     <a href="/partner-enquiry">Partners</a>
+                    <a href="/nobles-vault">Nobles Vault</a>
                 </div>
             </div>
 
@@ -663,16 +660,7 @@
                     </div>
                 </div>
                 <div class="dnv-hero-image">
-                    <div class="phone-mockup">
-                        <div class="phone-screen">
-                            <div class="app-icon"><i class="fa-solid fa-crown"></i></div>
-                            <h4>Nobles Vault</h4>
-                            <p>Your savings, anytime.</p>
-                            <div class="mockup-balance">₦2,184,650</div>
-                            <div class="mockup-progress"><div class="fill"></div></div>
-                            <p style="font-size:.65rem; margin-top:4px;">Gold Vault · 72% to goal</p>
-                        </div>
-                    </div>
+                    <img src="/asset/phone_14_01 (1).png" alt="" style="width: 50%;">
                 </div>
             </div>
         </section>
@@ -1109,44 +1097,44 @@
             }
 
             // ---- Mobile menu toggle fallback ----
-            var toggle = document.getElementById('navToggle');
-            var menu = document.getElementById('mobileMenu');
-            var backBtn = document.getElementById('mobileMenuBack');
+            // var toggle = document.getElementById('navToggle');
+            // var menu = document.getElementById('mobileMenu');
+            // var backBtn = document.getElementById('mobileMenuBack');
 
-            if (toggle && menu) {
-                toggle.addEventListener('click', function() {
-                    var isOpen = menu.classList.contains('is-open');
-                    if (isOpen) {
-                        menu.classList.remove('is-open');
-                        toggle.classList.remove('is-open');
-                        toggle.setAttribute('aria-expanded', 'false');
-                        document.body.classList.remove('menu-open');
-                    } else {
-                        menu.classList.add('is-open');
-                        toggle.classList.add('is-open');
-                        toggle.setAttribute('aria-expanded', 'true');
-                        document.body.classList.add('menu-open');
-                    }
-                });
+            // if (toggle && menu) {
+            //     toggle.addEventListener('click', function() {
+            //         var isOpen = menu.classList.contains('is-open');
+            //         if (isOpen) {
+            //             menu.classList.remove('is-open');
+            //             toggle.classList.remove('is-open');
+            //             toggle.setAttribute('aria-expanded', 'false');
+            //             document.body.classList.remove('menu-open');
+            //         } else {
+            //             menu.classList.add('is-open');
+            //             toggle.classList.add('is-open');
+            //             toggle.setAttribute('aria-expanded', 'true');
+            //             document.body.classList.add('menu-open');
+            //         }
+            //     });
 
-                if (backBtn) {
-                    backBtn.addEventListener('click', function() {
-                        menu.classList.remove('is-open');
-                        toggle.classList.remove('is-open');
-                        toggle.setAttribute('aria-expanded', 'false');
-                        document.body.classList.remove('menu-open');
-                    });
-                }
+            //     if (backBtn) {
+            //         backBtn.addEventListener('click', function() {
+            //             menu.classList.remove('is-open');
+            //             toggle.classList.remove('is-open');
+            //             toggle.setAttribute('aria-expanded', 'false');
+            //             document.body.classList.remove('menu-open');
+            //         });
+            //     }
 
-                document.addEventListener('keydown', function(e) {
-                    if (e.key === 'Escape' && menu.classList.contains('is-open')) {
-                        menu.classList.remove('is-open');
-                        toggle.classList.remove('is-open');
-                        toggle.setAttribute('aria-expanded', 'false');
-                        document.body.classList.remove('menu-open');
-                    }
-                });
-            }
+            //     document.addEventListener('keydown', function(e) {
+            //         if (e.key === 'Escape' && menu.classList.contains('is-open')) {
+            //             menu.classList.remove('is-open');
+            //             toggle.classList.remove('is-open');
+            //             toggle.setAttribute('aria-expanded', 'false');
+            //             document.body.classList.remove('menu-open');
+            //         }
+            //     });
+            // }
 
             // ---- Mobile accordion (app.js fallback) ----
             document.querySelectorAll('[data-mm-accordion]').forEach(function(btn) {
