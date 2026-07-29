@@ -270,6 +270,129 @@
     .toast.show { transform: translateY(0); opacity: 1; }
     .toast.success { background: #28a745; }
     .toast.error { background: #dc3545; }
+
+    /* Survey leads dashboard */
+    .leads-toolbar {
+      display: grid;
+      grid-template-columns: minmax(220px, 1.6fr) minmax(180px, .8fr) minmax(180px, .8fr) auto auto;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+    .leads-toolbar input,
+    .leads-toolbar select {
+      width: 100%;
+      min-height: 42px;
+      padding: 9px 12px;
+      border: 1px solid var(--line);
+      border-radius: var(--r-sm);
+      background: var(--white);
+      color: var(--ink);
+      font: inherit;
+      font-size: .88rem;
+      outline: none;
+    }
+    .leads-toolbar input:focus,
+    .leads-toolbar select:focus { border-color: var(--purple); }
+    .leads-count-note { margin: 0 0 12px; color: var(--muted); font-size: .85rem; }
+    .lead-table-scroll { overflow-x: auto; width: 100%; }
+    .lead-table { min-width: 2850px; }
+    .lead-table th { position: sticky; top: 0; z-index: 2; white-space: nowrap; }
+    .lead-table td { vertical-align: top; min-width: 130px; }
+    .lead-table .lead-name { font-weight: 700; color: var(--ink); }
+    .lead-table .lead-small { font-size: .78rem; color: var(--muted); line-height: 1.45; }
+    .lead-table .lead-message {
+      min-width: 220px;
+      max-width: 280px;
+      white-space: normal;
+      overflow-wrap: anywhere;
+      line-height: 1.45;
+    }
+    .lead-table .lead-url {
+      display: inline-block;
+      max-width: 220px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      color: var(--purple);
+    }
+    .lead-edit-control {
+      width: 100%;
+      min-width: 145px;
+      padding: 8px 9px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: #fff;
+      font: inherit;
+      font-size: .8rem;
+      color: var(--ink);
+    }
+    textarea.lead-edit-control {
+      min-width: 210px;
+      min-height: 74px;
+      resize: vertical;
+    }
+    .status-badge.new { background: #f3e8ff; color: #5c008c; }
+    .status-badge.contacted { background: #e7f3ff; color: #075985; }
+    .status-badge.interested { background: #fff3cd; color: #856404; }
+    .status-badge.onboarding { background: #ede9fe; color: #5b21b6; }
+    .status-badge.funded { background: #d4edda; color: #155724; }
+    .status-badge.follow-up-later { background: #fef3c7; color: #92400e; }
+    .status-badge.not-interested,
+    .status-badge.closed { background: #f8d7da; color: #721c24; }
+    @media (max-width: 1050px) {
+      .leads-toolbar { grid-template-columns: 1fr 1fr; }
+      .leads-toolbar .lead-search { grid-column: 1 / -1; }
+    }
+    @media (max-width: 620px) {
+      .leads-toolbar { grid-template-columns: 1fr; }
+      .leads-toolbar .lead-search { grid-column: auto; }
+    }
+
+
+
+    /* Gallery source and YouTube controls */
+    .gallery-source-switch {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 18px 0 20px;
+    }
+    .gallery-source-option {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 14px 16px;
+      border: 1.5px solid var(--line);
+      border-radius: var(--r-sm);
+      background: var(--white);
+      cursor: pointer;
+      transition: border-color .2s, background .2s, box-shadow .2s;
+    }
+    .gallery-source-option:hover { border-color: var(--purple); background: var(--purple-tint); }
+    .gallery-source-option:has(input:checked) {
+      border-color: var(--purple);
+      background: var(--purple-tint);
+      box-shadow: 0 0 0 3px rgba(92,0,140,.08);
+    }
+    .gallery-source-option input { margin-top: 3px; accent-color: var(--purple); }
+    .gallery-source-option strong { display:block; color:var(--purple); margin-bottom:2px; }
+    .gallery-source-option small { color:var(--muted); line-height:1.4; }
+    .gallery-youtube-preview {
+      display: none;
+      margin-top: 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--r-sm);
+      overflow: hidden;
+      background: var(--cream);
+    }
+    .gallery-youtube-preview.active { display: block; }
+    .gallery-youtube-preview iframe { width:100%; aspect-ratio:16/9; border:0; display:block; }
+    .gallery-youtube-help { margin-top:7px; color:var(--muted); font-size:.8rem; line-height:1.5; }
+    @media (max-width: 640px) {
+      .gallery-source-switch { grid-template-columns: 1fr; }
+    }
+
   </style>
 </head>
 <body>
@@ -346,6 +469,7 @@
         <div class="admin-tabs" id="adminTabs">
           <button class="active" data-tab="gallery">Gallery</button>
           <button data-tab="blog">Blog</button>
+          <button data-tab="leads">Survey Leads</button>
           <button data-tab="content">Content</button>
         </div>
 
@@ -357,13 +481,33 @@
           </div>
           <form id="uploadForm" style="background:var(--white); padding:30px; border-radius:var(--r-md); border:1px solid var(--line); margin-bottom:40px;">
             <div class="calc-form-grid">
-              <div class="form-group"><label for="itemTitle">Title *</label><input type="text" id="itemTitle" required /></div>
-              <div class="form-group"><label for="itemDesc">Description</label><input type="text" id="itemDesc" /></div>
+              <div class="form-group"><label for="itemTitle">Title *</label><input type="text" id="itemTitle" maxlength="140" required /></div>
+              <div class="form-group"><label for="itemDesc">Description</label><input type="text" id="itemDesc" maxlength="300" /></div>
             </div>
-            <div class="form-group" style="margin-bottom:20px;">
+
+            <div class="gallery-source-switch" role="radiogroup" aria-label="Gallery media source">
+              <label class="gallery-source-option">
+                <input type="radio" name="gallerySource" value="upload" checked />
+                <span><strong>Upload a file</strong><small>Upload an image or a video to Supabase Storage.</small></span>
+              </label>
+              <label class="gallery-source-option">
+                <input type="radio" name="gallerySource" value="youtube" />
+                <span><strong>Add a YouTube link</strong><small>The video remains hosted on YouTube and plays inside the Nobles gallery.</small></span>
+              </label>
+            </div>
+
+            <div id="galleryUploadFields" class="form-group" style="margin-bottom:20px;">
               <label for="itemFile">Choose image or video *</label>
               <input type="file" id="itemFile" accept="image/*,video/*" required />
             </div>
+
+            <div id="galleryYoutubeFields" class="form-group" style="margin-bottom:20px; display:none;">
+              <label for="itemYoutubeUrl">YouTube video link *</label>
+              <input type="url" id="itemYoutubeUrl" inputmode="url" autocomplete="url" placeholder="https://www.youtube.com/watch?v=..." />
+              <div class="gallery-youtube-help">Accepted links include YouTube watch, share, Shorts, Live and embed links. Only public or unlisted videos that allow embedding will play on the website.</div>
+              <div id="itemYoutubePreview" class="gallery-youtube-preview" aria-live="polite"></div>
+            </div>
+
             <button type="submit" class="btn btn-primary"><i class="fa-regular fa-plus"></i> Add to Gallery</button>
             <span id="uploadStatus" style="margin-left:16px; font-size:.9rem; color:var(--muted);"></span>
           </form>
@@ -445,6 +589,81 @@
           </div>
         </div>
 
+
+        <!-- Survey Leads Tab -->
+        <div id="leadsTab" class="admin-tab-content">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:10px;">
+            <div>
+              <h3 style="font-family:var(--font-display);color:var(--purple);margin-bottom:4px;">Website Survey &amp; Enquiry Leads</h3>
+              <p style="color:var(--muted);font-size:.9rem;margin:0;">Review, assign and track every website lead stored in the protected Nobles database.</p>
+            </div>
+            <button id="logoutLeadsBtn" class="btn btn-outline btn-sm">Logout</button>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-card"><i class="fa-regular fa-address-card stat-icon"></i><div class="stat-number" id="leadStatTotal">0</div><div class="stat-label">Total Leads</div></div>
+            <div class="stat-card pending"><i class="fa-regular fa-bell stat-icon"></i><div class="stat-number" id="leadStatNew">0</div><div class="stat-label">New Leads</div></div>
+            <div class="stat-card"><i class="fa-regular fa-comments stat-icon"></i><div class="stat-number" id="leadStatContacted">0</div><div class="stat-label">Contacted</div></div>
+            <div class="stat-card approved"><i class="fa-solid fa-user-check stat-icon"></i><div class="stat-number" id="leadStatFunded">0</div><div class="stat-label">Funded Members</div></div>
+          </div>
+
+          <div class="leads-toolbar">
+            <input class="lead-search" id="leadSearchInput" type="search" placeholder="Search name, phone, location, product, message..." aria-label="Search website leads" />
+            <select id="leadProductFilter" aria-label="Filter leads by product">
+              <option value="">All products / needs</option>
+            </select>
+            <select id="leadStatusFilter" aria-label="Filter leads by status">
+              <option value="">All statuses</option>
+              <option value="New">New</option>
+              <option value="Contacted">Contacted</option>
+              <option value="Interested">Interested</option>
+              <option value="Onboarding">Onboarding</option>
+              <option value="Funded">Funded</option>
+              <option value="Follow Up Later">Follow Up Later</option>
+              <option value="Not Interested">Not Interested</option>
+              <option value="Closed">Closed</option>
+            </select>
+            <button id="refreshLeadsBtn" class="btn btn-outline btn-sm"><i class="fa-regular fa-arrows-rotate"></i> Refresh</button>
+            <button id="exportLeadsCsvBtn" class="btn btn-primary btn-sm"><i class="fa-solid fa-file-csv"></i> Export CSV</button>
+          </div>
+
+          <p class="leads-count-note" id="leadsCountNote">Loading leads...</p>
+
+          <div class="admin-table-wrap">
+            <div class="lead-table-scroll">
+              <table class="admin-table lead-table" id="leadsTable">
+                <thead>
+                  <tr>
+                    <th>Received</th>
+                    <th>Lead ID</th>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Location</th>
+                    <th>Profile</th>
+                    <th>Product / Need</th>
+                    <th>Follow-up Time</th>
+                    <th>Channel</th>
+                    <th>Message</th>
+                    <th>Consent</th>
+                    <th>Page Title</th>
+                    <th>Page URL</th>
+                    <th>Source</th>
+                    <th>Status</th>
+                    <th>Assigned Staff</th>
+                    <th>Last Contact</th>
+                    <th>Next Follow-up</th>
+                    <th>Internal Notes</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="leadsBody"></tbody>
+              </table>
+            </div>
+            <div id="leadsEmpty" class="empty-state" style="display:none;"><i class="fa-regular fa-address-card"></i><p>No website leads found.</p></div>
+          </div>
+        </div>
+
         <!-- Content Manager Tab (unchanged) -->
         <div id="contentTab" class="admin-tab-content">
           <div class="content-editor">
@@ -505,6 +724,7 @@
   <div id="toast" class="toast"></div>
 
   <script src="/asset/js/app.js"></script>
+  <script src="/asset/js/gallery-youtube-support.js"></script>
   <script>
     (async function() {
       "use strict";
@@ -527,6 +747,12 @@
       const uploadForm = document.getElementById('uploadForm');
       const uploadStatus = document.getElementById('uploadStatus');
       const adminGrid = document.getElementById('adminGrid');
+      const gallerySourceInputs = document.querySelectorAll('input[name="gallerySource"]');
+      const galleryUploadFields = document.getElementById('galleryUploadFields');
+      const galleryYoutubeFields = document.getElementById('galleryYoutubeFields');
+      const itemFileInput = document.getElementById('itemFile');
+      const itemYoutubeUrl = document.getElementById('itemYoutubeUrl');
+      const itemYoutubePreview = document.getElementById('itemYoutubePreview');
 
       const blogPostsBody = document.getElementById('blogPostsBody');
       const blogPostsEmpty = document.getElementById('blogPostsEmpty');
@@ -566,11 +792,29 @@
       const refreshContentBtn = document.getElementById('refreshContentBtn');
       const contentStatus = document.getElementById('contentStatus');
 
+      const leadsTab = document.getElementById('leadsTab');
+      const leadsBody = document.getElementById('leadsBody');
+      const leadsTable = document.getElementById('leadsTable');
+      const leadsEmpty = document.getElementById('leadsEmpty');
+      const leadsCountNote = document.getElementById('leadsCountNote');
+      const leadSearchInput = document.getElementById('leadSearchInput');
+      const leadProductFilter = document.getElementById('leadProductFilter');
+      const leadStatusFilter = document.getElementById('leadStatusFilter');
+      const refreshLeadsBtn = document.getElementById('refreshLeadsBtn');
+      const exportLeadsCsvBtn = document.getElementById('exportLeadsCsvBtn');
+      const logoutLeadsBtn = document.getElementById('logoutLeadsBtn');
+      const leadStatTotal = document.getElementById('leadStatTotal');
+      const leadStatNew = document.getElementById('leadStatNew');
+      const leadStatContacted = document.getElementById('leadStatContacted');
+      const leadStatFunded = document.getElementById('leadStatFunded');
+
       const toast = document.getElementById('toast');
 
       let isAdmin = false;
       let currentBlogTab = 'all';
       let replyTarget = null;
+      let websiteLeads = [];
+      let filteredWebsiteLeads = [];
 
       // ---- Helpers ----
       function showToast(msg, type = 'success') {
@@ -605,7 +849,317 @@
         return map[status] || status;
       }
 
-      // ---- Gallery functions (unchanged) ----
+
+      function escapeLeadHtml(value) {
+        return String(value == null ? '' : value)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#039;');
+      }
+
+      function safeLeadUrl(value) {
+        try {
+          const url = new URL(String(value || ''));
+          return /^https?:$/.test(url.protocol) ? url.href : '';
+        } catch (error) {
+          return '';
+        }
+      }
+
+      function formatLeadDateTime(value) {
+        if (!value) return '';
+        const date = new Date(value);
+        if (Number.isNaN(date.getTime())) return '';
+        return date.toLocaleString('en-NG', {
+          day: '2-digit',
+          month: 'short',
+          year: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit'
+        });
+      }
+
+      function leadStatusClass(status) {
+        return String(status || 'New').trim().toLowerCase().replace(/\s+/g, '-');
+      }
+
+      function leadStatusOptions(current) {
+        const statuses = ['New', 'Contacted', 'Interested', 'Onboarding', 'Funded', 'Follow Up Later', 'Not Interested', 'Closed'];
+        return statuses.map(status => `<option value="${escapeLeadHtml(status)}"${status === current ? ' selected' : ''}>${escapeLeadHtml(status)}</option>`).join('');
+      }
+
+      function updateLeadStats() {
+        leadStatTotal.textContent = websiteLeads.length;
+        leadStatNew.textContent = websiteLeads.filter(item => (item.status || 'New') === 'New').length;
+        leadStatContacted.textContent = websiteLeads.filter(item => item.status === 'Contacted').length;
+        leadStatFunded.textContent = websiteLeads.filter(item => item.status === 'Funded').length;
+      }
+
+      function populateLeadProductFilter() {
+        const selected = leadProductFilter.value;
+        const products = [...new Set(websiteLeads.map(item => item.interest).filter(Boolean))]
+          .sort((a, b) => a.localeCompare(b));
+
+        leadProductFilter.innerHTML = '<option value="">All products / needs</option>' +
+          products.map(product => `<option value="${escapeLeadHtml(product)}">${escapeLeadHtml(product)}</option>`).join('');
+
+        if (products.includes(selected)) leadProductFilter.value = selected;
+      }
+
+      function applyLeadFilters() {
+        const term = leadSearchInput.value.trim().toLowerCase();
+        const product = leadProductFilter.value;
+        const status = leadStatusFilter.value;
+
+        filteredWebsiteLeads = websiteLeads.filter(lead => {
+          if (product && lead.interest !== product) return false;
+          if (status && (lead.status || 'New') !== status) return false;
+          if (!term) return true;
+
+          return [
+            lead.lead_id, lead.name, lead.phone, lead.email, lead.location,
+            lead.profile, lead.interest, lead.contact_time, lead.preferred_channel,
+            lead.message, lead.page_title, lead.page_url, lead.source,
+            lead.status, lead.assigned_staff, lead.internal_notes
+          ].some(value => String(value || '').toLowerCase().includes(term));
+        });
+
+        renderWebsiteLeads();
+      }
+
+      function renderWebsiteLeads() {
+        const rows = filteredWebsiteLeads;
+        leadsCountNote.textContent = `${rows.length} of ${websiteLeads.length} lead${websiteLeads.length === 1 ? '' : 's'} shown`;
+
+        if (!rows.length) {
+          leadsBody.innerHTML = '';
+          leadsTable.style.display = 'none';
+          leadsEmpty.style.display = 'block';
+          return;
+        }
+
+        leadsEmpty.style.display = 'none';
+        leadsTable.style.display = '';
+
+        leadsBody.innerHTML = rows.map(lead => {
+          const pageUrl = safeLeadUrl(lead.page_url);
+          const phoneDigits = String(lead.phone || '').replace(/\D/g, '');
+          const phoneLink = phoneDigits.length >= 10 ? `tel:${phoneDigits}` : '';
+          const status = lead.status || 'New';
+
+          return `
+            <tr data-lead-row="${escapeLeadHtml(lead.id)}">
+              <td class="post-date">${escapeLeadHtml(formatLeadDateTime(lead.received_at))}</td>
+              <td><div class="lead-small">${escapeLeadHtml(lead.lead_id || '')}</div></td>
+              <td><div class="lead-name">${escapeLeadHtml(lead.name || '')}</div></td>
+              <td>${phoneLink ? `<a href="${phoneLink}">${escapeLeadHtml(lead.phone || '')}</a>` : escapeLeadHtml(lead.phone || '')}</td>
+              <td>${lead.email ? `<a href="mailto:${escapeLeadHtml(lead.email)}">${escapeLeadHtml(lead.email)}</a>` : ''}</td>
+              <td>${escapeLeadHtml(lead.location || '')}</td>
+              <td>${escapeLeadHtml(lead.profile || '')}</td>
+              <td><strong>${escapeLeadHtml(lead.interest || '')}</strong></td>
+              <td>${escapeLeadHtml(lead.contact_time || '')}</td>
+              <td>${escapeLeadHtml(lead.preferred_channel || '')}</td>
+              <td class="lead-message">${escapeLeadHtml(lead.message || '')}</td>
+              <td>${lead.consent ? 'Yes' : 'No'}</td>
+              <td>${escapeLeadHtml(lead.page_title || '')}</td>
+              <td>${pageUrl ? `<a class="lead-url" href="${escapeLeadHtml(pageUrl)}" target="_blank" rel="noopener">${escapeLeadHtml(pageUrl)}</a>` : ''}</td>
+              <td>${escapeLeadHtml(lead.source || 'Website survey')}</td>
+              <td>
+                <span class="status-badge ${leadStatusClass(status)}">${escapeLeadHtml(status)}</span>
+                <select class="lead-edit-control lead-status-select" aria-label="Lead status">
+                  ${leadStatusOptions(status)}
+                </select>
+              </td>
+              <td><input class="lead-edit-control lead-assigned-input" value="${escapeLeadHtml(lead.assigned_staff || '')}" placeholder="Staff name" /></td>
+              <td><input class="lead-edit-control lead-last-contact-input" type="date" value="${escapeLeadHtml(lead.last_contact_date || '')}" /></td>
+              <td><input class="lead-edit-control lead-next-followup-input" type="date" value="${escapeLeadHtml(lead.next_follow_up_date || '')}" /></td>
+              <td><textarea class="lead-edit-control lead-notes-input" placeholder="Internal follow-up notes">${escapeLeadHtml(lead.internal_notes || '')}</textarea></td>
+              <td><button class="btn btn-primary btn-sm save-lead-btn" data-id="${escapeLeadHtml(lead.id)}"><i class="fa-regular fa-floppy-disk"></i> Save</button></td>
+            </tr>`;
+        }).join('');
+
+        leadsBody.querySelectorAll('.save-lead-btn').forEach(button => {
+          button.addEventListener('click', () => saveWebsiteLead(button.dataset.id, button));
+        });
+      }
+
+      async function loadWebsiteLeads() {
+        leadsCountNote.textContent = 'Loading leads...';
+        leadsBody.innerHTML = '';
+        leadsEmpty.style.display = 'none';
+        leadsTable.style.display = '';
+
+        const { data, error } = await supabaseClient
+          .from('website_leads')
+          .select('*')
+          .order('received_at', { ascending: false });
+
+        if (error) {
+          console.error(error);
+          websiteLeads = [];
+          filteredWebsiteLeads = [];
+          leadsBody.innerHTML = '';
+          leadsTable.style.display = 'none';
+          leadsEmpty.style.display = 'block';
+          leadsCountNote.textContent = 'Could not load leads. Confirm that the website_leads table and RLS policies have been created.';
+          showToast('Error loading website leads: ' + error.message, 'error');
+          updateLeadStats();
+          return;
+        }
+
+        websiteLeads = data || [];
+        filteredWebsiteLeads = websiteLeads.slice();
+        populateLeadProductFilter();
+        updateLeadStats();
+        applyLeadFilters();
+      }
+
+      async function saveWebsiteLead(id, button) {
+        const row = button.closest('tr');
+        if (!row) return;
+
+        const update = {
+          status: row.querySelector('.lead-status-select').value,
+          assigned_staff: row.querySelector('.lead-assigned-input').value.trim() || null,
+          last_contact_date: row.querySelector('.lead-last-contact-input').value || null,
+          next_follow_up_date: row.querySelector('.lead-next-followup-input').value || null,
+          internal_notes: row.querySelector('.lead-notes-input').value.trim() || null
+        };
+
+        button.disabled = true;
+        button.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Saving';
+
+        const { data, error } = await supabaseClient
+          .from('website_leads')
+          .update(update)
+          .eq('id', id)
+          .select()
+          .single();
+
+        button.disabled = false;
+        button.innerHTML = '<i class="fa-regular fa-floppy-disk"></i> Save';
+
+        if (error) {
+          console.error(error);
+          showToast('Could not update lead: ' + error.message, 'error');
+          return;
+        }
+
+        const index = websiteLeads.findIndex(item => String(item.id) === String(id));
+        if (index !== -1) websiteLeads[index] = data;
+        updateLeadStats();
+        applyLeadFilters();
+        showToast('Lead updated successfully.');
+      }
+
+      function csvValue(value) {
+        const text = String(value == null ? '' : value).replace(/\r?\n/g, ' ');
+        return `"${text.replace(/"/g, '""')}"`;
+      }
+
+      function exportWebsiteLeadsCsv() {
+        const rows = filteredWebsiteLeads;
+        if (!rows.length) {
+          showToast('There are no leads to export.', 'error');
+          return;
+        }
+
+        const headers = [
+          'Received At', 'Lead ID', 'Name', 'Phone', 'Email', 'Location', 'Profile',
+          'Product / Need', 'Preferred Follow-up Time', 'Preferred Channel', 'Message',
+          'Consent', 'Page Title', 'Page URL', 'Source', 'Status', 'Assigned Staff',
+          'Last Contact Date', 'Next Follow-up Date', 'Internal Notes'
+        ];
+
+        const csvRows = [headers.map(csvValue).join(',')];
+
+        rows.forEach(lead => {
+          csvRows.push([
+            formatLeadDateTime(lead.received_at),
+            lead.lead_id,
+            lead.name,
+            lead.phone,
+            lead.email,
+            lead.location,
+            lead.profile,
+            lead.interest,
+            lead.contact_time,
+            lead.preferred_channel,
+            lead.message,
+            lead.consent ? 'Yes' : 'No',
+            lead.page_title,
+            lead.page_url,
+            lead.source,
+            lead.status || 'New',
+            lead.assigned_staff,
+            lead.last_contact_date,
+            lead.next_follow_up_date,
+            lead.internal_notes
+          ].map(csvValue).join(','));
+        });
+
+        const blob = new Blob(['\uFEFF' + csvRows.join('\r\n')], { type: 'text/csv;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        const stamp = new Date().toISOString().slice(0, 10);
+        link.href = url;
+        link.download = `nobles-website-leads-${stamp}.csv`;
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        URL.revokeObjectURL(url);
+        showToast(`${rows.length} lead${rows.length === 1 ? '' : 's'} exported.`);
+      }
+
+
+      function currentGallerySource() {
+        return document.querySelector('input[name="gallerySource"]:checked')?.value || 'upload';
+      }
+
+      function resetYouTubePreview() {
+        itemYoutubePreview.classList.remove('active');
+        itemYoutubePreview.innerHTML = '';
+      }
+
+      function updateYouTubePreview() {
+        const videoId = window.extractYouTubeVideoId
+          ? window.extractYouTubeVideoId(itemYoutubeUrl.value)
+          : '';
+
+        if (!videoId) {
+          resetYouTubePreview();
+          return;
+        }
+
+        itemYoutubePreview.innerHTML = `
+          <iframe
+            src="${window.youtubeEmbedUrl(videoId)}"
+            title="YouTube gallery preview"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>`;
+        itemYoutubePreview.classList.add('active');
+      }
+
+      function updateGallerySourceFields() {
+        const isYouTube = currentGallerySource() === 'youtube';
+        galleryUploadFields.style.display = isYouTube ? 'none' : 'block';
+        galleryYoutubeFields.style.display = isYouTube ? 'block' : 'none';
+        itemFileInput.required = !isYouTube;
+        itemYoutubeUrl.required = isYouTube;
+        uploadStatus.textContent = '';
+        if (!isYouTube) resetYouTubePreview();
+      }
+
+      gallerySourceInputs.forEach(input => input.addEventListener('change', updateGallerySourceFields));
+      itemYoutubeUrl.addEventListener('input', updateYouTubePreview);
+      itemYoutubeUrl.addEventListener('change', updateYouTubePreview);
+      updateGallerySourceFields();
+
+      // ---- Gallery functions ----
       async function loadAdminItems() {
         try {
           const items = await loadGalleryItems();
@@ -616,16 +1170,48 @@
         }
       }
       async function deleteItem(id) {
+        if (!confirm('Delete this gallery item permanently?')) return;
+
         const { data: item, error: fetchError } = await supabaseClient
           .from('gallery_items')
-          .select('file_url')
+          .select('file_url,file_type')
           .eq('id', id)
           .single();
-        if (fetchError || !item) { alert('Could not find item.'); return; }
-        const filePath = item.file_url.split('/').pop();
-        await supabaseClient.storage.from('gallery').remove([filePath]);
-        await supabaseClient.from('gallery_items').delete().eq('id', id);
-        alert('Item deleted.');
+
+        if (fetchError || !item) {
+          showToast('Could not find the gallery item.', 'error');
+          return;
+        }
+
+        // YouTube items have no file in Supabase Storage.
+        if (item.file_type !== 'youtube' && item.file_url) {
+          try {
+            const mediaUrl = new URL(item.file_url);
+            const marker = '/storage/v1/object/public/gallery/';
+            const markerIndex = mediaUrl.pathname.indexOf(marker);
+            if (markerIndex !== -1) {
+              const filePath = decodeURIComponent(mediaUrl.pathname.slice(markerIndex + marker.length));
+              if (filePath) {
+                const { error: storageError } = await supabaseClient.storage.from('gallery').remove([filePath]);
+                if (storageError) console.warn('Storage deletion warning:', storageError.message);
+              }
+            }
+          } catch (error) {
+            console.warn('Could not determine Storage path:', error);
+          }
+        }
+
+        const { error: deleteError } = await supabaseClient
+          .from('gallery_items')
+          .delete()
+          .eq('id', id);
+
+        if (deleteError) {
+          showToast('Delete failed: ' + deleteError.message, 'error');
+          return;
+        }
+
+        showToast('Gallery item deleted.');
         await loadAdminItems();
       }
 
@@ -991,60 +1577,124 @@
         await supabaseClient.auth.signOut();
         await checkAuth();
       });
+      logoutLeadsBtn.addEventListener('click', async function() {
+        await supabaseClient.auth.signOut();
+        await checkAuth();
+      });
 
-      // ---- Gallery upload (unchanged) ----
+      // ---- Gallery upload or YouTube link ----
       uploadForm.addEventListener('submit', async function(e) {
         e.preventDefault();
+
         const title = document.getElementById('itemTitle').value.trim();
         const desc = document.getElementById('itemDesc').value.trim();
-        const fileInput = document.getElementById('itemFile');
-        const file = fileInput.files[0];
-        if (!title || !file) {
-          uploadStatus.textContent = '⚠️ Please fill title and select a file.';
+        const source = currentGallerySource();
+
+        if (!title) {
+          uploadStatus.textContent = '⚠️ Please enter a title.';
           uploadStatus.style.color = 'var(--orange-deep)';
           return;
         }
-        const MAX_FILE_SIZE_MB = 50;
-        const fileSizeMB = file.size / (1024 * 1024);
-        if (fileSizeMB > MAX_FILE_SIZE_MB) {
-          uploadStatus.textContent = `❌ File too large (${fileSizeMB.toFixed(1)}MB). Max ${MAX_FILE_SIZE_MB}MB.`;
-          uploadStatus.style.color = 'red';
-          return;
-        }
-        uploadStatus.textContent = `⏳ Uploading (${fileSizeMB.toFixed(1)}MB)...`;
-        uploadStatus.style.color = 'var(--muted)';
-        const fileType = file.type.startsWith('image/') ? 'image' : 'video';
-        const fileExt = file.name.split('.').pop();
-        const filePath = `${Date.now()}_${Math.random().toString(36).substring(2, 8)}.${fileExt}`;
+
+        uploadForm.querySelector('button[type="submit"]').disabled = true;
+
         try {
-          const { data: uploadData, error: uploadError } = await supabaseClient.storage
-            .from('gallery')
-            .upload(filePath, file, { cacheControl: '3600', upsert: false });
-          if (uploadError) {
-            uploadStatus.textContent = `❌ Upload failed: ${uploadError.message}`;
-            uploadStatus.style.color = 'red';
-            console.error('Upload error:', uploadError);
-            return;
+          if (source === 'youtube') {
+            const videoId = window.extractYouTubeVideoId(itemYoutubeUrl.value);
+
+            if (!videoId) {
+              uploadStatus.textContent = '❌ Enter a valid YouTube video, Shorts, Live or share link.';
+              uploadStatus.style.color = 'red';
+              return;
+            }
+
+            uploadStatus.textContent = '⏳ Adding YouTube video...';
+            uploadStatus.style.color = 'var(--muted)';
+
+            const { error: youtubeError } = await supabaseClient
+              .from('gallery_items')
+              .insert([{
+                title: title,
+                description: desc,
+                file_url: window.youtubeWatchUrl(videoId),
+                file_type: 'youtube'
+              }]);
+
+            if (youtubeError) {
+              uploadStatus.textContent = '❌ Database error: ' + youtubeError.message;
+              uploadStatus.style.color = 'red';
+              console.error('YouTube gallery insert error:', youtubeError);
+              return;
+            }
+
+            uploadStatus.textContent = '✅ YouTube video added to the gallery.';
+            uploadStatus.style.color = 'var(--green-wa)';
+          } else {
+            const file = itemFileInput.files[0];
+
+            if (!file) {
+              uploadStatus.textContent = '⚠️ Select an image or video file.';
+              uploadStatus.style.color = 'var(--orange-deep)';
+              return;
+            }
+
+            const MAX_FILE_SIZE_MB = 50;
+            const fileSizeMB = file.size / (1024 * 1024);
+
+            if (fileSizeMB > MAX_FILE_SIZE_MB) {
+              uploadStatus.textContent = `❌ File too large (${fileSizeMB.toFixed(1)}MB). Max ${MAX_FILE_SIZE_MB}MB.`;
+              uploadStatus.style.color = 'red';
+              return;
+            }
+
+            uploadStatus.textContent = `⏳ Uploading (${fileSizeMB.toFixed(1)}MB)...`;
+            uploadStatus.style.color = 'var(--muted)';
+
+            const fileType = file.type.startsWith('image/') ? 'image' : 'video';
+            const fileExt = file.name.split('.').pop();
+            const filePath = `${Date.now()}_${Math.random().toString(36).substring(2, 8)}.${fileExt}`;
+
+            const { error: uploadError } = await supabaseClient.storage
+              .from('gallery')
+              .upload(filePath, file, { cacheControl: '3600', upsert: false });
+
+            if (uploadError) {
+              uploadStatus.textContent = `❌ Upload failed: ${uploadError.message}`;
+              uploadStatus.style.color = 'red';
+              console.error('Upload error:', uploadError);
+              return;
+            }
+
+            const { data: urlData } = supabaseClient.storage.from('gallery').getPublicUrl(filePath);
+            const publicUrl = urlData.publicUrl;
+
+            const { error: dbError } = await supabaseClient
+              .from('gallery_items')
+              .insert([{ title, description: desc, file_url: publicUrl, file_type: fileType }]);
+
+            if (dbError) {
+              await supabaseClient.storage.from('gallery').remove([filePath]);
+              uploadStatus.textContent = `❌ Database error: ${dbError.message}`;
+              uploadStatus.style.color = 'red';
+              console.error('DB error:', dbError);
+              return;
+            }
+
+            uploadStatus.textContent = `✅ Uploaded successfully! (${fileSizeMB.toFixed(1)}MB)`;
+            uploadStatus.style.color = 'var(--green-wa)';
           }
-          const { data: urlData } = supabaseClient.storage.from('gallery').getPublicUrl(filePath);
-          const publicUrl = urlData.publicUrl;
-          const { error: dbError } = await supabaseClient
-            .from('gallery_items')
-            .insert([{ title, description: desc, file_url: publicUrl, file_type: fileType }]);
-          if (dbError) {
-            uploadStatus.textContent = `❌ Database error: ${dbError.message}`;
-            uploadStatus.style.color = 'red';
-            console.error('DB error:', dbError);
-            return;
-          }
-          uploadStatus.textContent = `✅ Uploaded successfully! (${fileSizeMB.toFixed(1)}MB)`;
-          uploadStatus.style.color = 'var(--green-wa)';
+
           uploadForm.reset();
+          document.querySelector('input[name="gallerySource"][value="upload"]').checked = true;
+          updateGallerySourceFields();
+          resetYouTubePreview();
           await loadAdminItems();
         } catch (err) {
           uploadStatus.textContent = `❌ Unexpected error: ${err.message}`;
           uploadStatus.style.color = 'red';
-          console.error('Upload exception:', err);
+          console.error('Gallery submission exception:', err);
+        } finally {
+          uploadForm.querySelector('button[type="submit"]').disabled = false;
         }
       });
 
@@ -1057,14 +1707,25 @@
         tabBtn.classList.add('active');
         galleryTab.classList.toggle('active', tab === 'gallery');
         blogTab.classList.toggle('active', tab === 'blog');
+        leadsTab.classList.toggle('active', tab === 'leads');
         document.getElementById('contentTab').classList.toggle('active', tab === 'content');
         if (tab === 'blog') {
           loadBlogStats();
           switchBlogTab(currentBlogTab);
+        } else if (tab === 'leads') {
+          loadWebsiteLeads();
         } else if (tab === 'content') {
           loadPageContent(contentPageSelect.value);
         }
       });
+
+
+      // ---- Survey lead controls ----
+      leadSearchInput.addEventListener('input', applyLeadFilters);
+      leadProductFilter.addEventListener('change', applyLeadFilters);
+      leadStatusFilter.addEventListener('change', applyLeadFilters);
+      refreshLeadsBtn.addEventListener('click', loadWebsiteLeads);
+      exportLeadsCsvBtn.addEventListener('click', exportWebsiteLeadsCsv);
 
       // ---- Blog sub-tabs ----
       blogSubTabs.addEventListener('click', function(e) {
