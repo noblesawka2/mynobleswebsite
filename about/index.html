@@ -269,34 +269,188 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; color: var(
 .nav-dropdown-nested a { padding: 8px 20px; font-size: .85rem; }
 
 .nav-right { display: flex; align-items: center; gap: 18px; }
+/* -------- Homepage-matched mobile toggle -------- */
 .nav-toggle {
-  display: none;
+  display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 5px;
-  width: 26px;
-  padding: 6px 0;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 10px;
+  border: 1.5px solid var(--line);
+  background: var(--white);
+  cursor: pointer;
+  flex-shrink: 0;
+  z-index: 1100;
+  position: relative;
 }
-.nav-toggle span { display: block; width: 100%; height: 2px; background: var(--purple-deep); transition: transform var(--dur-fast) var(--ease), opacity var(--dur-fast) var(--ease); }
-body.nav-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-body.nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
-body.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.nav-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--purple);
+  border-radius: 2px;
+  transition: transform .35s var(--ease), opacity .25s var(--ease), width .3s var(--ease);
+}
+.nav-toggle.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.is-open span:nth-child(2) { opacity: 0; }
+.nav-toggle.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-.mobile-menu {
-  display: none;
-  flex-direction: column;
-  gap: 4px;
-  padding: 12px clamp(20px,5vw,48px) 22px;
-  border-top: 1px solid var(--line);
-  background: var(--paper);
+@media (min-width: 901px) {
+  .nav-toggle { display: none; }
 }
-.mobile-menu a { padding: 12px 4px; font-weight: 600; border-bottom: 1px solid var(--line); }
-.mobile-menu .btn { margin-top: 12px; justify-content: center; }
+
+/* ---------- Homepage-matched mobile fullscreen menu ---------- */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 1050;
+  background: linear-gradient(160deg, var(--white) 0%, var(--cream) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.04);
+  transition: opacity .45s var(--ease), transform .45s var(--ease), visibility 0s linear .45s;
+  overflow-y: auto;
+  padding: 40px 20px;
+}
+.mobile-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  transition: opacity .45s var(--ease), transform .45s var(--ease);
+}
+.mobile-menu::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(92, 0, 140, .10), transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(244, 156, 0, .14), transparent 45%);
+  pointer-events: none;
+}
+.mobile-menu-back {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--purple-tint);
+  color: var(--purple);
+  border: 1px solid rgba(92, 0, 140, .16);
+  padding: 10px 18px 10px 14px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: .85rem;
+  opacity: 0;
+  transform: translateX(-14px);
+  transition: opacity .5s var(--ease) .08s, transform .5s var(--ease) .08s, background .25s var(--ease), color .25s var(--ease);
+}
+.mobile-menu.is-open .mobile-menu-back {
+  opacity: 1;
+  transform: translateX(0);
+}
+.mobile-menu-back:hover { background: var(--purple); color: var(--white); }
+.mobile-menu-back svg { flex-shrink: 0; }
+.mobile-menu-inner {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  padding: 20px 0 40px;
+  text-align: center;
+}
+.mobile-menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 20px 0 30px;
+  text-align: left;
+}
+.mobile-menu-links .mm-item { border-bottom: 1px solid rgba(92, 0, 140, .08); }
+.mobile-menu-links .mm-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 14px 0;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .5s var(--ease), transform .5s var(--ease), color .25s;
+  cursor: pointer;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+}
+.mobile-menu.is-open .mobile-menu-links .mm-link { opacity: 1; transform: translateY(0); }
+.mobile-menu.is-open .mobile-menu-links .mm-item:nth-child(1) .mm-link { transition-delay: .08s; }
+.mobile-menu.is-open .mobile-menu-links .mm-item:nth-child(2) .mm-link { transition-delay: .14s; }
+.mobile-menu.is-open .mobile-menu-links .mm-item:nth-child(3) .mm-link { transition-delay: .20s; }
+.mobile-menu.is-open .mobile-menu-links .mm-item:nth-child(4) .mm-link { transition-delay: .26s; }
+.mobile-menu.is-open .mobile-menu-links .mm-item:nth-child(5) .mm-link { transition-delay: .32s; }
+.mobile-menu.is-open .mobile-menu-links .mm-item:nth-child(6) .mm-link { transition-delay: .38s; }
+.mobile-menu.is-open .mobile-menu-links .mm-item:nth-child(7) .mm-link { transition-delay: .44s; }
+.mobile-menu-links .mm-arrow {
+  font-size: .7rem;
+  opacity: .5;
+  transition: transform .3s var(--ease);
+}
+.mobile-menu-links .mm-link.open .mm-arrow { transform: rotate(180deg); }
+.mobile-menu-links .mm-sublinks {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .45s var(--ease), padding .3s var(--ease);
+  padding-left: 8px;
+}
+.mobile-menu-links .mm-sublinks.open { max-height: 600px; padding-bottom: 12px; }
+.mobile-menu-links .mm-sublinks a {
+  display: block;
+  padding: 10px 0 10px 12px;
+  font-size: .95rem;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity .3s var(--ease), transform .3s var(--ease), color .2s, border-color .2s;
+}
+.mobile-menu-links .mm-sublinks.open a { opacity: 1; transform: translateX(0); }
+.mobile-menu-links .mm-sublinks a:hover { color: var(--purple); border-left-color: var(--purple); }
+.mobile-menu-actions { display: flex; flex-direction: column; gap: 12px; margin-bottom: 26px; }
+.mobile-menu-actions .btn {
+  width: 100%;
+  justify-content: center;
+  border-radius: 12px;
+  padding: 15px 30px;
+}
+.mobile-menu-wa {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: .9rem;
+  font-weight: 600;
+}
+.mobile-menu-wa:hover { color: var(--purple); }
+body.menu-open { overflow: hidden; }
 
 @media (max-width: 900px) {
   .nav-links { display: none; }
-  .nav-right .btn-ghost { display: none; }
+  .nav-right .btn-ghost,
+  .nav-right > .btn-primary { display: none; }
   .nav-toggle { display: flex; }
-  body.nav-open .mobile-menu { display: flex; }
 }
 
 /* ---------- Split section (image + content) ---------- */
@@ -686,32 +840,96 @@ footer {
     <div class="nav-right">
       <a href="https://wa.me/2349151142355" target="_blank" rel="noopener" class="btn btn-ghost">Chat with Nola</a>
       <a href="https://play.google.com/store/apps/details?id=com.myminervahub.nobles_vault&amp;pcampaignid=web_share" class="btn btn-primary">Download App</a>
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </div>
-  <!-- Mobile menu -->
-  <div class="mobile-menu">
-    <div class="mm-item"><a href="/loans/marketlift">MarketLift</a></div>
-    <div class="mm-item"><a href="/loans/marketpower">MarketPower</a></div>
-    <div class="mm-item"><a href="/loans/unity-loan">Unity Loan</a></div>
-    <div class="mm-item"><a href="/loans/easypay">EasyPay</a></div>
-    <div class="mm-item"><a href="/loans/empower-loan">Empower Loan</a></div>
-    <div class="mm-item"><a href="/loans/kitchen-saver">Kitchen Saver</a></div>
-    <div class="mm-item"><a href="/easysave">EasySave</a></div>
-    <div class="mm-item"><a href="/futurefund">Future Fund</a></div>
-    <div class="mm-item"><a href="/goldvault">Gold Vault</a></div>
-    <div class="mm-item"><a href="/edusave">EduSave</a></div>
-    <div class="mm-item"><a href="/groupsavings">Group Savings</a></div>
-    <div class="mm-item"><a href="/monthlysavingschallenge">Monthly Savings Challenge</a></div>
-    <div class="mm-item"><a href="/foodvault">Food Vault</a></div>
-    <div class="mm-item"><a href="/about">About Us</a></div>
-    <div class="mm-item"><a href="/gallery">Gallery</a></div>
-    <div class="mm-item"><a href="/contact">Contact Us</a></div>
-    <a href="https://play.google.com/store/apps/details?id=com.myminervahub.nobles_vault&amp;pcampaignid=web_share" class="btn btn-primary">Download App</a>
-  </div>
 </header>
+
+<!-- ============ MOBILE FULLSCREEN MENU — MATCHED TO HOMEPAGE ============ -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <button class="mobile-menu-back" id="mobileMenuBack" type="button" aria-label="Close menu and return to page">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span>Back</span>
+  </button>
+
+  <div class="mobile-menu-inner">
+    <nav class="mobile-menu-links" aria-label="Mobile navigation">
+      <div class="mm-item">
+        <a href="/about" class="mm-link" style="justify-content:flex-start;">About Us</a>
+      </div>
+
+      <div class="mm-item">
+        <button class="mm-link" data-mm-accordion type="button" aria-expanded="false">
+          <span>Save &amp; Invest</span>
+          <span class="mm-arrow">▾</span>
+        </button>
+        <div class="mm-sublinks">
+          <a href="/easysave">EasySave</a>
+          <a href="/futurefund">Future Fund</a>
+          <a href="/goldvault">Gold Vault</a>
+          <a href="/edusave">EduSave</a>
+          <a href="/groupsavings">Group Savings</a>
+          <a href="/monthlysavingschallenge">Monthly Savings Challenge</a>
+          <a href="/foodvault">Food Vault</a>
+        </div>
+      </div>
+
+      <div class="mm-item">
+        <button class="mm-link" data-mm-accordion type="button" aria-expanded="false">
+          <span>Loans</span>
+          <span class="mm-arrow">▾</span>
+        </button>
+        <div class="mm-sublinks">
+          <a href="/loans/marketlift">MarketLift</a>
+          <a href="/loans/marketpower">MarketPower</a>
+          <a href="/loans/unityloan">Unity Loan</a>
+          <a href="/loans/easypay">EasyPay</a>
+          <a href="/loans/empowerloan">Empower Loan</a>
+          <a href="/loans/kitchensaver">Kitchen Saver</a>
+        </div>
+      </div>
+
+      <div class="mm-item">
+        <button class="mm-link" data-mm-accordion type="button" aria-expanded="false">
+          <span>Partner</span>
+          <span class="mm-arrow">▾</span>
+        </button>
+        <div class="mm-sublinks">
+          <a href="/partner-enquiry">Partners</a>
+          <a href="/nobles-vault">Nobles Vault</a>
+        </div>
+      </div>
+
+      <div class="mm-item">
+        <button class="mm-link" data-mm-accordion type="button" aria-expanded="false">
+          <span>Resources</span>
+          <span class="mm-arrow">▾</span>
+        </button>
+        <div class="mm-sublinks">
+          <a href="/blog">Blog</a>
+          <a href="/financialeducation">Financial Education</a>
+          <a href="/faq">FAQs</a>
+        </div>
+      </div>
+
+      <div class="mm-item">
+        <a href="/gallery" class="mm-link" style="justify-content:flex-start;">Gallery</a>
+      </div>
+      <div class="mm-item">
+        <a href="/contact" class="mm-link" style="justify-content:flex-start;">Contact Us</a>
+      </div>
+    </nav>
+
+    <div class="mobile-menu-actions">
+      <a href="https://play.google.com/store/apps/details?id=com.myminervahub.nobles_vault&amp;pcampaignid=web_share" class="btn btn-primary">Download Nobles Vault</a>
+    </div>
+    <a href="https://wa.me/2349151142355" target="_blank" rel="noopener" class="mobile-menu-wa">Chat with Nola on WhatsApp →</a>
+  </div>
+</div>
 
 <main>
 
@@ -1072,7 +1290,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // ---- DOM refs ----
   const toast = document.getElementById('toast');
   const backToTop = document.getElementById('backToTop');
-  const navToggle = document.querySelector('.nav-toggle');
+  const navToggle = document.getElementById('navToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileMenuBack = document.getElementById('mobileMenuBack');
   const header = document.querySelector('.site-header');
 
   // ---- Toast helper ----
@@ -1096,16 +1316,65 @@ document.addEventListener('DOMContentLoaded', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  // ---- Mobile nav toggle ----
-  if (navToggle) {
+  // ---- Homepage-matched mobile menu ----
+  function closeMobileMenu() {
+    if (!navToggle || !mobileMenu) return;
+    navToggle.classList.remove('is-open');
+    navToggle.setAttribute('aria-expanded', 'false');
+    mobileMenu.classList.remove('is-open');
+    mobileMenu.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('menu-open');
+  }
+
+  function openMobileMenu() {
+    if (!navToggle || !mobileMenu) return;
+    navToggle.classList.add('is-open');
+    navToggle.setAttribute('aria-expanded', 'true');
+    mobileMenu.classList.add('is-open');
+    mobileMenu.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('menu-open');
+  }
+
+  if (navToggle && mobileMenu) {
     navToggle.addEventListener('click', () => {
-      const open = document.body.classList.toggle('nav-open');
-      navToggle.setAttribute('aria-expanded', String(open));
+      mobileMenu.classList.contains('is-open') ? closeMobileMenu() : openMobileMenu();
     });
-    document.querySelectorAll('.mobile-menu a').forEach(a => {
-      a.addEventListener('click', () => document.body.classList.remove('nav-open'));
+
+    if (mobileMenuBack) mobileMenuBack.addEventListener('click', closeMobileMenu);
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') closeMobileMenu();
     });
   }
+
+  // ---- Mobile accordion dropdowns ----
+  document.querySelectorAll('[data-mm-accordion]').forEach(button => {
+    button.addEventListener('click', function () {
+      const currentItem = this.closest('.mm-item');
+      const currentPanel = currentItem?.querySelector('.mm-sublinks');
+      if (!currentItem || !currentPanel) return;
+
+      const willOpen = !currentPanel.classList.contains('open');
+
+      currentItem.parentElement.querySelectorAll('.mm-item').forEach(item => {
+        const otherButton = item.querySelector('[data-mm-accordion]');
+        const otherPanel = item.querySelector('.mm-sublinks');
+        if (otherButton && otherButton !== this) {
+          otherButton.classList.remove('open');
+          otherButton.setAttribute('aria-expanded', 'false');
+        }
+        if (otherPanel && otherPanel !== currentPanel) otherPanel.classList.remove('open');
+      });
+
+      currentPanel.classList.toggle('open', willOpen);
+      this.classList.toggle('open', willOpen);
+      this.setAttribute('aria-expanded', String(willOpen));
+    });
+  });
 
   // ---- Admin state (global) ----
   let isAdmin = false;
