@@ -586,9 +586,17 @@
         </a>
 
         <nav class="nav-links" aria-label="Primary navigation">
+            <!-- Home Icon -->
+            <li>
+                <a href="/" class="nav-home-link" aria-label="Home">
+                    <i data-lucide="home" class="nav-home-icon"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+
             <li><a href="/about">About Us</a></li>
 
-            <!-- Save & Invest – all at root level (no /savings/) -->
+            <!-- Save & Invest -->
             <li>
                 <button class="nav-link-label" aria-haspopup="true" aria-expanded="false" type="button">
                     Save &amp; Invest
@@ -604,7 +612,8 @@
                     <li><a href="/foodvault">Food Vault</a></li>
                 </ul>
             </li>
-             <li>
+
+            <li>
                 <button class="nav-link-label" aria-haspopup="true" aria-expanded="false" type="button">
                     Loans
                     <span class="dropdown-arrow">▾</span>
@@ -618,7 +627,6 @@
                     <li><a href="/loans/kitchensaver">Kitchen Saver</a></li>
                 </ul>
             </li>
-
 
             <!-- Partner -->
             <li>
@@ -643,13 +651,14 @@
                 </ul>
             </li>
 
-            <!-- Regular links -->
             <li><a href="/gallery">Gallery</a></li>
             <li><a href="/contact">Contact Us</a></li>
         </nav>
 
         <div class="nav-cta">
-            <a href="https://play.google.com/store/apps/details?id=com.myminervahub.nobles_vault&pcampaignid=web_share" class="btn btn-secondary btn-sm">Download Nobles Vault</a>
+            <a href="https://play.google.com/store/apps/details?id=com.myminervahub.nobles_vault&pcampaignid=web_share" class="btn btn-secondary btn-sm">
+                Download Nobles Vault
+            </a>
         </div>
 
         <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
@@ -666,14 +675,23 @@
         </svg>
         <span>Back</span>
     </button>
+
     <div class="mobile-menu-inner">
         <nav class="mobile-menu-links" aria-label="Mobile navigation">
+
+            <!-- Home Icon -->
+            <div class="mm-item">
+                <a href="/" class="mm-link mm-home-link" style="justify-content:flex-start;">
+                    <i data-lucide="home" class="mm-home-icon"></i>
+                    <span>Home</span>
+                </a>
+            </div>
 
             <div class="mm-item">
                 <a href="/about" class="mm-link" style="justify-content:flex-start;">About Us</a>
             </div>
 
-            <!-- Save & Invest (root level) -->
+            <!-- Save & Invest -->
             <div class="mm-item">
                 <button class="mm-link" data-mm-accordion type="button">
                     <span>Save &amp; Invest</span>
@@ -689,6 +707,7 @@
                     <a href="/foodvault">Food Vault</a>
                 </div>
             </div>
+
             <!-- Loans -->
             <div class="mm-item">
                 <button class="mm-link" data-mm-accordion type="button">
@@ -705,8 +724,6 @@
                 </div>
             </div>
 
-            
-
             <!-- Partner -->
             <div class="mm-item">
                 <button class="mm-link" data-mm-accordion type="button">
@@ -719,7 +736,7 @@
                 </div>
             </div>
 
-            <!-- Resources (separate) -->
+            <!-- Resources -->
             <div class="mm-item">
                 <button class="mm-link" data-mm-accordion type="button">
                     <span>Resources</span>
@@ -732,19 +749,24 @@
                 </div>
             </div>
 
-            <!-- Regular links -->
             <div class="mm-item">
                 <a href="/gallery" class="mm-link" style="justify-content:flex-start;">Gallery</a>
             </div>
+
             <div class="mm-item">
                 <a href="/contact" class="mm-link" style="justify-content:flex-start;">Contact Us</a>
             </div>
         </nav>
 
         <div class="mobile-menu-actions">
-            <a href="https://play.google.com/store/apps/details?id=com.myminervahub.nobles_vault&pcampaignid=web_share" class="btn btn-primary btn-block">Download Nobles Vault</a>
+            <a href="https://play.google.com/store/apps/details?id=com.myminervahub.nobles_vault&pcampaignid=web_share" class="btn btn-primary btn-block">
+                Download Nobles Vault
+            </a>
         </div>
-        <a href="https://cdn.botpress.cloud/webchat/v3.7/shareable.html?configUrl=https://files.bpcontent.cloud/2026/05/12/08/20260512081608-IX0TLUF2.json" target="_blank" class="mobile-menu-wa">Chat with Nola on WhatsApp →</a>
+
+        <a href="https://cdn.botpress.cloud/webchat/v3.7/shareable.html?configUrl=https://files.bpcontent.cloud/2026/05/12/08/20260512081608-IX0TLUF2.json" target="_blank" class="mobile-menu-wa">
+            Chat with Nola on WhatsApp →
+        </a>
     </div>
 </div>
 
@@ -1198,6 +1220,10 @@
 
     <!-- ============ SCRIPTS ============ -->
     <script src="/asset/js/app.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+<script>
+    lucide.createIcons();
+</script>
     <script>
         (function() {
             "use strict";

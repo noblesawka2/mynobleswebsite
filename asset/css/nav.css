@@ -1,0 +1,14 @@
+.nav-home-link,
+.mm-home-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-home-icon,
+.mm-home-icon {
+    width: 18px;
+    height: 18px;
+    stroke-width: 2.4;
+    flex-shrink: 0;
+}
