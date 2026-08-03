@@ -599,7 +599,7 @@
             <li>
                 <button class="nav-link-label" aria-haspopup="true" aria-expanded="false" type="button">
                     Save &amp; Build
-                    <span class="dropdown-arrow">▾</span>
+                    <span class="dropdown-arrow"><i data-lucide="chevron-down" width="12" height="12" aria-hidden="true"></i></span>
                 </button>
                 <ul class="nav-dropdown">
                     <li><a href="/easysave">EasySave</a></li>
@@ -615,7 +615,7 @@
             <li>
                 <button class="nav-link-label" aria-haspopup="true" aria-expanded="false" type="button">
                     Loans
-                    <span class="dropdown-arrow">▾</span>
+                    <span class="dropdown-arrow"><i data-lucide="chevron-down" width="12" height="12" aria-hidden="true"></i></span>
                 </button>
                 <ul class="nav-dropdown">
                     <li><a href="/loans/marketlift">MarketLift</a></li>
@@ -631,7 +631,7 @@
             <li>
                 <button class="nav-link-label" aria-haspopup="true" aria-expanded="false" type="button">
                     Resources
-                    <span class="dropdown-arrow">▾</span>
+                    <span class="dropdown-arrow"><i data-lucide="chevron-down" width="12" height="12" aria-hidden="true"></i></span>
                 </button>
                 <ul class="nav-dropdown">
                     <li><a href="/blog">Blog</a></li>
@@ -653,7 +653,7 @@
         </div>
 
         <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-            <span></span><span></span><span></span>
+            <i data-lucide="menu" width="20" height="20" aria-hidden="true"></i>
         </button>
     </div>
 </header>
@@ -661,9 +661,7 @@
 <!-- ============ MOBILE FULLSCREEN MENU ============ -->
 <div class="mobile-menu" id="mobileMenu">
     <button class="mobile-menu-back" id="mobileMenuBack" type="button" aria-label="Close menu and return to page">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+        <i data-lucide="arrow-left" width="18" height="18" aria-hidden="true"></i>
         <span>Back</span>
     </button>
 
@@ -686,7 +684,7 @@
             <div class="mm-item">
                 <button class="mm-link" data-mm-accordion type="button">
                     <span>Save &amp; Build</span>
-                    <span class="mm-arrow">▾</span>
+                    <span class="mm-arrow"><i data-lucide="chevron-down" width="12" height="12" aria-hidden="true"></i></span>
                 </button>
                 <div class="mm-sublinks">
                     <a href="/easysave">EasySave</a>
@@ -703,7 +701,7 @@
             <div class="mm-item">
                 <button class="mm-link" data-mm-accordion type="button">
                     <span>Loans</span>
-                    <span class="mm-arrow">▾</span>
+                    <span class="mm-arrow"><i data-lucide="chevron-down" width="12" height="12" aria-hidden="true"></i></span>
                 </button>
                 <div class="mm-sublinks">
                     <a href="/loans/marketlift">MarketLift</a>
@@ -719,7 +717,7 @@
             <div class="mm-item">
                 <button class="mm-link" data-mm-accordion type="button">
                     <span>Partner</span>
-                    <span class="mm-arrow">▾</span>
+                    <span class="mm-arrow"><i data-lucide="chevron-down" width="12" height="12" aria-hidden="true"></i></span>
                 </button>
                 <div class="mm-sublinks">
                     <a href="/partner-enquiry">Partners</a>
@@ -731,7 +729,7 @@
             <div class="mm-item">
                 <button class="mm-link" data-mm-accordion type="button">
                     <span>Resources</span>
-                    <span class="mm-arrow">▾</span>
+                    <span class="mm-arrow"><i data-lucide="chevron-down" width="12" height="12" aria-hidden="true"></i></span>
                 </button>
                 <div class="mm-sublinks">
                     <a href="/blog">Blog</a>
@@ -757,7 +755,7 @@
         </div>
 
         <a href="https://cdn.botpress.cloud/webchat/v3.7/shareable.html?configUrl=https://files.bpcontent.cloud/2026/05/12/08/20260512081608-IX0TLUF2.json" target="_blank" class="mobile-menu-wa">
-            Chat with Nola on WhatsApp →
+            Chat with Nola on WhatsApp <i data-lucide="arrow-right" width="16" height="16" aria-hidden="true"></i>
         </a>
     </div>
 </div>
@@ -811,7 +809,7 @@
                     <div style="max-width:720px; margin:20px auto 0;">
                         <div class="search-bar">
                             <div class="search-input-wrap">
-                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <i data-lucide="search" width="1em" height="1em"></i>
                                 <input type="text" id="resourceSearch" placeholder="Search resources..." />
                             </div>
                             <select id="categoryFilter" class="filter-select">
@@ -831,73 +829,73 @@
                 <div class="resources-grid reveal-stagger reveal" id="resourcesGrid">
                     <!-- Financial literacy guides -->
                     <div class="resource-card" data-category="personal-finance">
-                        <span class="res-icon"><i class="fa-regular fa-book"></i></span>
+                        <span class="res-icon"><i data-lucide="book-open" width="1em" height="1em"></i></span>
                         <span class="res-category">Personal Finance</span>
                         <h4>Financial Literacy Guides</h4>
                         <p>Foundational guides covering money management, savings basics, and financial planning for individuals and families.</p>
                         <div class="res-actions">
-                            <a href="#" class="btn btn-primary btn-sm"><i class="fa-regular fa-download"></i> Download</a>
-                            <a href="#" class="btn btn-outline btn-sm"><i class="fa-regular fa-eye"></i> Preview</a>
+                            <a href="#" class="btn btn-primary btn-sm"><i data-lucide="download" width="1em" height="1em"></i> Download</a>
+                            <a href="#" class="btn btn-outline btn-sm"><i data-lucide="eye" width="1em" height="1em"></i> Preview</a>
                         </div>
                     </div>
                     <!-- Savings and budgeting manuals -->
                     <div class="resource-card" data-category="savings">
-                        <span class="res-icon"><i class="fa-regular fa-pen-to-square"></i></span>
+                        <span class="res-icon"><i data-lucide="square-pen" width="1em" height="1em"></i></span>
                         <span class="res-category">Savings</span>
                         <h4>Savings &amp; Budgeting Manuals</h4>
                         <p>Step-by-step guides to help you build a savings habit, create a budget, and track your spending effectively.</p>
                         <div class="res-actions">
-                            <a href="#" class="btn btn-primary btn-sm"><i class="fa-regular fa-download"></i> Download</a>
-                            <a href="#" class="btn btn-outline btn-sm"><i class="fa-regular fa-eye"></i> Preview</a>
+                            <a href="#" class="btn btn-primary btn-sm"><i data-lucide="download" width="1em" height="1em"></i> Download</a>
+                            <a href="#" class="btn btn-outline btn-sm"><i data-lucide="eye" width="1em" height="1em"></i> Preview</a>
                         </div>
                     </div>
                     <!-- Responsible borrowing guides -->
                     <div class="resource-card" data-category="debt">
-                        <span class="res-icon"><i class="fa-regular fa-handshake"></i></span>
+                        <span class="res-icon"><i data-lucide="handshake" width="1em" height="1em"></i></span>
                         <span class="res-category">Debt Management</span>
                         <h4>Responsible Borrowing Guides</h4>
                         <p>Understand how to borrow responsibly, manage debt, and avoid over-indebtedness with practical tools and advice.</p>
                         <div class="res-actions">
-                            <a href="#" class="btn btn-primary btn-sm"><i class="fa-regular fa-download"></i> Download</a>
-                            <a href="#" class="btn btn-outline btn-sm"><i class="fa-regular fa-eye"></i> Preview</a>
+                            <a href="#" class="btn btn-primary btn-sm"><i data-lucide="download" width="1em" height="1em"></i> Download</a>
+                            <a href="#" class="btn btn-outline btn-sm"><i data-lucide="eye" width="1em" height="1em"></i> Preview</a>
                         </div>
                     </div>
                     <!-- Business finance resources -->
                     <div class="resource-card" data-category="business-finance">
-                        <span class="res-icon"><i class="fa-regular fa-building"></i></span>
+                        <span class="res-icon"><i data-lucide="building-2" width="1em" height="1em"></i></span>
                         <span class="res-category">Business Finance</span>
                         <h4>Business Finance Resources</h4>
                         <p>Essential resources for entrepreneurs and small business owners covering cash flow, pricing, and financial management.</p>
                         <div class="res-actions">
-                            <a href="#" class="btn btn-primary btn-sm"><i class="fa-regular fa-download"></i> Download</a>
-                            <a href="#" class="btn btn-outline btn-sm"><i class="fa-regular fa-eye"></i> Preview</a>
+                            <a href="#" class="btn btn-primary btn-sm"><i data-lucide="download" width="1em" height="1em"></i> Download</a>
+                            <a href="#" class="btn btn-outline btn-sm"><i data-lucide="eye" width="1em" height="1em"></i> Preview</a>
                         </div>
                     </div>
                     <!-- Investment awareness materials -->
                     <div class="resource-card" data-category="personal-finance">
-                        <span class="res-icon"><i class="fa-regular fa-chart-line"></i></span>
+                        <span class="res-icon"><i data-lucide="chart-line" width="1em" height="1em"></i></span>
                         <span class="res-category">Personal Finance</span>
                         <h4>Investment Awareness Materials</h4>
                         <p>Learn the basics of investing, risk management, and how to grow your wealth through informed investment decisions.</p>
                         <div class="res-actions">
-                            <a href="#" class="btn btn-primary btn-sm"><i class="fa-regular fa-download"></i> Download</a>
-                            <a href="#" class="btn btn-outline btn-sm"><i class="fa-regular fa-eye"></i> Preview</a>
+                            <a href="#" class="btn btn-primary btn-sm"><i data-lucide="download" width="1em" height="1em"></i> Download</a>
+                            <a href="#" class="btn btn-outline btn-sm"><i data-lucide="eye" width="1em" height="1em"></i> Preview</a>
                         </div>
                     </div>
                     <!-- Community learning publications -->
                     <div class="resource-card" data-category="financial-inclusion">
-                        <span class="res-icon"><i class="fa-regular fa-users"></i></span>
+                        <span class="res-icon"><i data-lucide="users" width="1em" height="1em"></i></span>
                         <span class="res-category">Financial Inclusion</span>
                         <h4>Community Learning Publications</h4>
                         <p>Community-focused financial education materials designed for group learning and cooperative development.</p>
                         <div class="res-actions">
-                            <a href="#" class="btn btn-primary btn-sm"><i class="fa-regular fa-download"></i> Download</a>
-                            <a href="#" class="btn btn-outline btn-sm"><i class="fa-regular fa-eye"></i> Preview</a>
+                            <a href="#" class="btn btn-primary btn-sm"><i data-lucide="download" width="1em" height="1em"></i> Download</a>
+                            <a href="#" class="btn btn-outline btn-sm"><i data-lucide="eye" width="1em" height="1em"></i> Preview</a>
                         </div>
                     </div>
                 </div>
                 <div id="noResults" class="no-results" style="display:none;">
-                    <i class="fa-regular fa-circle-xmark"></i>
+                    <i data-lucide="circle-x" width="1em" height="1em"></i>
                     <p>No resources found matching your search.</p>
                 </div>
             </div>
@@ -912,42 +910,42 @@
                 </div>
                 <div class="categories-grid reveal-stagger reveal">
                     <div class="category-item" data-category="personal-finance">
-                        <span class="cat-icon"><i class="fa-regular fa-user"></i></span>
+                        <span class="cat-icon"><i data-lucide="user" width="1em" height="1em"></i></span>
                         <span class="cat-name">Personal Finance</span>
                         <span class="cat-count">8</span>
                     </div>
                     <div class="category-item" data-category="savings">
-                        <span class="cat-icon"><i class="fa-regular fa-piggy-bank"></i></span>
+                        <span class="cat-icon"><i data-lucide="piggy-bank" width="1em" height="1em"></i></span>
                         <span class="cat-name">Savings</span>
                         <span class="cat-count">6</span>
                     </div>
                     <div class="category-item" data-category="budgeting">
-                        <span class="cat-icon"><i class="fa-regular fa-calculator"></i></span>
+                        <span class="cat-icon"><i data-lucide="calculator" width="1em" height="1em"></i></span>
                         <span class="cat-name">Budgeting</span>
                         <span class="cat-count">5</span>
                     </div>
                     <div class="category-item" data-category="debt">
-                        <span class="cat-icon"><i class="fa-regular fa-circle-exclamation"></i></span>
+                        <span class="cat-icon"><i data-lucide="circle-alert" width="1em" height="1em"></i></span>
                         <span class="cat-name">Debt Management</span>
                         <span class="cat-count">4</span>
                     </div>
                     <div class="category-item" data-category="entrepreneurship">
-                        <span class="cat-icon"><i class="fa-regular fa-lightbulb"></i></span>
+                        <span class="cat-icon"><i data-lucide="lightbulb" width="1em" height="1em"></i></span>
                         <span class="cat-name">Entrepreneurship</span>
                         <span class="cat-count">7</span>
                     </div>
                     <div class="category-item" data-category="business-finance">
-                        <span class="cat-icon"><i class="fa-regular fa-building"></i></span>
+                        <span class="cat-icon"><i data-lucide="building-2" width="1em" height="1em"></i></span>
                         <span class="cat-name">Business Finance</span>
                         <span class="cat-count">6</span>
                     </div>
                     <div class="category-item" data-category="financial-inclusion">
-                        <span class="cat-icon"><i class="fa-regular fa-handshake"></i></span>
+                        <span class="cat-icon"><i data-lucide="handshake" width="1em" height="1em"></i></span>
                         <span class="cat-name">Financial Inclusion</span>
                         <span class="cat-count">5</span>
                     </div>
                     <div class="category-item" data-category="womens-empowerment">
-                        <span class="cat-icon"><i class="fa-regular fa-venus"></i></span>
+                        <span class="cat-icon"><i data-lucide="venus" width="1em" height="1em"></i></span>
                         <span class="cat-name">Women's Financial Empowerment</span>
                         <span class="cat-count">9</span>
                     </div>
@@ -964,34 +962,34 @@
                 </div>
                 <div class="toolkits-grid reveal-stagger reveal">
                     <div class="toolkit-card">
-                        <span class="toolkit-icon"><i class="fa-regular fa-file-lines"></i></span>
+                        <span class="toolkit-icon"><i data-lucide="file-text" width="1em" height="1em"></i></span>
                         <h4>Budget Templates</h4>
                         <p>Simple, practical budget templates to help you plan and track your monthly income and expenses.</p>
-                        <a href="#" class="btn btn-primary btn-sm"><i class="fa-regular fa-download"></i> Download</a>
+                        <a href="#" class="btn btn-primary btn-sm"><i data-lucide="download" width="1em" height="1em"></i> Download</a>
                     </div>
                     <div class="toolkit-card">
-                        <span class="toolkit-icon"><i class="fa-regular fa-chart-bar"></i></span>
+                        <span class="toolkit-icon"><i data-lucide="chart-no-axes-column" width="1em" height="1em"></i></span>
                         <h4>Cashflow Trackers</h4>
                         <p>Track your money flow with easy-to-use cashflow tracking sheets for personal and business use.</p>
-                        <a href="#" class="btn btn-primary btn-sm"><i class="fa-regular fa-download"></i> Download</a>
+                        <a href="#" class="btn btn-primary btn-sm"><i data-lucide="download" width="1em" height="1em"></i> Download</a>
                     </div>
                     <div class="toolkit-card">
-                        <span class="toolkit-icon"><i class="fa-regular fa-calendar"></i></span>
+                        <span class="toolkit-icon"><i data-lucide="calendar" width="1em" height="1em"></i></span>
                         <h4>Savings Planners</h4>
                         <p>Plan your savings goals with structured planners that help you stay on track and reach your targets.</p>
-                        <a href="#" class="btn btn-primary btn-sm"><i class="fa-regular fa-download"></i> Download</a>
+                        <a href="#" class="btn btn-primary btn-sm"><i data-lucide="download" width="1em" height="1em"></i> Download</a>
                     </div>
                     <div class="toolkit-card">
-                        <span class="toolkit-icon"><i class="fa-regular fa-book"></i></span>
+                        <span class="toolkit-icon"><i data-lucide="book-open" width="1em" height="1em"></i></span>
                         <h4>Simple Bookkeeping Templates</h4>
                         <p>Keep your business records organised with simple, beginner-friendly bookkeeping templates.</p>
-                        <a href="#" class="btn btn-primary btn-sm"><i class="fa-regular fa-download"></i> Download</a>
+                        <a href="#" class="btn btn-primary btn-sm"><i data-lucide="download" width="1em" height="1em"></i> Download</a>
                     </div>
                     <div class="toolkit-card">
-                        <span class="toolkit-icon"><i class="fa-regular fa-bullseye"></i></span>
+                        <span class="toolkit-icon"><i data-lucide="target" width="1em" height="1em"></i></span>
                         <h4>Goal-Setting Worksheets</h4>
                         <p>Set and track your financial goals with structured worksheets that keep you motivated and accountable.</p>
-                        <a href="#" class="btn btn-primary btn-sm"><i class="fa-regular fa-download"></i> Download</a>
+                        <a href="#" class="btn btn-primary btn-sm"><i data-lucide="download" width="1em" height="1em"></i> Download</a>
                     </div>
                 </div>
             </div>
@@ -1007,46 +1005,46 @@
                 <div class="videos-grid reveal-stagger reveal">
                     <div class="video-card">
                         <div class="video-thumb">
-                            <i class="fa-regular fa-circle-play"></i>
-                            <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                            <i data-lucide="circle-play" width="1em" height="1em"></i>
+                            <div class="play-btn"><i data-lucide="play" width="1em" height="1em"></i></div>
                         </div>
                         <div class="video-body">
                             <h4>Short Financial Lessons</h4>
                             <p>Bite-sized video lessons covering essential financial topics for everyday life.</p>
-                            <a href="#" class="btn btn-primary btn-sm" style="margin-top:8px;"><i class="fa-regular fa-circle-play"></i> Watch</a>
+                            <a href="#" class="btn btn-primary btn-sm" style="margin-top:8px;"><i data-lucide="circle-play" width="1em" height="1em"></i> Watch</a>
                         </div>
                     </div>
                     <div class="video-card">
                         <div class="video-thumb">
-                            <i class="fa-regular fa-circle-play"></i>
-                            <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                            <i data-lucide="circle-play" width="1em" height="1em"></i>
+                            <div class="play-btn"><i data-lucide="play" width="1em" height="1em"></i></div>
                         </div>
                         <div class="video-body">
                             <h4>Recorded Webinars</h4>
                             <p>Full-length recorded webinars from financial experts and cooperative leaders.</p>
-                            <a href="#" class="btn btn-primary btn-sm" style="margin-top:8px;"><i class="fa-regular fa-circle-play"></i> Watch</a>
+                            <a href="#" class="btn btn-primary btn-sm" style="margin-top:8px;"><i data-lucide="circle-play" width="1em" height="1em"></i> Watch</a>
                         </div>
                     </div>
                     <div class="video-card">
                         <div class="video-thumb">
-                            <i class="fa-regular fa-circle-play"></i>
-                            <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                            <i data-lucide="circle-play" width="1em" height="1em"></i>
+                            <div class="play-btn"><i data-lucide="play" width="1em" height="1em"></i></div>
                         </div>
                         <div class="video-body">
                             <h4>Interactive Learning Sessions</h4>
                             <p>Engaging, interactive sessions that make learning about money practical and enjoyable.</p>
-                            <a href="#" class="btn btn-primary btn-sm" style="margin-top:8px;"><i class="fa-regular fa-circle-play"></i> Watch</a>
+                            <a href="#" class="btn btn-primary btn-sm" style="margin-top:8px;"><i data-lucide="circle-play" width="1em" height="1em"></i> Watch</a>
                         </div>
                     </div>
                     <div class="video-card">
                         <div class="video-thumb">
-                            <i class="fa-regular fa-circle-play"></i>
-                            <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                            <i data-lucide="circle-play" width="1em" height="1em"></i>
+                            <div class="play-btn"><i data-lucide="play" width="1em" height="1em"></i></div>
                         </div>
                         <div class="video-body">
                             <h4>Success Stories</h4>
                             <p>Real stories from members who have transformed their finances through education and discipline.</p>
-                            <a href="#" class="btn btn-primary btn-sm" style="margin-top:8px;"><i class="fa-regular fa-circle-play"></i> Watch</a>
+                            <a href="#" class="btn btn-primary btn-sm" style="margin-top:8px;"><i data-lucide="circle-play" width="1em" height="1em"></i> Watch</a>
                         </div>
                     </div>
                 </div>
@@ -1064,7 +1062,7 @@
                     <div class="faq-item">
                         <button class="faq-question" aria-expanded="false">
                             Who can access the Financial Education Library?
-                            <i class="fa-solid fa-chevron-down faq-arrow"></i>
+                            <i data-lucide="chevron-down" width="1em" height="1em" class="faq-arrow"></i>
                         </button>
                         <div class="faq-answer">
                             <p>The Financial Education Library is open to everyone — members, non-members, and anyone interested in improving their financial knowledge. Some resources may require membership for full access.</p>
@@ -1073,7 +1071,7 @@
                     <div class="faq-item">
                         <button class="faq-question" aria-expanded="false">
                             Are the resources free to download?
-                            <i class="fa-solid fa-chevron-down faq-arrow"></i>
+                            <i data-lucide="chevron-down" width="1em" height="1em" class="faq-arrow"></i>
                         </button>
                         <div class="faq-answer">
                             <p>Yes, all resources in the Financial Education Library are free to download and use. We believe in making financial education accessible to everyone.</p>
@@ -1082,7 +1080,7 @@
                     <div class="faq-item">
                         <button class="faq-question" aria-expanded="false">
                             How often are new resources added?
-                            <i class="fa-solid fa-chevron-down faq-arrow"></i>
+                            <i data-lucide="chevron-down" width="1em" height="1em" class="faq-arrow"></i>
                         </button>
                         <div class="faq-answer">
                             <p>New resources are added regularly. Subscribe to our newsletter to stay updated on the latest additions to the library.</p>
@@ -1091,7 +1089,7 @@
                     <div class="faq-item">
                         <button class="faq-question" aria-expanded="false">
                             Can I suggest a topic for the library?
-                            <i class="fa-solid fa-chevron-down faq-arrow"></i>
+                            <i data-lucide="chevron-down" width="1em" height="1em" class="faq-arrow"></i>
                         </button>
                         <div class="faq-answer">
                             <p>Absolutely! We welcome suggestions. Contact us through the form on our contact page or reach out on WhatsApp to suggest topics you'd like to see covered.</p>
@@ -1100,7 +1098,7 @@
                     <div class="faq-item">
                         <button class="faq-question" aria-expanded="false">
                             Are there videos available in local languages?
-                            <i class="fa-solid fa-chevron-down faq-arrow"></i>
+                            <i data-lucide="chevron-down" width="1em" height="1em" class="faq-arrow"></i>
                         </button>
                         <div class="faq-answer">
                             <p>We are working on expanding our video content to include local languages. Stay tuned for updates!</p>
@@ -1118,12 +1116,12 @@
                     <p>Subscribe to receive updates on new resources, financial tips, and learning opportunities.</p>
                 </div>
                 <div class="newsletter-box reveal">
-                    <h3><i class="fa-regular fa-envelope" style="color:var(--orange); margin-right:10px;"></i> Join Our Learning Community</h3>
+                    <h3><i data-lucide="mail" width="1em" height="1em" style="color:var(--orange); margin-right:10px;"></i> Join Our Learning Community</h3>
                     <p>Get the latest financial education resources delivered to your inbox.</p>
                     <form id="newsletterForm" class="newsletter-form">
                         <input type="text" id="newsletterName" placeholder="Your name" required />
                         <input type="email" id="newsletterEmail" placeholder="Your email address" required />
-                        <button type="submit" class="btn btn-primary"><i class="fa-regular fa-paper-plane"></i> Subscribe</button>
+                        <button type="submit" class="btn btn-primary"><i data-lucide="send" width="1em" height="1em"></i> Subscribe</button>
                     </form>
                     <div id="newsletterStatus" class="newsletter-status"></div>
                 </div>
@@ -1154,8 +1152,8 @@
         <div class="container footer-grid">
             <div class="footer-brand">
                 <div class="footer-logo-chip">
-                    <img src="/asset/N1 Logo full.png" alt="Nobles Cooperative logo" />
-                </div>
+    <img src="./Materials for the Website/6 Logos/N2 Logo full new.png" alt="Nobles Cooperative logo" />
+</div>
                 <p style="color:rgba(255,255,255,.72); max-width:280px; line-height:1.7;">Plan. Save. Build. Grow — with dignity. A women-first financial cooperative and strategic development ecosystem built for the South-East.</p>
                 <p class="footer-reg">Anambra State Cooperative — Reg. No. AN 17915</p>
             </div>
@@ -1202,7 +1200,7 @@
     </footer>
 
     <!-- ============ BACK TO TOP ============ -->
-    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top"><i data-lucide="arrow-up" width="18" height="18" aria-hidden="true"></i></button>
 
     <!-- ============ MOBILE STICKY BAR ============ -->
     <div class="mobile-sticky-bar">
@@ -1321,7 +1319,7 @@
                         return;
                     }
 
-                    newsletterStatus.textContent = '✅ Thank you for subscribing! You\'ll receive updates on new resources.';
+                    window.setLucideStatus(newsletterStatus, 'circle-check', 'Thank you for subscribing! You\'ll receive updates on new resources.');
                     newsletterStatus.style.color = '#28a745';
                     newsletterForm.reset();
                     showToast('Subscribed successfully!', 'success');

@@ -9,6 +9,35 @@
   var backToTop = document.getElementById("backToTop");
   var previousFocus = null;
 
+  function refreshLucideIcons() {
+    if (window.lucide) window.lucide.createIcons();
+  }
+
+  window.refreshLucideIcons = refreshLucideIcons;
+
+  window.setLucideStatus = function (element, iconName, message) {
+    if (!element) return;
+    element.textContent = "";
+    var icon = document.createElement("i");
+    icon.setAttribute("data-lucide", iconName);
+    icon.setAttribute("aria-hidden", "true");
+    element.appendChild(icon);
+    element.appendChild(document.createTextNode(" " + message));
+    refreshLucideIcons();
+  };
+
+  if ("MutationObserver" in window) {
+    var lucideObserver = new MutationObserver(function (mutations) {
+      var hasNewIcons = mutations.some(function (mutation) {
+        return Array.from(mutation.addedNodes).some(function (node) {
+          return node.nodeType === 1 && (node.matches("i[data-lucide]") || node.querySelector("i[data-lucide]"));
+        });
+      });
+      if (hasNewIcons) refreshLucideIcons();
+    });
+    lucideObserver.observe(document.documentElement, { childList: true, subtree: true });
+  }
+
   function focusable(container) {
     return container ? Array.from(container.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])')) : [];
   }
@@ -18,6 +47,8 @@
     toggle.classList.toggle("is-open", open);
     toggle.setAttribute("aria-expanded", String(open));
     toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    toggle.innerHTML = '<i data-lucide="' + (open ? "x" : "menu") + '" width="20" height="20" aria-hidden="true"></i>';
+    refreshLucideIcons();
     menu.classList.toggle("is-open", open);
     menu.setAttribute("aria-hidden", String(!open));
     document.body.classList.toggle("menu-open", open);

@@ -205,12 +205,12 @@
         'box-shadow:0 12px 30px rgba(0,0,0,.35)' +
       '}',
 
-      '.gallery-youtube-play::before{' +
-        'content:"";' +
-        'margin-left:4px;' +
-        'border-top:9px solid transparent;' +
-        'border-bottom:9px solid transparent;' +
-        'border-left:15px solid #fff' +
+      '.gallery-youtube-play svg{' +
+        'width:22px;' +
+        'height:22px;' +
+        'margin-left:3px;' +
+        'color:#fff;' +
+        'fill:currentColor' +
       '}',
 
       '.gallery-youtube-thumb:focus-visible,' +
@@ -487,6 +487,7 @@
           '<span ' +
             'class="gallery-youtube-play" ' +
             'aria-hidden="true">' +
+            '<i data-lucide="play" width="22" height="22"></i>' +
           '</span>' +
 
         '</button>'
@@ -584,7 +585,7 @@
           'class="empty-state" ' +
           'style="grid-column:1/-1">' +
 
-          '<i class="fa-regular fa-images"></i>' +
+          '<i data-lucide="images" width="1em" height="1em"></i>' +
           '<p>No gallery items yet.</p>' +
 
         '</div>';
@@ -623,10 +624,10 @@
 
         var icon =
           type === 'youtube'
-            ? 'fa-brands fa-youtube'
+            ? '<i class="fa-brands fa-youtube"></i>'
             : type === 'video'
-              ? 'fa-regular fa-circle-play'
-              : 'fa-regular fa-image';
+              ? '<i data-lucide="circle-play" width="1em" height="1em"></i>'
+              : '<i data-lucide="image" width="1em" height="1em"></i>';
 
         var videoId =
           type === 'youtube'
@@ -667,7 +668,7 @@
                   itemId +
                 '">' +
 
-                '<i class="fa-regular fa-trash-can"></i> ' +
+                '<i data-lucide="trash-2" width="1em" height="1em"></i> ' +
                 'Delete' +
 
               '</button>' +
@@ -682,7 +683,7 @@
                 'class="btn btn-sm btn-primary" ' +
                 'data-gallery-open>' +
 
-                '<i class="fa-regular fa-eye"></i> ' +
+                '<i data-lucide="eye" width="1em" height="1em"></i> ' +
 
                 (
                   type === 'youtube'
@@ -706,7 +707,7 @@
                       'download ' +
                       'class="btn btn-sm btn-outline">' +
 
-                      '<i class="fa-regular fa-download"></i> ' +
+                      '<i data-lucide="download" width="1em" height="1em"></i> ' +
                       'Download' +
 
                     '</a>'
@@ -731,9 +732,7 @@
             '<div class="gallery-item-info">' +
 
               '<span class="gallery-type-badge">' +
-                '<i class="' +
-                  icon +
-                '"></i>' +
+                icon +
                 escapeHtml(typeLabel) +
               '</span>' +
 

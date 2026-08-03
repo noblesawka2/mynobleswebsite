@@ -275,7 +275,7 @@ function renderGalleryGrid(items, containerId, showDelete = false, onDelete = nu
         <div class="gallery-item-actions">
           <button class="btn btn-sm btn-primary view-btn" data-url="${item.file_url}" data-type="${item.file_type}">View</button>
           <a href="${item.file_url}" download class="btn btn-sm btn-outline">Download</a>
-          ${showDelete ? `<button class="btn btn-sm btn-danger delete-btn" data-id="${item.id}">🗑️ Delete</button>` : ''}
+          ${showDelete ? `<button class="btn btn-sm btn-danger delete-btn" data-id="${item.id}"><i data-lucide="trash-2" width="1em" height="1em"></i> Delete</button>` : ''}
         </div>
       </div>
     </div>

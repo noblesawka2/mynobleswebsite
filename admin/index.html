@@ -412,17 +412,15 @@
         <a href="https://play.google.com/store/apps/details?id=com.myminervahub.nobles_vault&pcampaignid=web_share" class="btn btn-secondary btn-sm">Download Nobles Vault</a>
       </div>
       <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-        <span></span><span></span><span></span>
-      </button>
+            <i data-lucide="menu" width="20" height="20" aria-hidden="true"></i>
+        </button>
     </div>
   </header>
 
   <!-- Mobile menu -->
   <div class="mobile-menu" id="mobileMenu">
     <button class="mobile-menu-back" id="mobileMenuBack" type="button" aria-label="Close menu">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
+      <i data-lucide="arrow-left" width="18" height="18" aria-hidden="true"></i>
       <span>Back</span>
     </button>
     <div class="mobile-menu-inner">
@@ -436,7 +434,7 @@
         <a href="https://play.google.com/store/apps/details?id=com.myminervahub.nobles_vault&pcampaignid=web_share" class="btn btn-primary btn-block">Download Nobles Vault</a>
         <a href="https://wa.me/2349151142355" target="_blank" class="btn btn-outline btn-block">Become a Member (₦1,000)</a>
       </div>
-      <a href="https://wa.me/2349151142355" target="_blank" class="mobile-menu-wa">Chat with Nola on WhatsApp →</a>
+      <a href="https://wa.me/2349151142355" target="_blank" class="mobile-menu-wa">Chat with Nola on WhatsApp <i data-lucide="arrow-right" width="16" height="16" aria-hidden="true"></i></a>
     </div>
   </div>
 
@@ -508,7 +506,7 @@
               <div id="itemYoutubePreview" class="gallery-youtube-preview" aria-live="polite"></div>
             </div>
 
-            <button type="submit" class="btn btn-primary"><i class="fa-regular fa-plus"></i> Add to Gallery</button>
+            <button type="submit" class="btn btn-primary"><i data-lucide="plus" width="1em" height="1em"></i> Add to Gallery</button>
             <span id="uploadStatus" style="margin-left:16px; font-size:.9rem; color:var(--muted);"></span>
           </form>
           <h3 style="font-family:var(--font-display); color:var(--purple); margin-bottom:20px;">Existing Gallery Items</h3>
@@ -519,10 +517,10 @@
         <div id="blogTab" class="admin-tab-content">
           <!-- Stats -->
           <div class="stats-grid" id="blogStats">
-            <div class="stat-card"><i class="fa-regular fa-newspaper stat-icon"></i><div class="stat-number" id="statTotal">0</div><div class="stat-label">Total Posts</div></div>
-            <div class="stat-card pending"><i class="fa-regular fa-clock stat-icon"></i><div class="stat-number" id="statPending">0</div><div class="stat-label">Pending Review</div></div>
-            <div class="stat-card approved"><i class="fa-regular fa-circle-check stat-icon"></i><div class="stat-number" id="statApproved">0</div><div class="stat-label">Approved</div></div>
-            <div class="stat-card"><i class="fa-regular fa-comment stat-icon"></i><div class="stat-number" id="statComments">0</div><div class="stat-label">Total Comments</div></div>
+            <div class="stat-card"><i data-lucide="newspaper" width="1em" height="1em" class="stat-icon"></i><div class="stat-number" id="statTotal">0</div><div class="stat-label">Total Posts</div></div>
+            <div class="stat-card pending"><i data-lucide="clock" width="1em" height="1em" class="stat-icon"></i><div class="stat-number" id="statPending">0</div><div class="stat-label">Pending Review</div></div>
+            <div class="stat-card approved"><i data-lucide="circle-check" width="1em" height="1em" class="stat-icon"></i><div class="stat-number" id="statApproved">0</div><div class="stat-label">Approved</div></div>
+            <div class="stat-card"><i data-lucide="message-circle" width="1em" height="1em" class="stat-icon"></i><div class="stat-number" id="statComments">0</div><div class="stat-label">Total Comments</div></div>
           </div>
 
           <!-- Blog sub-tabs -->
@@ -532,7 +530,7 @@
             <button data-blogtab="approved">Approved</button>
             <button data-blogtab="rejected">Rejected</button>
             <button data-blogtab="comments">Comments</button>
-            <button data-blogtab="settings"><i class="fa-solid fa-user-gear"></i> Settings</button>
+            <button data-blogtab="settings"><i data-lucide="user-cog" width="1em" height="1em"></i> Settings</button>
           </div>
 
           <!-- Blog posts table -->
@@ -541,7 +539,7 @@
               <thead><tr><th>Post</th><th>Author</th><th>Date</th><th>Status</th><th style="min-width:180px;">Actions</th></tr></thead>
               <tbody id="blogPostsBody"></tbody>
             </table>
-            <div id="blogPostsEmpty" class="empty-state" style="display:none;"><i class="fa-regular fa-newspaper"></i><p>No posts found.</p></div>
+            <div id="blogPostsEmpty" class="empty-state" style="display:none;"><i data-lucide="newspaper" width="1em" height="1em"></i><p>No posts found.</p></div>
           </div>
 
           <!-- Blog comments (MODERATION) -->
@@ -561,7 +559,7 @@
                 <tbody id="blogCommentsBody"></tbody>
               </table>
               <div id="blogCommentsEmpty" class="empty-state" style="display:none;">
-                <i class="fa-regular fa-comment"></i><p>No comments yet.</p>
+                <i data-lucide="message-circle" width="1em" height="1em"></i><p>No comments yet.</p>
               </div>
             </div>
           </div>
@@ -569,21 +567,21 @@
           <!-- Blog settings -->
           <div id="blogSettingsWrap" style="display:none;">
             <div class="settings-section">
-              <h3><i class="fa-solid fa-user-gear"></i> Admin Profile</h3>
+              <h3><i data-lucide="user-cog" width="1em" height="1em"></i> Admin Profile</h3>
               <div class="avatar-upload">
                 <img id="settingsAvatarPreview" class="current-avatar" src="" alt="Admin avatar" style="display:none;" />
                 <div class="upload-controls">
                   <label class="file-label">Upload new avatar (PNG, JPG)</label>
                   <input type="file" id="settingsAvatarInput" accept="image/*" />
-                  <button id="settingsSaveAvatar" class="btn btn-primary btn-sm" style="margin-top:6px;"><i class="fa-regular fa-floppy-disk"></i> Save Avatar</button>
+                  <button id="settingsSaveAvatar" class="btn btn-primary btn-sm" style="margin-top:6px;"><i data-lucide="save" width="1em" height="1em"></i> Save Avatar</button>
                   <div id="settingsAvatarStatus" style="font-size:.85rem; color:var(--muted); margin-top:6px;"></div>
                 </div>
               </div>
               <hr style="margin:24px 0; border-color:var(--line);" />
-              <h3><i class="fa-regular fa-circle-question"></i> Quick Actions</h3>
+              <h3><i data-lucide="circle-question" width="1em" height="1em"></i> Quick Actions</h3>
               <div style="display:flex; gap:12px; flex-wrap:wrap;">
-                <a href="/blog" target="_blank" class="btn btn-outline btn-sm"><i class="fa-regular fa-eye"></i> View Blog</a>
-                <button id="refreshBlogBtn" class="btn btn-outline btn-sm"><i class="fa-regular fa-arrows-rotate"></i> Refresh Data</button>
+                <a href="/blog" target="_blank" class="btn btn-outline btn-sm"><i data-lucide="eye" width="1em" height="1em"></i> View Blog</a>
+                <button id="refreshBlogBtn" class="btn btn-outline btn-sm"><i data-lucide="refresh-cw" width="1em" height="1em"></i> Refresh Data</button>
               </div>
             </div>
           </div>
@@ -601,10 +599,10 @@
           </div>
 
           <div class="stats-grid">
-            <div class="stat-card"><i class="fa-regular fa-address-card stat-icon"></i><div class="stat-number" id="leadStatTotal">0</div><div class="stat-label">Total Leads</div></div>
-            <div class="stat-card pending"><i class="fa-regular fa-bell stat-icon"></i><div class="stat-number" id="leadStatNew">0</div><div class="stat-label">New Leads</div></div>
-            <div class="stat-card"><i class="fa-regular fa-comments stat-icon"></i><div class="stat-number" id="leadStatContacted">0</div><div class="stat-label">Contacted</div></div>
-            <div class="stat-card approved"><i class="fa-solid fa-user-check stat-icon"></i><div class="stat-number" id="leadStatFunded">0</div><div class="stat-label">Funded Members</div></div>
+            <div class="stat-card"><i data-lucide="contact" width="1em" height="1em" class="stat-icon"></i><div class="stat-number" id="leadStatTotal">0</div><div class="stat-label">Total Leads</div></div>
+            <div class="stat-card pending"><i data-lucide="bell" width="1em" height="1em" class="stat-icon"></i><div class="stat-number" id="leadStatNew">0</div><div class="stat-label">New Leads</div></div>
+            <div class="stat-card"><i data-lucide="messages-square" width="1em" height="1em" class="stat-icon"></i><div class="stat-number" id="leadStatContacted">0</div><div class="stat-label">Contacted</div></div>
+            <div class="stat-card approved"><i data-lucide="user-check" width="1em" height="1em" class="stat-icon"></i><div class="stat-number" id="leadStatFunded">0</div><div class="stat-label">Funded Members</div></div>
           </div>
 
           <div class="leads-toolbar">
@@ -623,8 +621,8 @@
               <option value="Not Interested">Not Interested</option>
               <option value="Closed">Closed</option>
             </select>
-            <button id="refreshLeadsBtn" class="btn btn-outline btn-sm"><i class="fa-regular fa-arrows-rotate"></i> Refresh</button>
-            <button id="exportLeadsCsvBtn" class="btn btn-primary btn-sm"><i class="fa-solid fa-file-csv"></i> Export CSV</button>
+            <button id="refreshLeadsBtn" class="btn btn-outline btn-sm"><i data-lucide="refresh-cw" width="1em" height="1em"></i> Refresh</button>
+            <button id="exportLeadsCsvBtn" class="btn btn-primary btn-sm"><i data-lucide="file-spreadsheet" width="1em" height="1em"></i> Export CSV</button>
           </div>
 
           <p class="leads-count-note" id="leadsCountNote">Loading leads...</p>
@@ -660,7 +658,7 @@
                 <tbody id="leadsBody"></tbody>
               </table>
             </div>
-            <div id="leadsEmpty" class="empty-state" style="display:none;"><i class="fa-regular fa-address-card"></i><p>No website leads found.</p></div>
+            <div id="leadsEmpty" class="empty-state" style="display:none;"><i data-lucide="contact" width="1em" height="1em"></i><p>No website leads found.</p></div>
           </div>
         </div>
 
@@ -686,8 +684,8 @@
             </div>
             <div id="contentFields"><p style="color:var(--muted);">Select a page to load its content.</p></div>
             <div class="content-manager-actions">
-              <button id="saveContentBtn" class="btn btn-primary"><i class="fa-regular fa-floppy-disk"></i> Save All Changes</button>
-              <button id="refreshContentBtn" class="btn btn-outline"><i class="fa-regular fa-arrows-rotate"></i> Refresh</button>
+              <button id="saveContentBtn" class="btn btn-primary"><i data-lucide="save" width="1em" height="1em"></i> Save All Changes</button>
+              <button id="refreshContentBtn" class="btn btn-outline"><i data-lucide="refresh-cw" width="1em" height="1em"></i> Refresh</button>
             </div>
             <div id="contentStatus" class="content-status"></div>
           </div>
@@ -707,13 +705,13 @@
   <!-- Reply Modal (for blog) -->
   <div class="reply-modal" id="replyModal">
     <div class="modal-content">
-      <button class="close-modal" id="closeReplyModal"><i class="fa-solid fa-xmark"></i></button>
+      <button class="close-modal" id="closeReplyModal"><i data-lucide="x" width="1em" height="1em"></i></button>
       <h3>Reply as Nobles Cooperative</h3>
-      <div class="admin-badge-preview"><i class="fa-solid fa-circle-check" style="color:var(--gold);"></i> Nobles Cooperative <span style="background:var(--gold); color:var(--ink); padding:0 8px; border-radius:50px; font-size:.6rem; font-weight:700;">Verified</span></div>
+      <div class="admin-badge-preview"><i data-lucide="circle-check" width="1em" height="1em" style="color:var(--gold);"></i> Nobles Cooperative <span style="background:var(--gold); color:var(--ink); padding:0 8px; border-radius:50px; font-size:.6rem; font-weight:700;">Verified</span></div>
       <div class="reply-context" id="replyContext">Replying to: <strong id="replyTargetName">Post</strong></div>
       <textarea id="replyContent" placeholder="Write your reply as Nobles Cooperative..."></textarea>
       <div style="display:flex; gap:12px; margin-top:16px;">
-        <button id="submitReplyBtn" class="btn btn-primary"><i class="fa-regular fa-paper-plane"></i> Post Reply</button>
+        <button id="submitReplyBtn" class="btn btn-primary"><i data-lucide="send" width="1em" height="1em"></i> Post Reply</button>
         <button id="cancelReplyBtn" class="btn btn-outline">Cancel</button>
       </div>
       <div id="replyStatus" style="margin-top:10px; font-size:.9rem;"></div>
@@ -976,7 +974,7 @@
               <td><input class="lead-edit-control lead-last-contact-input" type="date" value="${escapeLeadHtml(lead.last_contact_date || '')}" /></td>
               <td><input class="lead-edit-control lead-next-followup-input" type="date" value="${escapeLeadHtml(lead.next_follow_up_date || '')}" /></td>
               <td><textarea class="lead-edit-control lead-notes-input" placeholder="Internal follow-up notes">${escapeLeadHtml(lead.internal_notes || '')}</textarea></td>
-              <td><button class="btn btn-primary btn-sm save-lead-btn" data-id="${escapeLeadHtml(lead.id)}"><i class="fa-regular fa-floppy-disk"></i> Save</button></td>
+              <td><button class="btn btn-primary btn-sm save-lead-btn" data-id="${escapeLeadHtml(lead.id)}"><i data-lucide="save" width="1em" height="1em"></i> Save</button></td>
             </tr>`;
         }).join('');
 
@@ -1029,7 +1027,7 @@
         };
 
         button.disabled = true;
-        button.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Saving';
+        button.innerHTML = '<i data-lucide="loader-circle" width="1em" height="1em" class="fa-spin"></i> Saving';
 
         const { data, error } = await supabaseClient
           .from('website_leads')
@@ -1039,7 +1037,7 @@
           .single();
 
         button.disabled = false;
-        button.innerHTML = '<i class="fa-regular fa-floppy-disk"></i> Save';
+        button.innerHTML = '<i data-lucide="save" width="1em" height="1em"></i> Save';
 
         if (error) {
           console.error(error);
@@ -1255,26 +1253,26 @@
                 ${post.content.substring(0, 60)}${post.content.length > 60 ? '...' : ''}
               </div>
             </td>
-            <td><div class="post-author">${post.author_name}</div>${post.admin_reply ? '<div style="font-size:.7rem; color:var(--gold);"><i class="fa-solid fa-circle-check"></i> Admin replied</div>' : ''}</td>
+            <td><div class="post-author">${post.author_name}</div>${post.admin_reply ? '<div style="font-size:.7rem; color:var(--gold);"><i data-lucide="circle-check" width="1em" height="1em"></i> Admin replied</div>' : ''}</td>
             <td class="post-date">${timeAgo(post.created_at)}</td>
             <td>${statusBadge(post.status)}</td>
             <td>
               <div class="action-btns">
                 ${post.status === 'pending' ? `
-                  <button class="btn btn-sm btn-primary approve-post" data-id="${post.id}"><i class="fa-regular fa-circle-check"></i></button>
-                  <button class="btn btn-sm btn-outline reject-post" data-id="${post.id}"><i class="fa-regular fa-circle-xmark"></i></button>
+                  <button class="btn btn-sm btn-primary approve-post" data-id="${post.id}"><i data-lucide="circle-check" width="1em" height="1em"></i></button>
+                  <button class="btn btn-sm btn-outline reject-post" data-id="${post.id}"><i data-lucide="circle-x" width="1em" height="1em"></i></button>
                 ` : ''}
                 ${post.status === 'approved' ? `
-                  <button class="btn btn-sm btn-outline reject-post" data-id="${post.id}"><i class="fa-regular fa-circle-xmark"></i></button>
+                  <button class="btn btn-sm btn-outline reject-post" data-id="${post.id}"><i data-lucide="circle-x" width="1em" height="1em"></i></button>
                 ` : ''}
                 ${post.status === 'rejected' ? `
-                  <button class="btn btn-sm btn-primary approve-post" data-id="${post.id}"><i class="fa-regular fa-circle-check"></i></button>
+                  <button class="btn btn-sm btn-primary approve-post" data-id="${post.id}"><i data-lucide="circle-check" width="1em" height="1em"></i></button>
                 ` : ''}
                 <button class="btn btn-sm btn-secondary admin-reply-btn" data-id="${post.id}" data-title="${post.title}" data-author="${post.author_name}">
-                  <i class="fa-regular fa-reply"></i>
+                  <i data-lucide="reply" width="1em" height="1em"></i>
                 </button>
-                <button class="btn btn-sm btn-outline view-post-btn" data-id="${post.id}"><i class="fa-regular fa-eye"></i></button>
-                <button class="btn btn-sm btn-danger delete-post-btn" data-id="${post.id}"><i class="fa-regular fa-trash-can"></i></button>
+                <button class="btn btn-sm btn-outline view-post-btn" data-id="${post.id}"><i data-lucide="eye" width="1em" height="1em"></i></button>
+                <button class="btn btn-sm btn-danger delete-post-btn" data-id="${post.id}"><i data-lucide="trash-2" width="1em" height="1em"></i></button>
               </div>
             </td>
           </tr>
@@ -1368,19 +1366,19 @@
             <td>
               <div class="action-btns">
                 ${c.status === 'pending' ? `
-                  <button class="btn btn-sm btn-primary approve-comment-btn" data-id="${c.id}"><i class="fa-regular fa-circle-check"></i> Approve</button>
-                  <button class="btn btn-sm btn-danger reject-comment-btn" data-id="${c.id}"><i class="fa-regular fa-circle-xmark"></i> Reject</button>
+                  <button class="btn btn-sm btn-primary approve-comment-btn" data-id="${c.id}"><i data-lucide="circle-check" width="1em" height="1em"></i> Approve</button>
+                  <button class="btn btn-sm btn-danger reject-comment-btn" data-id="${c.id}"><i data-lucide="circle-x" width="1em" height="1em"></i> Reject</button>
                 ` : ''}
                 ${c.status === 'approved' ? `
-                  <button class="btn btn-sm btn-danger reject-comment-btn" data-id="${c.id}"><i class="fa-regular fa-circle-xmark"></i> Reject</button>
+                  <button class="btn btn-sm btn-danger reject-comment-btn" data-id="${c.id}"><i data-lucide="circle-x" width="1em" height="1em"></i> Reject</button>
                 ` : ''}
                 ${c.status === 'rejected' ? `
-                  <button class="btn btn-sm btn-primary approve-comment-btn" data-id="${c.id}"><i class="fa-regular fa-circle-check"></i> Approve</button>
+                  <button class="btn btn-sm btn-primary approve-comment-btn" data-id="${c.id}"><i data-lucide="circle-check" width="1em" height="1em"></i> Approve</button>
                 ` : ''}
                 <button class="btn btn-sm btn-secondary admin-reply-comment-btn" data-id="${c.id}" data-author="${c.author_name}" data-postid="${c.post_id}">
-                  <i class="fa-regular fa-reply"></i>
+                  <i data-lucide="reply" width="1em" height="1em"></i>
                 </button>
-                <button class="btn btn-sm btn-danger delete-comment-btn" data-id="${c.id}"><i class="fa-regular fa-trash-can"></i></button>
+                <button class="btn btn-sm btn-danger delete-comment-btn" data-id="${c.id}"><i data-lucide="trash-2" width="1em" height="1em"></i></button>
               </div>
             </td>
           </tr>
@@ -1455,7 +1453,7 @@
         const avatarUrl = urlData.publicUrl;
         await supabaseClient.from('admin_settings').upsert({ id: 1, avatar_url: avatarUrl }, { onConflict: 'id' });
         settingsAvatarPreview.src = avatarUrl;
-        settingsAvatarStatus.textContent = '✅ Avatar updated!';
+        window.setLucideStatus(settingsAvatarStatus, 'circle-check', 'Avatar updated!');
         settingsAvatarStatus.style.color = '#28a745';
         showToast('Avatar saved successfully!');
       }
@@ -1591,7 +1589,7 @@
         const source = currentGallerySource();
 
         if (!title) {
-          uploadStatus.textContent = '⚠️ Please enter a title.';
+          window.setLucideStatus(uploadStatus, 'triangle-alert', 'Please enter a title.');
           uploadStatus.style.color = 'var(--orange-deep)';
           return;
         }
@@ -1603,7 +1601,7 @@
             const videoId = window.extractYouTubeVideoId(itemYoutubeUrl.value);
 
             if (!videoId) {
-              uploadStatus.textContent = '❌ Enter a valid YouTube video, Shorts, Live or share link.';
+              window.setLucideStatus(uploadStatus, 'circle-x', 'Enter a valid YouTube video, Shorts, Live or share link.');
               uploadStatus.style.color = 'red';
               return;
             }
@@ -1621,19 +1619,19 @@
               }]);
 
             if (youtubeError) {
-              uploadStatus.textContent = '❌ Database error: ' + youtubeError.message;
+              window.setLucideStatus(uploadStatus, 'circle-x', 'Database error: ' + youtubeError.message);
               uploadStatus.style.color = 'red';
               console.error('YouTube gallery insert error:', youtubeError);
               return;
             }
 
-            uploadStatus.textContent = '✅ YouTube video added to the gallery.';
+            window.setLucideStatus(uploadStatus, 'circle-check', 'YouTube video added to the gallery.');
             uploadStatus.style.color = 'var(--green-wa)';
           } else {
             const file = itemFileInput.files[0];
 
             if (!file) {
-              uploadStatus.textContent = '⚠️ Select an image or video file.';
+              window.setLucideStatus(uploadStatus, 'triangle-alert', 'Select an image or video file.');
               uploadStatus.style.color = 'var(--orange-deep)';
               return;
             }
@@ -1642,7 +1640,7 @@
             const fileSizeMB = file.size / (1024 * 1024);
 
             if (fileSizeMB > MAX_FILE_SIZE_MB) {
-              uploadStatus.textContent = `❌ File too large (${fileSizeMB.toFixed(1)}MB). Max ${MAX_FILE_SIZE_MB}MB.`;
+              window.setLucideStatus(uploadStatus, 'circle-x', `File too large (${fileSizeMB.toFixed(1)}MB). Max ${MAX_FILE_SIZE_MB}MB.`);
               uploadStatus.style.color = 'red';
               return;
             }
@@ -1659,7 +1657,7 @@
               .upload(filePath, file, { cacheControl: '3600', upsert: false });
 
             if (uploadError) {
-              uploadStatus.textContent = `❌ Upload failed: ${uploadError.message}`;
+              window.setLucideStatus(uploadStatus, 'circle-x', `Upload failed: ${uploadError.message}`);
               uploadStatus.style.color = 'red';
               console.error('Upload error:', uploadError);
               return;
@@ -1674,13 +1672,13 @@
 
             if (dbError) {
               await supabaseClient.storage.from('gallery').remove([filePath]);
-              uploadStatus.textContent = `❌ Database error: ${dbError.message}`;
+              window.setLucideStatus(uploadStatus, 'circle-x', `Database error: ${dbError.message}`);
               uploadStatus.style.color = 'red';
               console.error('DB error:', dbError);
               return;
             }
 
-            uploadStatus.textContent = `✅ Uploaded successfully! (${fileSizeMB.toFixed(1)}MB)`;
+            window.setLucideStatus(uploadStatus, 'circle-check', `Uploaded successfully! (${fileSizeMB.toFixed(1)}MB)`);
             uploadStatus.style.color = 'var(--green-wa)';
           }
 
@@ -1690,7 +1688,7 @@
           resetYouTubePreview();
           await loadAdminItems();
         } catch (err) {
-          uploadStatus.textContent = `❌ Unexpected error: ${err.message}`;
+          window.setLucideStatus(uploadStatus, 'circle-x', `Unexpected error: ${err.message}`);
           uploadStatus.style.color = 'red';
           console.error('Gallery submission exception:', err);
         } finally {
@@ -1838,11 +1836,11 @@
           if (error) errorCount++;
         }
         if (errorCount === 0) {
-          contentStatus.textContent = '✅ All changes saved successfully!';
+          window.setLucideStatus(contentStatus, 'circle-check', 'All changes saved successfully!');
           contentStatus.style.color = '#28a745';
           showToast('Content saved!', 'success');
         } else {
-          contentStatus.textContent = `⚠️ ${errorCount} errors occurred. Check console.`;
+          window.setLucideStatus(contentStatus, 'triangle-alert', `${errorCount} errors occurred. Check console.`);
           contentStatus.style.color = '#dc3545';
           showToast('Some changes failed to save.', 'error');
         }
@@ -1867,5 +1865,5 @@
       await checkAuth();
     })();
   </script>
-</body>
+<script src="https://unpkg.com/lucide@latest"></script><script>lucide.createIcons();</script></body>
 </html>
