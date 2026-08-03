@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap");
 /* ==========================================================================
            NOBLES COOPERATIVE — Design System
            Display: Fraunces (warm, dignified serif)
@@ -8,12 +9,12 @@
         :root {
             /* --- Brand palette (kept from source brand + supporting tones) --- */
             --purple: #5C008C;
-            --purple-deep: #2A0044;
+            --purple-deep: #2F0D46;
             --purple-mid: #7E23B4;
             --purple-tint: #F4EBFA;
             --orange: #F49C00;
             --orange-deep: #D98200;
-            --gold: #FFD873;
+            --gold: #F9E8BD;
             --cream: #FFF7E9;
             --paper: #FFFDF8;
             --ink: #0D0D14;
@@ -28,9 +29,9 @@
             --grad-text: linear-gradient(100deg, var(--purple) 0%, var(--purple-mid) 45%, var(--orange) 100%);
 
             /* --- Type --- */
-            --font-display: 'Fraunces', 'Iowan Old Style', Georgia, serif;
-            --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            --font-mono: 'Space Mono', 'SFMono-Regular', Menlo, monospace;
+              --font-display: "Playfair Display", "Iowan Old Style", Georgia, serif;
+            --font-body: "DM Sans", -apple-system, BlinkMacSystemFont,"Segoe UI", Roboto, Arial, sans-serif;
+             --font-mono: "Space Mono", "SFMono-Regular", Menlo, Monaco, Consolas, monospace;
 
             /* --- Motion --- */
             --ease: cubic-bezier(.22, 1, .36, 1);
