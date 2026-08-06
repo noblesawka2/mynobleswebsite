@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us — Nobles Cooperative</title>
-    <meta name="description" content="Get in touch with Nobles Cooperative. We're here to help with enquiries, support requests, and partnership opportunities." />
+    <meta name="description" content="Get in touch with Nobles Cooperative. We are here to help with enquiries and support requests." />
     <link rel="icon" type="image/png" href="/asset/favicon.png" />
 
     <!-- Google Fonts -->
@@ -294,6 +294,46 @@
             font-size: .9rem;
         }
 
+        .call-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 1200;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: rgba(20, 8, 28, .68);
+        }
+        .call-modal.is-open {
+            display: flex;
+        }
+        .call-modal-dialog {
+            width: min(420px, 100%);
+            border-radius: var(--r-lg);
+            background: var(--white);
+            box-shadow: var(--shadow-lg);
+            padding: 28px;
+            position: relative;
+        }
+        .call-modal-dialog h2 {
+            font-family: var(--font-display);
+            color: var(--purple);
+            margin-bottom: 10px;
+        }
+        .call-modal-dialog p {
+            color: var(--muted);
+        }
+        .call-modal-close {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            border: 0;
+            background: transparent;
+            color: var(--purple);
+            cursor: pointer;
+            padding: 8px;
+        }
+
         /* ---------- Social Media ---------- */
         .social-links-grid {
             display: flex;
@@ -472,7 +512,7 @@
             <!-- Save & Invest -->
             <li>
                 <button class="nav-link-label" aria-haspopup="true" aria-expanded="false" type="button">
-                    Save &amp; Build
+                    Save and Build
                     <span class="dropdown-arrow"><i data-lucide="chevron-down" width="12" height="12" aria-hidden="true"></i></span>
                 </button>
                 <ul class="nav-dropdown">
@@ -501,7 +541,7 @@
                 </ul>
             </li>
 
-            <!-- Partner -->
+            <!-- Resources -->
             <li>
                 <button class="nav-link-label" aria-haspopup="true" aria-expanded="false" type="button">
                     Resources
@@ -557,7 +597,7 @@
             <!-- Save & Invest -->
             <div class="mm-item">
                 <button class="mm-link" data-mm-accordion type="button">
-                    <span>Save &amp; Build</span>
+                    <span>Save and Build</span>
                     <span class="mm-arrow"><i data-lucide="chevron-down" width="12" height="12" aria-hidden="true"></i></span>
                 </button>
                 <div class="mm-sublinks">
@@ -584,18 +624,6 @@
                     <a href="/loans/easypay">EasyPay</a>
                     <a href="/loans/empowerloan">Empower Loan</a>
                     <a href="/loans/kitchensaver">Kitchen Saver</a>
-                </div>
-            </div>
-
-            <!-- Partner -->
-            <div class="mm-item">
-                <button class="mm-link" data-mm-accordion type="button">
-                    <span>Partner</span>
-                    <span class="mm-arrow"><i data-lucide="chevron-down" width="12" height="12" aria-hidden="true"></i></span>
-                </button>
-                <div class="mm-sublinks">
-                    <a href="/partner-enquiry">Partners</a>
-                    <a href="/nobles-vault">Nobles Vault</a>
                 </div>
             </div>
 
@@ -650,15 +678,24 @@
                         Get in Touch
                     </div>
                     <h1>We'd Love to Hear From You.</h1>
-                    <p>Whether you have a question, need support or want to explore partnership opportunities, our team is ready to assist you.</p>
+                    <p>Have a question or need help? Our team is ready to assist you.</p>
                     <div style="display:flex; flex-wrap:wrap; gap:14px;">
-                        <a href="tel:+2349151142355" class="btn btn-primary"><span><i data-lucide="phone" width="1em" height="1em"></i> Call Us</span></a>
+                        <a href="tel:+2349151142355" class="btn btn-primary" id="callUsAction"><span><i data-lucide="phone" width="1em" height="1em"></i> Call Us</span></a>
                         <a href="#contact-form" class="btn btn-outline-invert"><span><i data-lucide="send" width="1em" height="1em"></i> Send a Message</span></a>
                     </div>
                 </div>
                 <div class="contact-hero-image">
                     <img src="../Materials for the Website/Contact Us.jpg" alt="Friendly Nobles staff welcoming visitors at the office" loading="lazy" />
                 </div>
+
+        <div class="call-modal" id="callModal" aria-hidden="true">
+            <div class="call-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="callModalTitle">
+                <button type="button" class="call-modal-close" id="callModalClose" aria-label="Close phone numbers"><i data-lucide="x" width="20" height="20" aria-hidden="true"></i></button>
+                <h2 id="callModalTitle">Call Nobles</h2>
+                <p>Official phone number:</p>
+                <p><strong>+234 915 114 2355</strong></p>
+            </div>
+        </div>
             </div>
         </section>
 
@@ -685,7 +722,7 @@
                             <i data-lucide="mail" width="1em" height="1em"></i>
                         </div>
                         <h4>Email</h4>
-                        <p><a href="mailto:noblesawka2@gmail.com">noblesawka2@gmail.com</a></p>
+                        <p><a href="mailto:info@mynoblescooperative.com">info@mynoblescooperative.com</a></p>
                         <p style="font-size:.8rem; color:var(--muted);">We reply within 24 hours</p>
                     </div>
                     <!-- Address -->
@@ -721,7 +758,7 @@
                 <div class="contact-form-wrapper reveal">
                     <div class="form-side">
                         <h3>We're Here to Help</h3>
-                        <p>Whether you're a member, a prospective member, or a partner, we'd love to hear from you.</p>
+                        <p>Whether you are a member or you want to join, we would love to hear from you.</p>
                         <form id="contactForm" novalidate>
                             <div class="form-group">
                                 <label for="contactName">Full Name *</label>
@@ -732,16 +769,15 @@
                                 <input type="email" id="contactEmail" placeholder="chinonso@example.com" required />
                             </div>
                             <div class="form-group">
-                                <label for="contactPhone">Phone Number</label>
-                                <input type="tel" id="contactPhone" placeholder="080 1234 5678" />
+                                <label for="contactPhone">WhatsApp Number</label>
+                                <input type="tel" id="contactPhone" placeholder="Enter your WhatsApp number" />
                             </div>
                             <div class="form-group">
                                 <label for="contactSubject">Subject *</label>
                                 <select id="contactSubject" required>
                                     <option value="">Select a subject</option>
-                                    <option value="membership">Membership Enquiry</option>
+                                    <option value="registration">Registration Enquiry</option>
                                     <option value="support">Support Request</option>
-                                    <option value="partnership">Partnership Opportunity</option>
                                     <option value="feedback">Feedback / Suggestion</option>
                                     <option value="complaint">Complaint</option>
                                     <option value="other">Other</option>
@@ -761,7 +797,7 @@
                             </div>
                         </form>
                     </div>
-                    <div>
+                    <div id="location">
                         <h3 style="font-family:var(--font-display); font-size:1.4rem; color:var(--purple); margin-bottom:12px; font-weight:700;">
                             Visit Our Office
                         </h3>
@@ -811,7 +847,7 @@
                 </div>
                 <div class="holiday-notice reveal">
                     <i data-lucide="calendar" width="1em" height="1em" style="margin-right:8px;"></i>
-                    Public holidays: We observe all Nigerian national holidays. Our team will respond to enquiries on the next working day.
+                    We do not close for public holidays unless we announce otherwise.
                 </div>
             </div>
         </section>
@@ -824,15 +860,14 @@
                     <p>Follow us on social media for updates, financial tips, and community news.</p>
                 </div>
                 <div class="social-links-grid reveal-stagger reveal">
-                    <a href="https://facebook.com/noblescoop" target="_blank" class="social-link">
+                    <a href="https://facebook.com/noblescoop" target="_blank" rel="noopener noreferrer" aria-label="Visit Nobles on Facebook" class="social-link">
                         <i class="fa-brands fa-facebook social-icon"></i> Facebook
                     </a>
-                    <a href="https://instagram.com/noblescop" target="_blank" class="social-link">
+                    <a href="https://instagram.com/noblescop" target="_blank" rel="noopener noreferrer" aria-label="Visit Nobles on Instagram" class="social-link">
                         <i class="fa-brands fa-instagram social-icon"></i> Instagram
                     </a>
-                    <a href="https://x.com/joinnobles" target="_blank" class="social-link">
+                    <a href="https://x.com/joinnobles" target="_blank" rel="noopener noreferrer" aria-label="Visit Nobles on X" class="social-link">
                         <i class="fa-brands fa-x-twitter social-icon"></i> X (Twitter)
-                    </a>
                     </a>
                 </div>
             </div>
@@ -852,7 +887,7 @@
                             <i data-lucide="chevron-down" width="1em" height="1em" class="faq-arrow"></i>
                         </button>
                         <div class="faq-answer">
-                            <p>To become a member, simply download the Nobles Vault app or visit our office at No. 331B Ziks Avenue (MTN Office), Amaenyi, Awka, Anambra State. The membership fee is ₦1,000 (one-time lifetime share).</p>
+                            <p>To join Nobles, register through Nobles Vault or <a href="/contact#location">visit our office</a>. Registration fee is ₦1,000.</p>
                         </div>
                     </div>
                     <div class="faq-item">
@@ -861,7 +896,7 @@
                             <i data-lucide="chevron-down" width="1em" height="1em" class="faq-arrow"></i>
                         </button>
                         <div class="faq-answer">
-                            <p>We offer savings plans (EasySave, Future Fund, Gold Vault, EduSave), loans (MarketLift, MarketPower, Unity Loan, EasyPay, Empower Loan, Kitchen Saver), and financial education. All services are designed for women in South-East Nigeria.</p>
+                            <p>We offer savings, Group Savings, Savings Challenge, responsible loans for registered members, financial education, Food Vault and other savings plans shown on this website.</p>
                         </div>
                     </div>
                     <div class="faq-item">
@@ -870,7 +905,7 @@
                             <i data-lucide="chevron-down" width="1em" height="1em" class="faq-arrow"></i>
                         </button>
                         <div class="faq-answer">
-                            <p>Loan applications are processed through the Nobles Vault app. You'll need to be an active member with a savings history. Our team will guide you through the vetting process.</p>
+                            <p>Loans are only available to registered members. Please <a href="/contact#location">visit our office</a> so our team can guide you.</p>
                         </div>
                     </div>
                     <div class="faq-item">
@@ -879,7 +914,7 @@
                             <i data-lucide="chevron-down" width="1em" height="1em" class="faq-arrow"></i>
                         </button>
                         <div class="faq-answer">
-                            <p>Yes, Nobles Cooperative is fully registered with the Anambra State Government under registration number AN 17915. We operate in full compliance with all cooperative regulations.</p>
+                            <p>Yes. Nobles Cooperative is registered under Section 4 of the Nigerian Cooperative Societies Act 98 of 2004 as AN 17915 and is registered with the Anambra State Government. We operate in line with applicable cooperative regulations.</p>
                         </div>
                     </div>
                     <div class="faq-item">
@@ -888,7 +923,7 @@
                             <i data-lucide="chevron-down" width="1em" height="1em" class="faq-arrow"></i>
                         </button>
                         <div class="faq-answer">
-                            <p>Absolutely! Our Awka office is open Monday–Friday, 8AM–5PM. Our friendly staff will be happy to assist you in person.</p>
+                            <p>Yes. You can <a href="/contact#location">visit our office</a> from Monday to Friday, 8AM to 5PM. Our staff will help you.</p>
                         </div>
                     </div>
                 </div>
@@ -921,25 +956,26 @@
                 <div class="footer-logo-chip">
     <img src="./Materials for the Website/6 Logos/N2 Logo full new.png" alt="Nobles Cooperative logo" />
 </div>
-                <p style="color:rgba(255,255,255,.72); max-width:280px; line-height:1.7;">Plan. Save. Build. Grow — with dignity. A women-first financial cooperative and strategic development ecosystem built for the South-East.</p>
+                <p style="color:rgba(255,255,255,.72); max-width:280px; line-height:1.7;">Plan. Save. Build. Grow — with dignity. A women-first financial cooperative and strategic development ecosystem built for Anambra.</p>
                 <p class="footer-reg">Anambra State Cooperative — Reg. No. AN 17915</p>
             </div>
             <div class="footer-col">
                 <h4>Empowerment hubs</h4>
                 <ul>
-                    <!-- <li><a href="#">Save &amp; Build</a></li>
+                    <!-- <li><a href="#">Save and Build</a></li>
                     <li><a href="#">Borrow Responsibly</a></li>
                     <li><a href="#">Financial Calculators</a></li> -->
                     <li><a href="#">Impact Programs</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Partner With Us</h4>
+                <h4>Legal and Social</h4>
                 <ul>
-                    <li><a href="/investors">Investors</a></li>
-                    <li><a href="/legacybuilders">LegacyBuilders</a></li>
-                    <li><a href="/nobles-vault">Nobles Vault</a></li>
-                    <li><a href="/partner-enquiry">Partners</a></li>
+                    <li><a href="/terms-and-conditions">Terms and Conditions</a></li>
+                    <li><a href="/data-policy">Data Policy</a></li>
+                    <li><a href="https://facebook.com/noblescoop" target="_blank" rel="noopener noreferrer" aria-label="Visit Nobles on Facebook"><i class="fa-brands fa-facebook" aria-hidden="true"></i> Facebook</a></li>
+                    <li><a href="https://instagram.com/noblescop" target="_blank" rel="noopener noreferrer" aria-label="Visit Nobles on Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+                    <li><a href="https://x.com/joinnobles" target="_blank" rel="noopener noreferrer" aria-label="Visit Nobles on X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i> X</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -954,7 +990,7 @@
             <div class="footer-col">
                 <h4>Immediate help</h4>
                 <ul>
-                    <li><a href="/vault-support">Vault Setup Support</a></li>
+                    
                     <li><a href="https://cdn.botpress.cloud/webchat/v3.7/shareable.html?configUrl=https://files.bpcontent.cloud/2026/05/12/08/20260512081608-IX0TLUF2.json" target="_blank">Chat with Nola</a></li>
                     <li><a href="/complaints">Complaints Portal</a></li>
                 </ul>
@@ -990,6 +1026,55 @@
             const form = document.getElementById('contactForm');
             const successMsg = document.getElementById('formSuccess');
             const toast = document.getElementById('toast');
+            const callUsAction = document.getElementById('callUsAction');
+            const callModal = document.getElementById('callModal');
+            const callModalClose = document.getElementById('callModalClose');
+            let callModalTrigger = null;
+
+            function openCallModal(trigger) {
+                callModalTrigger = trigger;
+                callModal.classList.add('is-open');
+                callModal.setAttribute('aria-hidden', 'false');
+                callModalClose.focus();
+            }
+
+            function closeCallModal() {
+                callModal.classList.remove('is-open');
+                callModal.setAttribute('aria-hidden', 'true');
+                if (callModalTrigger) callModalTrigger.focus();
+            }
+
+            callUsAction.addEventListener('click', function(e) {
+                if (window.matchMedia('(min-width: 769px)').matches) {
+                    e.preventDefault();
+                    openCallModal(this);
+                }
+            });
+
+            callModalClose.addEventListener('click', closeCallModal);
+            callModal.addEventListener('click', function(e) {
+                if (e.target === callModal) closeCallModal();
+            });
+            callModal.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    e.preventDefault();
+                    closeCallModal();
+                    return;
+                }
+                if (e.key !== 'Tab') return;
+                var focusable = callModal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+                if (!focusable.length) return;
+                var first = focusable[0];
+                var last = focusable[focusable.length - 1];
+                if (e.shiftKey && document.activeElement === first) {
+                    e.preventDefault();
+                    last.focus();
+                } else if (!e.shiftKey && document.activeElement === last) {
+                    e.preventDefault();
+                    first.focus();
+                }
+            });
+
 
             // ---- Toast ----
             function showToast(msg, type) {

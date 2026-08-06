@@ -1,6 +1,6 @@
 # Frequently Asked Questions
 
-Find quick answers to common questions about membership, savings, loans, the Nobles Vault App and our services.
+Find quick answers to common questions about registration, savings, loans, the Nobles Vault App and our services.
 
 **Primary CTA:** Contact Support  
 **Secondary CTA:** Become a Member
@@ -9,7 +9,7 @@ Find quick answers to common questions about membership, savings, loans, the Nob
 
 **Total FAQ entries:** 138
 
-## Membership
+## Registration
 
 ### What is Nobles Cooperative?
 <a id="what-is-nobles-cooperative"></a>
@@ -34,30 +34,30 @@ Eligible adults who want structured savings, responsible credit, financial educa
 ### Are Nobles products available to non-members?
 <a id="are-nobles-products-available-to-non-members"></a>
 
-Nobles products are designed for registered members. A visitor may receive information, product guidance and onboarding support before completing membership, but contribution plans and credit facilities are activated only under the applicable membership and KYC rules.
+Nobles products are designed for registered members. A visitor may receive information, product guidance and onboarding support before completing registration, but contribution plans and credit facilities are activated only under the applicable registration and KYC rules.
 
-### What does Nobles membership give me access to?
-<a id="what-does-nobles-membership-give-me-access-to"></a>
+### What does Nobles registration give me access to?
+<a id="what-does-nobles-registration-give-me-access-to"></a>
 
-Membership allows an eligible person to open an approved contribution plan, receive financial education and cooperative support, use available Nobles Vault services and request assessment for suitable credit or ancillary programmes. Membership does not guarantee a loan, a return, a particular limit or immediate access to every product.
+Registration allows an eligible person to open an approved contribution plan, receive financial education and cooperative support, use available Nobles Vault services and request assessment for suitable credit or ancillary programmes. Registration does not guarantee a loan, a return, a particular limit or immediate access to every product.
 
-### Does membership automatically make me a shareholder?
-<a id="does-membership-automatically-make-me-a-shareholder"></a>
+### Does registration automatically make me a shareholder?
+<a id="does-registration-automatically-make-me-a-shareholder"></a>
 
-No. Membership and shareholding are separate. Becoming a member allows you to begin an approved contribution plan and access eligible cooperative services. Shareholding applies only where a member separately subscribes for approved shares, completes the required process and is entered in the applicable share register.
+No. Registration and shareholding are separate. Becoming a member allows you to begin an approved contribution plan and access eligible cooperative services. Shareholding applies only where a member separately subscribes for approved shares, completes the required process and is entered in the applicable share register.
 
 ### Can I subscribe for shares separately?
 <a id="can-i-subscribe-for-shares-separately"></a>
 
-Where share subscription is available, an eligible member may apply under the approved share terms. The amount, rights, restrictions and evidence of ownership must be disclosed separately from ordinary membership or savings contributions. Paying into a contribution plan does not by itself purchase shares.
+Where share subscription is available, an eligible member may apply under the approved share terms. The amount, rights, restrictions and evidence of ownership must be disclosed separately from ordinary registration or savings contributions. Paying into a contribution plan does not by itself purchase shares.
 
 ### How do I become a member?
 <a id="how-do-i-become-a-member"></a>
 
-Begin through the Nobles Vault app, official WhatsApp support or assisted registration at the Nobles office. Provide accurate personal details, complete the required KYC and identity verification, activate your membership, open the appropriate entry plan and make your first suitable contribution through an approved channel.
+Begin through the Nobles Vault app, official WhatsApp support or assisted registration at the Nobles office. Provide accurate personal details, complete the required KYC and identity verification, activate your registration, open the appropriate entry plan and make your first suitable contribution through an approved channel.
 
-### What documents or information are required for membership?
-<a id="what-documents-or-information-are-required-for-membership"></a>
+### What documents or information are required for registration?
+<a id="what-documents-or-information-are-required-for-registration"></a>
 
 You will normally provide your full name, active phone number, residential address, date of birth, BVN, NIN and next-of-kin details. Depending on your KYC level or the product requested, Nobles may also require a valid ID, passport photograph, proof of address, employment or business information and other supporting documents.
 
@@ -71,10 +71,10 @@ BVN and NIN help confirm identity, match names, reduce impersonation, protect me
 
 You can begin your savings journey from as little as ₦500 through an approved entry plan such as EasySave. The purpose is to build consistency and financial structure rather than to wait until you have a large amount.
 
-### Are there membership, registration or share fees?
-<a id="are-there-membership-registration-or-share-fees"></a>
+### Are there registration, registration or share fees?
+<a id="are-there-registration-registration-or-share-fees"></a>
 
-Any applicable membership, registration or separate share-subscription charge will be disclosed before payment. Pay only through an approved Nobles channel and keep the official receipt or transaction confirmation. A staff member must not invent or collect an undisclosed fee.
+Any applicable registration, registration or separate share-subscription charge will be disclosed before payment. Pay only through an approved Nobles channel and keep the official receipt or transaction confirmation. A staff member must not invent or collect an undisclosed fee.
 
 ### Can I join without using a smartphone?
 <a id="can-i-join-without-using-a-smartphone"></a>
@@ -84,22 +84,22 @@ Yes. Nobles is digital-first, not digital-only. Members who need help may regist
 ### Can I join Nobles if I live outside Awka?
 <a id="can-i-join-nobles-if-i-live-outside-awka"></a>
 
-Membership and contribution-plan access may be available to eligible people outside Awka through Nobles Vault and approved support channels. Credit access is currently more restricted because physical verification, monitoring and recovery may be required; the credit team will confirm whether your location is serviceable.
+Registration and contribution-plan access may be available to eligible people outside Awka through Nobles Vault and approved support channels. Credit access is currently more restricted because physical verification, monitoring and recovery may be required; the credit team will confirm whether your location is serviceable.
 
 ### Can I save towards a child’s or another family member’s goal?
 <a id="can-i-save-towards-a-childs-or-another-family-members-goal"></a>
 
-Yes. A parent, guardian or sponsor may save towards a child’s or family member’s school, food or future goal through an approved plan. The registered account holder, beneficiary arrangement and payout instruction must follow Nobles membership, KYC and product rules.
+Yes. A parent, guardian or sponsor may save towards a child’s or family member’s school, food or future goal through an approved plan. The registered account holder, beneficiary arrangement and payout instruction must follow Nobles registration, KYC and product rules.
 
 ### How do I update my phone number, address, next of kin or other details?
 <a id="how-do-i-update-my-phone-number-address-next-of-kin-or-other-details"></a>
 
 Contact official support and complete the required identity checks. Sensitive changes are not made only from a social-media message. Nobles may request a signed instruction, valid ID, BVN or NIN confirmation, proof of address or another control before updating the record.
 
-### Can my membership be restricted, suspended or closed?
-<a id="can-my-membership-be-restricted-suspended-or-closed"></a>
+### Can my registration be restricted, suspended or closed?
+<a id="can-my-registration-be-restricted-suspended-or-closed"></a>
 
-Yes, where required by cooperative rules, incomplete KYC, suspected fraud, unlawful activity, unresolved debt, false information, a member’s verified request or another legitimate control. Closing or restricting membership does not cancel an existing loan, lien, dispute, legal obligation or record-retention requirement.
+Yes, where required by cooperative rules, incomplete KYC, suspected fraud, unlawful activity, unresolved debt, false information, a member’s verified request or another legitimate control. Closing or restricting registration does not cancel an existing loan, lien, dispute, legal obligation or record-retention requirement.
 
 ## Savings
 
@@ -288,12 +288,12 @@ Assessment protects the member, guarantors and cooperative. Nobles must understa
 ### Can I get a loan immediately after joining or downloading the app?
 <a id="can-i-get-a-loan-immediately-after-joining-or-downloading-the-app"></a>
 
-No. Membership or app download does not create automatic loan eligibility. Nobles must complete the applicable verification, repayment-capacity review, documentation, credit checks and approval process.
+No. Registration or app download does not create automatic loan eligibility. Nobles must complete the applicable verification, repayment-capacity review, documentation, credit checks and approval process.
 
 ### Who qualifies for a Nobles loan?
 <a id="who-qualifies-for-a-nobles-loan"></a>
 
-Qualification depends on membership status, KYC, a genuine and acceptable purpose, a clear repayment source, affordability, savings and repayment history, business or employment evidence, existing debts, character, guarantors or security and management approval.
+Qualification depends on registration status, KYC, a genuine and acceptable purpose, a clear repayment source, affordability, savings and repayment history, business or employment evidence, existing debts, character, guarantors or security and management approval.
 
 ### What documents may be required for a loan application?
 <a id="what-documents-may-be-required-for-a-loan-application"></a>
@@ -445,7 +445,7 @@ There is no universal instant-processing promise. Timing depends on the product,
 ### What is the Nobles Vault app?
 <a id="what-is-the-nobles-vault-app"></a>
 
-Nobles Vault is the cooperative’s digital membership and savings tool. It helps members register, complete KYC, activate EasySave, receive funds through approved channels, view activity, open suitable contribution plans and build better money discipline from a phone.
+Nobles Vault is the cooperative’s digital registration and savings tool. It helps members register, complete KYC, activate EasySave, receive funds through approved channels, view activity, open suitable contribution plans and build better money discipline from a phone.
 
 ### Is Nobles Vault free to download?
 <a id="is-nobles-vault-free-to-download"></a>
@@ -480,12 +480,12 @@ Use the dedicated account details or another approved funding method shown in th
 ### Can I activate savings products in the app?
 <a id="can-i-activate-savings-products-in-the-app"></a>
 
-Approved products may be available after membership, EasySave activation and the required KYC. Read the goal, tenor, contribution, return, maturity and withdrawal rules before confirming a plan.
+Approved products may be available after registration, EasySave activation and the required KYC. Read the goal, tenor, contribution, return, maturity and withdrawal rules before confirming a plan.
 
-### Can I get a loan automatically through Nobles Vault?
+### How can I ask about a loan?
 <a id="can-i-get-a-loan-automatically-through-nobles-vault"></a>
 
-No. The app may support a credit enquiry or application route, but every loan still requires eligibility assessment, documentation, verification, repayment-capacity review and approval.
+Loans are only available to registered members. Please [visit our office](/contact#location) so our team can guide you.
 
 ### How do I check my balance or transaction history?
 <a id="how-do-i-check-my-balance-or-transaction-history"></a>
@@ -522,7 +522,7 @@ No. Staff do not need your password, PIN or OTP to assist you. They may verify y
 
 Nobles can guide you step by step through official WhatsApp, staff assistance or office onboarding. Digital-first does not mean you must struggle alone, and no member should give a staff member her PIN or OTP in order to receive help.
 
-## Payments & Withdrawals
+## Payments and Withdrawals
 
 ### What payment channels should I use?
 <a id="what-payment-channels-should-i-use"></a>
@@ -532,7 +532,7 @@ Use only Nobles Vault, your verified Nobles collection account, the cooperative�
 ### Should I pay into a staff member’s personal account?
 <a id="should-i-pay-into-a-staff-members-personal-account"></a>
 
-No. Do not pay membership, savings, loan or any other Nobles funds into a staff member’s personal account. A payment is valid only when it reaches an approved cooperative channel and is properly recorded.
+No. Do not pay registration, savings, loan or any other Nobles funds into a staff member’s personal account. A payment is valid only when it reaches an approved cooperative channel and is properly recorded.
 
 ### Can an authorised staff member collect cash from me?
 <a id="can-an-authorised-staff-member-collect-cash-from-me"></a>
@@ -592,9 +592,9 @@ Contact your bank or payment provider and Nobles immediately. Provide the receip
 ### How can I repay a Nobles loan?
 <a id="how-can-i-repay-a-nobles-loan"></a>
 
-Repay through the approved channel stated in your offer letter and repayment schedule. This may include Nobles Vault, bank transfer, standing instruction, direct debit, Remita, salary deduction or an authorised and receipted collection route. Keep proof until the repayment is posted.
+Repay through the approved channel stated in your offer letter and repayment schedule. This may include bank transfer, standing instruction, direct debit, Remita, salary deduction or an authorised and receipted collection route. Keep proof until the repayment is posted.
 
-## Security & Privacy
+## Security and Privacy
 
 ### Is my money safe with Nobles?
 <a id="is-my-money-safe-with-nobles"></a>
@@ -614,7 +614,7 @@ Confirm the phone number, email, app screen, published account details and trans
 ### What personal information does Nobles collect?
 <a id="what-personal-information-does-nobles-collect"></a>
 
-Nobles collects information needed for membership, KYC, account operation, support, product suitability, lending, fraud prevention and legal or cooperative obligations. This may include identity, contact, address, employment, business, transaction, guarantor and credit information.
+Nobles collects information needed for registration, KYC, account operation, support, product suitability, lending, fraud prevention and legal or cooperative obligations. This may include identity, contact, address, employment, business, transaction, guarantor and credit information.
 
 ### How does Nobles use or share my information?
 <a id="how-does-nobles-use-or-share-my-information"></a>
@@ -666,7 +666,7 @@ Nobles’ community-rooted women-support story began in 2007. The formal coopera
 ### Is Nobles registered and licensed?
 <a id="is-nobles-registered-and-licensed"></a>
 
-Nobles operates through registered cooperative and related approved structures and maintains the registrations or licences applicable to its current activities. Verification documents can be requested through official support or reviewed at the office. Nobles should not be presented as a bank or government funding agency.
+Yes. Nobles Cooperative is registered under Section 4 of the Nigerian Cooperative Societies Act 98 of 2004 as AN 17915 and is registered with the Anambra State Government. We operate in line with applicable cooperative regulations.
 
 ### Where is the Nobles office?
 <a id="where-is-the-nobles-office"></a>
@@ -676,12 +676,12 @@ Nobles operates through registered cooperative and related approved structures a
 ### How can I contact Nobles?
 <a id="how-can-i-contact-nobles"></a>
 
-WhatsApp or call 09151142355 and 09151922608. Email info@mynoblescooperative.com. Use mynoblescooperative.com for verified links, current product information and official notices.
+WhatsApp or call 09151142355 and 09151922608. Email [info@mynoblescooperative.com](mailto:info@mynoblescooperative.com). Use mynoblescooperative.com for verified links, current product information and official notices.
 
 ### What are Nobles’ office and support hours?
 <a id="what-are-nobles-office-and-support-hours"></a>
 
-Current hours are published on the Contact page and official channels. Confirm before travelling on weekends, public holidays or special service days. A staff member should not promise after-hours cash collection or transaction processing outside an approved arrangement.
+We do not close for public holidays unless we announce otherwise. Check the Contact page for our normal opening hours.
 
 ### How do I submit a complaint?
 <a id="how-do-i-submit-a-complaint"></a>
@@ -698,15 +698,6 @@ Reply to the complaint acknowledgement or request escalation, quoting the compla
 
 Yes. Nobles teaches practical savings discipline, budgeting, school-fee and food planning, separation of business and household money, responsible borrowing, repayment discipline and member protection. Education is part of the cooperative service, not an afterthought.
 
-### What is LegacyBuilders?
-<a id="what-is-legacybuilders"></a>
-
-LegacyBuilders Impact Enterprise Ltd is a separate social-impact, business and financial-education platform within the wider Nobles ecosystem. It supports mindset change, budgeting, business structure, investment education and women and youth development, while Nobles provides the cooperative financial structure. Their results and records should not be merged without clear attribution.
-
-### Can a group, church, market association, employer or community partner work with Nobles?
-<a id="can-a-group-church-market-association-employer-or-community-partner-work-with-nobles"></a>
-
-Yes. Nobles may support approved membership drives, group savings, financial education, workplace onboarding, market activation and referral partnerships. A partner does not receive access to member balances, PINs, OTPs or private account information.
 
 ### Why do some materials use different Nobles names?
 <a id="why-do-some-materials-use-different-nobles-names"></a>
