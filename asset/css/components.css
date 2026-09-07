@@ -1,5 +1,5 @@
 :root { --content-wide: 72rem; --content-prose: 46rem; }
-.inner-hero { padding: clamp(7rem, 12vw, 10rem) 0 clamp(3rem, 7vw, 6rem); background: var(--cream, #fff7e9); }
+.inner-hero { padding: clamp(7rem, 12vw, 10rem) 0 clamp(3rem, 7vw, 6rem); background: var(--purple, #32105c) url('/asset/background3.png') center/cover no-repeat; color: #fff; }
 .inner-hero h1 { max-width: 18ch; margin: .5rem 0 1rem; }
 .inner-hero p { max-width: 62ch; }
 .breadcrumbs ol { display: flex; flex-wrap: wrap; gap: .5rem; padding: 0; margin: 0 0 1rem; list-style: none; }
