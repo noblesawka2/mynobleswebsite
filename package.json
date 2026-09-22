@@ -1,7 +1,11 @@
 {
   "name": "nobles-cooperative-website",
   "private": true,
+  "scripts": {
+    "test": "node --test"
+  },
   "dependencies": {
+    "@supabase/supabase-js": "^2.57.0",
     "@vercel/analytics": "^2.0.1"
   }
 }

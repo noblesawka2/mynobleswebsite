@@ -4,3 +4,5 @@ node_modules/
 .env
 .env.*
 !.env.example
+nobles-system/config/config.php
+nobles-system/install.lock

@@ -676,7 +676,7 @@ Yes. Nobles Cooperative is registered under Section 4 of the Nigerian Cooperativ
 ### How can I contact Nobles?
 <a id="how-can-i-contact-nobles"></a>
 
-WhatsApp or call 09151142355 and 09151922608. Email [info@mynoblescooperative.com](mailto:info@mynoblescooperative.com). Use mynoblescooperative.com for verified links, current product information and official notices.
+WhatsApp or call 09151142355 and 09151922608. For support, email [support@mynoblescooperative.com](mailto:support@mynoblescooperative.com). For suggestions, email [info@mynoblescooperative.com](mailto:info@mynoblescooperative.com). Use mynoblescooperative.com for verified links, current product information and official notices.
 
 ### What are Nobles’ office and support hours?
 <a id="what-are-nobles-office-and-support-hours"></a>

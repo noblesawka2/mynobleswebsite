@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Forms &amp; Enquiries Admin | Nobles Cooperative</title>
+  <link rel="icon" href="/asset/favicon.png">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <style>
+    :root { font-family: Arial, sans-serif; color: #211a29; background: #f9f6fb; }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    button, input, select { font: inherit; }
+    button { cursor: pointer; }
+    header { background: #fff; border-bottom: 1px solid #e8deec; }
+    .container { max-width: 1200px; margin: auto; padding: 22px; }
+    header .container { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    header img { width: 82px; height: auto; }
+    header nav { display: flex; flex-wrap: wrap; gap: 18px; }
+    header a { color: #4d116d; font-weight: 700; text-decoration: none; }
+    h1 { color: #421066; margin: 10px 0; }
+    .muted { color: #625a69; }
+    .card { background: #fff; padding: 24px; border: 1px solid #e6dce9; border-radius: 14px; box-shadow: 0 7px 22px rgba(41, 18, 62, .05); }
+    #loginCard { max-width: 430px; margin: 55px auto; }
+    label { display: block; margin: 16px 0 6px; font-weight: 700; }
+    input, select { width: 100%; min-height: 43px; padding: 10px; border: 1px solid #cdbdd6; border-radius: 7px; background: #fff; color: #211a29; }
+    .button { min-height: 42px; padding: 10px 18px; border: 0; border-radius: 7px; background: #5c008c; color: #fff; font-weight: 700; }
+    .button.secondary { background: #eee3f5; color: #421066; }
+    .button:disabled { opacity: .55; cursor: wait; }
+    .toolbar { display: grid; grid-template-columns: 1fr 170px 170px auto; gap: 12px; align-items: end; margin: 22px 0; }
+    .toolbar label { margin-top: 0; }
+    .stats { display: flex; gap: 12px; flex-wrap: wrap; margin: 20px 0; }
+    .stats .card { min-width: 160px; }
+    .stats strong { display: block; font-size: 1.6rem; color: #5c008c; }
+    .table-wrap { overflow-x: auto; }
+    table { border-collapse: collapse; width: 100%; min-width: 760px; }
+    th, td { padding: 13px 12px; text-align: left; border-bottom: 1px solid #eee8f0; vertical-align: middle; }
+    th { background: #f6eff8; color: #421066; }
+    td button { border: 1px solid #5c008c; background: #fff; color: #5c008c; border-radius: 6px; padding: 6px 10px; }
+    td select { min-width: 125px; }
+    .pager { display: flex; justify-content: space-between; gap: 12px; align-items: center; margin: 20px 0; }
+    #detailPanel { margin-top: 24px; }
+    #detailFields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    #detailFields div { overflow-wrap: anywhere; }
+    #detailFields strong { display: block; color: #421066; margin-bottom: 4px; }
+    .error { color: #a42424; }
+    .success { color: #116540; }
+    [hidden] { display: none !important; }
+    @media (max-width: 700px) { .toolbar { grid-template-columns: 1fr; } #detailFields { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header><div class="container">
+    <a href="/"><img src="/asset/N1 Logo full.png" alt="Nobles Cooperative"></a>
+    <nav aria-label="Admin navigation"><a href="/admin/">Gallery &amp; Blog Admin</a><a href="/">Website</a></nav>
+  </div></header>
+  <main class="container">
+    <h1>Forms &amp; Enquiries</h1>
+    <p class="muted">Review website enquiries, contact messages, complaints, and membership interests.</p>
+    <section class="card" id="loginCard">
+      <h2>Admin sign in</h2>
+      <p>Use your Nobles admin email and password.</p>
+      <form id="loginForm">
+        <label for="email">Email</label><input id="email" type="email" autocomplete="username" required>
+        <label for="password">Password</label><input id="password" type="password" autocomplete="current-password" required>
+        <p><button class="button" type="submit">Sign in</button></p>
+      </form>
+      <p class="muted">First visit? Open the invitation email, then set your password after signing in.</p>
+      <p id="loginStatus" role="alert"></p>
+    </section>
+    <section id="dashboard" hidden>
+      <button class="button secondary" id="signOut" type="button">Sign out</button>
+      <details class="card" id="passwordSetup" style="margin-top:18px;max-width:470px">
+        <summary style="cursor:pointer;font-weight:700">Set or change your admin password</summary>
+        <form id="passwordForm">
+          <label for="newPassword">New password (at least 12 characters)</label>
+          <input id="newPassword" type="password" autocomplete="new-password" minlength="12" required>
+          <p><button class="button" type="submit">Save password</button></p>
+        </form>
+        <p id="passwordStatus" role="status" aria-live="polite"></p>
+      </details>
+      <div class="stats"><div class="card"><strong id="submissionCount">0</strong>Total matching</div><div class="card"><strong id="pageCount">0</strong>On this page</div></div>
+      <div class="toolbar">
+        <div><label for="search">Search this page</label><input id="search" type="search" placeholder="Reference, name, email, phone"></div>
+        <div><label for="typeFilter">Form</label><select id="typeFilter"><option value="">All forms</option><option value="enquiry">Enquiry</option><option value="contact">Contact</option><option value="complaint">Complaint</option><option value="membership">Membership</option></select></div>
+        <div><label for="statusFilter">Status</label><select id="statusFilter"><option value="">All statuses</option><option value="new">New</option><option value="in_progress">In progress</option><option value="resolved">Resolved</option></select></div>
+        <button class="button secondary" id="exportCsv" type="button">Export this page</button>
+      </div>
+      <p id="dashboardStatus" role="status" aria-live="polite"></p>
+      <div class="card table-wrap"><table><thead><tr><th>Reference</th><th>Form</th><th>Name</th><th>Phone</th><th>Date</th><th>Status</th><th></th></tr></thead><tbody id="rows"></tbody></table></div>
+      <div class="pager"><button class="button secondary" id="previous" type="button">Previous</button><span id="pageLabel"></span><button class="button secondary" id="next" type="button">Next</button></div>
+      <section class="card" id="detailPanel" hidden><h2 id="detailTitle">Submission</h2><div id="detailFields"></div></section>
+    </section>
+  </main>
+  <script>
+    (function () {
+      const client = supabase.createClient(
+        'https://zkijxwuipxgqcofekcco.supabase.co',
+        'sb_publishable_G32CP-7BYGL1oJ8nk8lMmw_Qs7AE8jd'
+      );
+      const $ = id => document.getElementById(id);
+      const login = $('loginCard'), dashboard = $('dashboard'), rows = $('rows');
+      let page = 0, count = 0, currentRows = [];
+
+      async function token() {
+        const { data } = await client.auth.getSession();
+        return data.session?.access_token || '';
+      }
+      async function api(method, body) {
+        const accessToken = await token();
+        if (!accessToken) throw new Error('Please sign in again.');
+        const query = new URLSearchParams({ page, limit: 50 });
+        if ($('typeFilter').value) query.set('type', $('typeFilter').value);
+        if ($('statusFilter').value) query.set('status', $('statusFilter').value);
+        const response = await fetch('/api/admin/submissions' + (method === 'GET' ? '?' + query : ''), {
+          method, headers: { Authorization: 'Bearer ' + accessToken, 'Content-Type': 'application/json' },
+          body: body ? JSON.stringify(body) : undefined
+        });
+        const result = await response.json();
+        if (!response.ok) throw new Error(result.error || 'Request failed.');
+        return result;
+      }
+      function textCell(row, value) {
+        const cell = row.insertCell();
+        cell.textContent = value == null ? '' : String(value);
+        return cell;
+      }
+      function render() {
+        const query = $('search').value.trim().toLowerCase();
+        rows.replaceChildren();
+        const shown = currentRows.filter(item =>
+          [item.reference_no, item.name, item.email, item.whatsapp, item.phone]
+            .some(value => String(value || '').toLowerCase().includes(query))
+        );
+        for (const item of shown) {
+          const row = rows.insertRow();
+          textCell(row, item.reference_no);
+          textCell(row, item.form_type);
+          textCell(row, item.name);
+          textCell(row, item.whatsapp || item.phone);
+          textCell(row, new Date(item.created_at).toLocaleString());
+          const statusCell = row.insertCell();
+          const select = document.createElement('select');
+          for (const [value, label] of [['new','New'],['in_progress','In progress'],['resolved','Resolved']]) {
+            const option = document.createElement('option');
+            option.value = value; option.textContent = label; select.append(option);
+          }
+          select.value = item.status;
+          select.addEventListener('change', async () => {
+            select.disabled = true;
+            try { await api('PATCH', { id: item.id, status: select.value }); item.status = select.value; }
+            catch (error) { select.value = item.status; $('dashboardStatus').textContent = error.message; }
+            finally { select.disabled = false; }
+          });
+          statusCell.append(select);
+          const action = row.insertCell();
+          const view = document.createElement('button');
+          view.type = 'button'; view.textContent = 'View';
+          view.addEventListener('click', () => showDetail(item));
+          action.append(view);
+        }
+        $('pageCount').textContent = shown.length;
+        $('pageLabel').textContent = 'Page ' + (page + 1);
+        $('previous').disabled = page === 0;
+        $('next').disabled = (page + 1) * 50 >= count;
+      }
+      function showDetail(item) {
+        $('detailPanel').hidden = false;
+        $('attachmentDownload')?.remove();
+        $('detailTitle').textContent = item.reference_no + ' — ' + item.form_type;
+        $('detailFields').replaceChildren();
+        const details = { ...item.payload, status: item.status, submitted_at: new Date(item.created_at).toLocaleString() };
+        for (const [key, value] of Object.entries(details)) {
+          if (key === 'consent') continue;
+          const box = document.createElement('div');
+          const label = document.createElement('strong');
+          label.textContent = key.replaceAll('_', ' ');
+          const content = document.createElement('span');
+          content.textContent = Array.isArray(value) ? value.join(', ') : String(value ?? '');
+          box.append(label, content); $('detailFields').append(box);
+        }
+        if (item.attachment_path) {
+          const button = document.createElement('button');
+          button.type = 'button'; button.id = 'attachmentDownload'; button.className = 'button'; button.textContent = 'Download private attachment';
+          button.addEventListener('click', async () => {
+            button.disabled = true;
+            try {
+              const accessToken = await token();
+              const response = await fetch('/api/admin/attachment?id=' + encodeURIComponent(item.id), {
+                headers: { Authorization: 'Bearer ' + accessToken }
+              });
+              const result = await response.json();
+              if (!response.ok) throw new Error(result.error || 'Could not open attachment.');
+              const link = document.createElement('a');
+              link.href = result.url; link.rel = 'noopener noreferrer'; link.download = item.payload.attachment_name || 'attachment';
+              document.body.append(link); link.click(); link.remove();
+            } catch (error) { $('dashboardStatus').textContent = error.message; }
+            finally { button.disabled = false; }
+          });
+          $('detailPanel').append(button);
+        }
+        if (item.nobles_notifications?.length) {
+          const note = document.createElement('p');
+          note.textContent = 'Notifications: ' + item.nobles_notifications.map(n =>
+            `${n.recipient_type} ${n.channel} (${n.recipient}): ${n.status}`).join(' | ');
+          $('detailFields').append(note);
+        }
+        $('detailPanel').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      async function load() {
+        $('dashboardStatus').textContent = 'Loading...';
+        try {
+          const data = await api('GET');
+          currentRows = data.rows; count = data.count;
+          $('submissionCount').textContent = count;
+          login.hidden = true; dashboard.hidden = false;
+          $('dashboardStatus').textContent = '';
+          $('detailPanel').hidden = true;
+          render();
+        } catch (error) {
+          $('dashboardStatus').textContent = error.message;
+          $('loginStatus').textContent = error.message;
+          if (error.message.includes('sign in')) { login.hidden = false; dashboard.hidden = true; }
+        }
+      }
+      $('loginForm').addEventListener('submit', async event => {
+        event.preventDefault();
+        $('loginStatus').textContent = 'Signing in...';
+        const { error } = await client.auth.signInWithPassword({
+          email: $('email').value.trim(), password: $('password').value
+        });
+        if (error) { $('loginStatus').textContent = error.message; return; }
+        $('loginStatus').textContent = '';
+        await load();
+      });
+      $('signOut').addEventListener('click', async () => {
+        await client.auth.signOut(); dashboard.hidden = true; login.hidden = false;
+      });
+      $('passwordForm').addEventListener('submit', async event => {
+        event.preventDefault();
+        const password = $('newPassword').value;
+        if (password.length < 12) { $('passwordStatus').textContent = 'Use at least 12 characters.'; return; }
+        const button = event.currentTarget.querySelector('button[type="submit"]');
+        button.disabled = true;
+        $('passwordStatus').textContent = 'Saving password...';
+        const { error } = await client.auth.updateUser({ password });
+        $('passwordStatus').textContent = error ? error.message : 'Password saved. Use it to sign in next time.';
+        if (!error) event.currentTarget.reset();
+        button.disabled = false;
+      });
+      $('search').addEventListener('input', render);
+      for (const id of ['typeFilter', 'statusFilter']) $(id).addEventListener('change', () => { page = 0; load(); });
+      $('previous').addEventListener('click', () => { page--; load(); });
+      $('next').addEventListener('click', () => { page++; load(); });
+      $('exportCsv').addEventListener('click', () => {
+        const fields = ['reference_no','form_type','name','email','whatsapp','phone','subject','category','product','issue','status','created_at'];
+        const csv = [fields.join(',')].concat(currentRows.map(item =>
+          fields.map(field => {
+            const value = String(item[field] ?? '');
+            const safe = /^[=+@\-\t\r]/.test(value) ? "'" + value : value;
+            return '"' + safe.replaceAll('"', '""') + '"';
+          }).join(',')
+        )).join('\r\n');
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv' }));
+        link.download = 'nobles-submissions-page-' + (page + 1) + '.csv';
+        link.click(); URL.revokeObjectURL(link.href);
+      });
+      token().then(value => { if (value) load(); });
+    })();
+  </script>
+</body>
+</html>

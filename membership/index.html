@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Tell Nobles Cooperative about your membership interest.">
+  <title>Become a Member | Nobles Cooperative</title>
+  <link rel="icon" href="/asset/favicon.png">
+  <link rel="stylesheet" href="/asset/css/styles.css">
+  <link rel="stylesheet" href="/asset/css/components.css">
+  <style>
+    body { background: #fff9ef; color: #201729; }
+    .member-header { background: #fff; border-bottom: 1px solid #e8dced; }
+    .member-header .container { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-top: 14px; padding-bottom: 14px; }
+    .member-header img { width: 92px; height: auto; }
+    .member-header nav { display: flex; flex-wrap: wrap; gap: 20px; }
+    .member-header a { color: #3b115f; font-weight: 700; text-decoration: none; }
+    .member-hero { padding: 76px 0; background: #32105c url('/asset/background3.png') center/cover no-repeat; color: #fff; }
+    .member-hero h1 { color: #fff; font-size: clamp(2.5rem, 6vw, 4.5rem); max-width: 780px; }
+    .member-hero p { max-width: 720px; line-height: 1.7; }
+    .member-main { padding: 64px 0 90px; }
+    .member-card { max-width: 850px; margin: auto; padding: clamp(22px, 5vw, 44px); border-radius: 22px; background: #fff; border: 1px solid #e8dced; box-shadow: 0 18px 50px rgba(43, 13, 63, .08); }
+    .member-card h2 { margin-top: 0; color: #32105c; }
+    .member-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+    .member-field.full { grid-column: 1 / -1; }
+    .member-field label { display: block; font-weight: 700; margin-bottom: 6px; }
+    .member-field input, .member-field select, .member-field textarea { display: block; width: 100%; min-height: 48px; padding: 12px 14px; border: 1px solid #d8c7df; border-radius: 10px; background: #fff; color: #201729; font: inherit; }
+    .member-field textarea { min-height: 110px; resize: vertical; }
+    .member-consent { display: flex; gap: 10px; margin: 22px 0; line-height: 1.5; }
+    .member-consent input { width: 18px; height: 18px; flex: none; margin-top: 4px; }
+    .member-status { margin-top: 18px; min-height: 24px; font-weight: 700; }
+    .member-status.error { color: #a52222; }
+    .member-status.success { color: #176c46; }
+    .member-note { max-width: 850px; margin: 24px auto 0; line-height: 1.7; }
+    @media (max-width: 650px) { .member-grid { grid-template-columns: 1fr; } .member-field.full { grid-column: auto; } }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="member-header"><div class="container">
+    <a href="/" aria-label="Nobles Cooperative home"><img src="/asset/N1 Logo full.png" alt="Nobles Cooperative"></a>
+    <nav aria-label="Main navigation"><a href="/">Home</a><a href="/contact/">Contact</a><a href="/complaints/">Complaints</a><a href="/nobles-vault/">Nobles Vault</a></nav>
+  </div></header>
+  <main id="main">
+    <section class="member-hero"><div class="container">
+      <p>Membership interest</p>
+      <h1>Become a Nobles member</h1>
+      <p>Tell us a little about yourself and the product you are interested in. Our team will guide you through the official registration process.</p>
+    </div></section>
+    <section class="member-main"><div class="container">
+      <div class="member-card">
+        <h2>Start your membership enquiry</h2>
+        <p>This form records your interest. It does not create a Nobles Vault account or request payment.</p>
+        <form id="membershipForm">
+          <div class="member-grid">
+            <div class="member-field full"><label for="memberName">Full name *</label><input id="memberName" name="name" autocomplete="name" maxlength="190" required></div>
+            <div class="member-field"><label for="memberWhatsapp">WhatsApp number *</label><input id="memberWhatsapp" name="whatsapp" type="tel" autocomplete="tel" maxlength="30" required></div>
+            <div class="member-field"><label for="memberPhone">Other phone number</label><input id="memberPhone" name="phone" type="tel" maxlength="30"></div>
+            <div class="member-field"><label for="memberAge">Age range *</label><select id="memberAge" name="age" required><option value="">Select age range</option><option>18 - 25</option><option>26 - 35</option><option>36 - 45</option><option>46 - 55</option><option>56+</option></select></div>
+            <div class="member-field"><label for="memberProduct">Product of interest *</label><select id="memberProduct" name="product" required><option value="">Select a product</option><option>EasySave</option><option>Future Fund</option><option>Gold Vault</option><option>EduSave</option><option>Group Savings</option><option>Monthly Savings Challenge</option><option>Food Vault</option><option>Loan</option></select></div>
+            <div class="member-field"><label for="memberState">State *</label><input id="memberState" name="state" maxlength="100" required></div>
+            <div class="member-field"><label for="memberLga">LGA *</label><input id="memberLga" name="lga" maxlength="100" required></div>
+            <div class="member-field"><label for="memberTown">Town *</label><input id="memberTown" name="town" maxlength="100" required></div>
+            <div class="member-field"><label for="memberSource">How did you hear about Nobles? *</label><select id="memberSource" name="source" required><option value="">Select one</option><option>YouTube</option><option>Facebook</option><option>Instagram</option><option>TikTok</option><option>A Friend/Family</option><option>Marketer</option><option>Other</option></select></div>
+            <div class="member-field full"><label for="memberGoal">What would you like to achieve?</label><textarea id="memberGoal" name="goal" maxlength="2000"></textarea></div>
+          </div>
+          <label class="member-consent"><input type="checkbox" name="consent" value="1" required><span>I agree that Nobles Cooperative may use these details to respond to my membership enquiry. See the <a href="/data-policy/">Privacy &amp; Security Policy</a>. Never include your PIN, password or OTP.</span></label>
+          <button class="btn btn-primary" type="submit">Submit membership enquiry</button>
+          <p id="membershipStatus" class="member-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+      <p class="member-note">Already a member? <a href="/nobles-vault/">Set up Nobles Vault</a> or <a href="/first-contribution/">make your first contribution</a>. Need help? Email <a href="mailto:support@mynoblescooperative.com">support@mynoblescooperative.com</a>. For suggestions, use <a href="mailto:info@mynoblescooperative.com">info@mynoblescooperative.com</a>.</p>
+    </div></section>
+  </main>
+  <footer><div class="container footer-bottom"><div>&copy; 2023 Nobles Cooperative. All rights reserved.</div><div><strong>No Woman Is Left Behind.</strong></div></div></footer>
+  <script src="/asset/js/nobles-forms.js"></script>
+  <script>
+    (function () {
+      const form = document.getElementById('membershipForm');
+      const status = document.getElementById('membershipStatus');
+      const product = new URLSearchParams(location.search).get('product');
+      if (product && [...form.elements.product.options].some(option => option.value === product)) form.elements.product.value = product;
+      form.addEventListener('submit', async function (event) {
+        event.preventDefault();
+        if (!form.reportValidity()) return;
+        const button = form.querySelector('button[type="submit"]');
+        button.disabled = true;
+        status.className = 'member-status';
+        status.textContent = 'Submitting...';
+        try {
+          const fields = Object.fromEntries(new FormData(form));
+          const result = await window.NoblesForms.submit('membership', fields);
+          status.className = 'member-status success';
+          status.textContent = 'Thank you. Your reference is ' + result.reference + '. Our team will contact you.';
+          form.reset();
+        } catch (error) {
+          status.className = 'member-status error';
+          status.textContent = error.message || 'Could not submit. Please try again.';
+        } finally {
+          button.disabled = false;
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
