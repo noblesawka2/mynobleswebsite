@@ -1278,7 +1278,6 @@
             var successTitle = document.getElementById("surveySuccessTitle");
             var successCopy = document.getElementById("surveySuccessCopy");
             var previousFocus = null;
-            var autoOpenTimer = null;
 
             if (!modal || !form) return;
 
@@ -1540,13 +1539,15 @@
                 }
             });
 
-            if (shouldAutoOpen()) {
-                autoOpenTimer = window.setTimeout(function () { openModal(false); }, 4500);
+            function maybeAutoOpenOnScroll() {
+                if ((window.scrollY || window.pageYOffset) < 200) return;
+                window.removeEventListener("scroll", maybeAutoOpenOnScroll);
+                if (modal.hidden && shouldAutoOpen()) openModal(false);
             }
 
-            window.addEventListener("beforeunload", function () { 
-                if (autoOpenTimer) window.clearTimeout(autoOpenTimer);
-            });
+            if (shouldAutoOpen()) {
+                window.addEventListener("scroll", maybeAutoOpenOnScroll, { passive: true });
+            }
         })();
     </script>
 
