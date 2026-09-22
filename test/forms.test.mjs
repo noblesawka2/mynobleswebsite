@@ -6,6 +6,7 @@ import { File } from 'node:buffer';
 import { POST, validateAttachment, validateSubmission } from '../api/forms/submit.mjs';
 import { GET as attachmentGET } from '../api/admin/attachment.mjs';
 import { sendSMS, sendWhatsApp } from '../api/_lib/notifications.mjs';
+import { adminEmails } from '../api/_lib/nobles.mjs';
 
 function fields(type, values) {
   const form = new FormData();
@@ -13,6 +14,12 @@ function fields(type, values) {
   for (const [key, value] of Object.entries(values)) form.set(key, value);
   return form;
 }
+
+test('forms admin email replaces the previous address even with stale Vercel settings', () => {
+  assert.deepEqual(adminEmails(), ['info@mynoblescooperative.com']);
+  assert.deepEqual(adminEmails('admin@mynoblescooperative.com'), ['info@mynoblescooperative.com']);
+  assert.deepEqual(adminEmails('ADMIN@MYNOBLESCOOPERATIVE.COM,info@mynoblescooperative.com'), ['info@mynoblescooperative.com']);
+});
 
 test('membership fields validate and normalize Nigerian phone numbers', () => {
   const { type, data } = validateSubmission(fields('membership', {

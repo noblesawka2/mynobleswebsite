@@ -19,10 +19,19 @@ export function json(data, status = 200) {
   });
 }
 
+export function adminEmails(configured = process.env.NOBLES_ADMIN_EMAILS) {
+  const previous = 'admin@mynoblescooperative.com';
+  const replacement = 'info@mynoblescooperative.com';
+  return [...new Set((configured || replacement).split(',')
+    .map(value => value.trim().toLowerCase())
+    .filter(Boolean)
+    .map(value => value === previous ? replacement : value))];
+}
+
 export async function requireAdmin(request) {
   const token = /^Bearer (.+)$/i.exec(request.headers.get('authorization') || '')?.[1];
   if (!token) return { error: json({ error: 'Sign in to access submissions.' }, 401) };
-  const emails = (process.env.NOBLES_ADMIN_EMAILS || 'admin@mynoblescooperative.com').split(',').map(x => x.trim().toLowerCase()).filter(Boolean);
+  const emails = adminEmails();
   if (!emails.length) return { error: json({ error: 'Admin access has not been configured.' }, 503) };
   const url = process.env.SUPABASE_URL;
   const key = process.env.SUPABASE_PUBLISHABLE_KEY;

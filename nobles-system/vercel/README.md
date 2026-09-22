@@ -15,9 +15,11 @@ the website. It does not use the PHP installer or MySQL schema.
    the repository's `.env.example` for Production and any Preview environment
    you intend to test. The secret key must be a **server-only** Supabase secret
    key; never put it into HTML or browser JavaScript.
-3. Set `NOBLES_ADMIN_EMAILS` to the email of an existing, confirmed Supabase
-   Auth account that you control. Multiple addresses can be comma-separated.
-   This allowlist is checked by the Vercel API, not just by the admin page.
+3. Set `NOBLES_ADMIN_EMAILS=info@mynoblescooperative.com` and invite that
+   address as a Supabase Auth user. Multiple addresses can be comma-separated.
+   The previous `admin@mynoblescooperative.com` value is mapped to `info@` by
+   the API during the transition, but update the Vercel setting as well.
+   The allowlist is checked by the Vercel API, not just by the admin page.
 4. Redeploy after setting variables. Submit a test of each form type and confirm
    each appears at `/admin/forms/`. Test a private attachment download, CSV
    export, and status update using the allowlisted admin account.
