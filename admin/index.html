@@ -581,7 +581,7 @@
                 </div>
               </div>
               <hr style="margin:24px 0; border-color:var(--line);" />
-              <h3><i data-lucide="circle-question" width="1em" height="1em"></i> Quick Actions</h3>
+              <h3><i data-lucide="circle-question-mark" width="1em" height="1em"></i> Quick Actions</h3>
               <div style="display:flex; gap:12px; flex-wrap:wrap;">
                 <a href="/blog" target="_blank" class="btn btn-outline btn-sm"><i data-lucide="eye" width="1em" height="1em"></i> View Blog</a>
                 <button id="refreshBlogBtn" class="btn btn-outline btn-sm"><i data-lucide="refresh-cw" width="1em" height="1em"></i> Refresh Data</button>
@@ -700,7 +700,7 @@
   <!-- Lightbox (for gallery) -->
   <div id="lightbox" style="display:none; position:fixed; inset:0; z-index:2000; background:rgba(0,0,0,0.85); justify-content:center; align-items:center; backdrop-filter:blur(6px);">
     <div style="position:relative; max-width:90vw; max-height:90vh;">
-      <button id="lightboxClose" style="position:absolute; top:-50px; right:0; background:none; border:none; color:white; font-size:2rem; cursor:pointer;">&times;</button>
+      <button id="lightboxClose" aria-label="Close gallery image" style="position:absolute; top:-50px; right:0; background:none; border:none; color:white; font-size:2rem; cursor:pointer;">&times;</button>
       <div id="lightboxContent" style="display:flex; justify-content:center; align-items:center; width:100%; height:100%;"></div>
     </div>
   </div>
@@ -708,7 +708,7 @@
   <!-- Reply Modal (for blog) -->
   <div class="reply-modal" id="replyModal">
     <div class="modal-content">
-      <button class="close-modal" id="closeReplyModal"><i data-lucide="x" width="1em" height="1em"></i></button>
+      <button class="close-modal" id="closeReplyModal" aria-label="Close reply dialog"><i data-lucide="x" width="1em" height="1em"></i></button>
       <h3>Reply as Nobles Cooperative</h3>
       <div class="admin-badge-preview"><i data-lucide="circle-check" width="1em" height="1em" style="color:var(--gold);"></i> Nobles Cooperative <span style="background:var(--gold); color:var(--ink); padding:0 8px; border-radius:50px; font-size:.6rem; font-weight:700;">Verified</span></div>
       <div class="reply-context" id="replyContext">Replying to: <strong id="replyTargetName">Post</strong></div>
@@ -1262,20 +1262,20 @@
             <td>
               <div class="action-btns">
                 ${post.status === 'pending' ? `
-                  <button class="btn btn-sm btn-primary approve-post" data-id="${post.id}"><i data-lucide="circle-check" width="1em" height="1em"></i></button>
-                  <button class="btn btn-sm btn-outline reject-post" data-id="${post.id}"><i data-lucide="circle-x" width="1em" height="1em"></i></button>
+                  <button class="btn btn-sm btn-primary approve-post" data-id="${post.id}"><i data-lucide="circle-check" width="1em" height="1em"></i> Approve</button>
+                  <button class="btn btn-sm btn-outline reject-post" data-id="${post.id}"><i data-lucide="circle-x" width="1em" height="1em"></i> Reject</button>
                 ` : ''}
                 ${post.status === 'approved' ? `
-                  <button class="btn btn-sm btn-outline reject-post" data-id="${post.id}"><i data-lucide="circle-x" width="1em" height="1em"></i></button>
+                  <button class="btn btn-sm btn-outline reject-post" data-id="${post.id}"><i data-lucide="circle-x" width="1em" height="1em"></i> Reject</button>
                 ` : ''}
                 ${post.status === 'rejected' ? `
-                  <button class="btn btn-sm btn-primary approve-post" data-id="${post.id}"><i data-lucide="circle-check" width="1em" height="1em"></i></button>
+                  <button class="btn btn-sm btn-primary approve-post" data-id="${post.id}"><i data-lucide="circle-check" width="1em" height="1em"></i> Approve</button>
                 ` : ''}
                 <button class="btn btn-sm btn-secondary admin-reply-btn" data-id="${post.id}" data-title="${post.title}" data-author="${post.author_name}">
-                  <i data-lucide="reply" width="1em" height="1em"></i>
+                  <i data-lucide="reply" width="1em" height="1em"></i> Reply
                 </button>
-                <button class="btn btn-sm btn-outline view-post-btn" data-id="${post.id}"><i data-lucide="eye" width="1em" height="1em"></i></button>
-                <button class="btn btn-sm btn-danger delete-post-btn" data-id="${post.id}"><i data-lucide="trash-2" width="1em" height="1em"></i></button>
+                <button class="btn btn-sm btn-outline view-post-btn" data-id="${post.id}"><i data-lucide="eye" width="1em" height="1em"></i> View</button>
+                <button class="btn btn-sm btn-danger delete-post-btn" data-id="${post.id}"><i data-lucide="trash-2" width="1em" height="1em"></i> Delete</button>
               </div>
             </td>
           </tr>
@@ -1379,9 +1379,9 @@
                   <button class="btn btn-sm btn-primary approve-comment-btn" data-id="${c.id}"><i data-lucide="circle-check" width="1em" height="1em"></i> Approve</button>
                 ` : ''}
                 <button class="btn btn-sm btn-secondary admin-reply-comment-btn" data-id="${c.id}" data-author="${c.author_name}" data-postid="${c.post_id}">
-                  <i data-lucide="reply" width="1em" height="1em"></i>
+                  <i data-lucide="reply" width="1em" height="1em"></i> Reply
                 </button>
-                <button class="btn btn-sm btn-danger delete-comment-btn" data-id="${c.id}"><i data-lucide="trash-2" width="1em" height="1em"></i></button>
+                <button class="btn btn-sm btn-danger delete-comment-btn" data-id="${c.id}"><i data-lucide="trash-2" width="1em" height="1em"></i> Delete</button>
               </div>
             </td>
           </tr>
@@ -1868,5 +1868,5 @@
       await checkAuth();
     })();
   </script>
-<script src="https://unpkg.com/lucide@latest"></script><script>lucide.createIcons();</script></body>
+<script src="/asset/js/lucide.min.js"></script><script src="/asset/js/lucide-icons.js"></script><script>lucide.createIcons();</script></body>
 </html>
